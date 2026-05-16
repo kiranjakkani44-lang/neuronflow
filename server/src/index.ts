@@ -1,12 +1,6 @@
 import 'dotenv/config';
 import express, { Express, Request, Response, NextFunction } from 'express';
 
-// Suppress punycode deprecation warning (Node.js built-in, harmless)
-process.on('warning', (warning: any) => {
-  if (warning.code === 'DEP0040') return;
-  console.warn(warning.name, warning.message);
-});
-
 // Validate JWT secret at startup (fails fast on bad config)
 import { validateJwtSecret } from './middleware/jwt-validation';
 validateJwtSecret(); // Exits if production has weak secret
