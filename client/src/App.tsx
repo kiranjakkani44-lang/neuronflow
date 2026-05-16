@@ -1,7 +1,14 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import PublicLayout from './components/layouts/PublicLayout';
 import DashboardLayout from './components/layouts/DashboardLayout';
+
+// Auth guard for admin route
+const RequireAuth = ({ children }: { children: React.ReactNode }) => {
+  const token = localStorage.getItem('token');
+  if (!token) return <Navigate to="/login" replace />;
+  return <>{children}</>;
+};
 
 const AdminLayout = () => (
   <div className="flex h-screen bg-gray-900">
@@ -60,8 +67,12 @@ export default function App() {
             <Route path="support" element={<Support />} />
           </Route>
 
-          {/* Admin Routes Placeholder */}
-          <Route path="/admin" element={<AdminLayout />}>
+          {/* Admin Routes (placeholder - requires auth) */}
+          <Route path="/admin" element={
+            <RequireAuth>
+              <AdminLayout />
+            </RequireAuth>
+          }}>
             <Route index element={<div>Admin Area</div>} />
           </Route>
         </Routes>

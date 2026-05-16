@@ -24,6 +24,7 @@ model users {
   updated_at    DateTime @updatedAt
   subscriptions subscriptions[]
   deployments   deployments[]
+  paymentOrders paymentOrders[]
 }
 
 model agents {
@@ -107,4 +108,19 @@ model leads {
   notes      String?
   user_id    String?  // Owner of the lead (multi-tenancy)
   created_at DateTime @default(now())
+}
+
+model paymentOrders {
+  id                String   @id @default(uuid())
+  razorpay_order_id String   @unique
+  user_id           String
+  plan              String
+  amount            Int
+  currency          String
+  status            String   @default("CREATED") // CREATED, PAID, FAILED, EXPIRED
+  razorpay_payment_id String?
+  local_receipt     String?
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+  user              users    @relation(fields: [user_id], references: [id])
 }

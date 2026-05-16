@@ -1,13 +1,14 @@
 import { Router } from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import crypto from 'crypto';
+import * as bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
+import * as crypto from 'crypto';
+import { OAuth2Client } from 'google-auth-library';
 import { PrismaClient } from '@prisma/client';
 import { authMiddleware, AuthRequest, tokenBlacklist } from '../middleware/auth';
+import { JWT_SECRET } from '../middleware/jwt-validation';
 
 const router = Router();
 const prisma = new PrismaClient();
-const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret';
 
 // Register
 router.post('/register', async (req, res) => {
@@ -234,8 +235,27 @@ router.post('/google/callback', async (req, res) => {
     const tokens = await tokenRes.json();
     const { id_token } = tokens;
 
-    // Decode JWT to get user info
-    const payload = JSON.parse(Buffer.from(id_token.split('.')[1], 'base64').toString());
+    if (!id_token) {
+      return res.status(400).json({ error: 'No ID token received from Google' });
+    }
+
+    // CRITICAL: Verify the ID token signature using google-auth-library
+    const client = new OAuth2Client(googleClientId);
+    let payload;
+    try {
+      const ticket = await client.verifyIdToken({
+        idToken: id_token,
+        audience: googleClientId,
+      });
+      payload = ticket.getPayload();
+    } catch (err) {
+      console.error('[OAuth] Token verification failed:', err);
+      return res.status(401).json({ error: 'Invalid Google ID token' });
+    }
+
+    if (!payload || !payload.email) {
+      return res.status(401).json({ error: 'Invalid token payload' });
+    }
 
     // Find or create user
     let user = await prisma.users.findUnique({ where: { email: payload.email } });
