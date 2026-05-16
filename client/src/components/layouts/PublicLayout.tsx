@@ -95,7 +95,7 @@ const ActivityToasts = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-40 right-6 z-50 flex flex-col gap-3">
       {toasts.map(id => (
         <div key={id} className="bg-[var(--surface2)] border border-[var(--border)] p-3 rounded-lg shadow-xl shadow-black/50 flex items-start gap-3 w-72 animate-in slide-in-from-bottom-5 fade-in duration-300">
           <div className="p-2 bg-[var(--accent)] bg-opacity-10 rounded-md text-[var(--accent)]">
@@ -121,7 +121,6 @@ const Navbar = () => (
       <div className="hidden md:flex gap-8">
         <Link to="/agents" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Agents</Link>
         <Link to="/#how-it-works" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">How it Works</Link>
-        <Link to="/#roi" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">ROI</Link>
         <Link to="/pricing" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Pricing</Link>
       </div>
       <div>

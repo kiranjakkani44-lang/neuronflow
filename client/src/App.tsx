@@ -19,6 +19,7 @@ const Agents = React.lazy(() => import('./pages/Agents'));
 const AgentDetail = React.lazy(() => import('./pages/AgentDetail'));
 const Pricing = React.lazy(() => import('./pages/Pricing'));
 const Contact = React.lazy(() => import('./pages/Contact'));
+const About = React.lazy(() => import('./pages/About'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Register = React.lazy(() => import('./pages/Register'));
 const DashboardOverview = React.lazy(() => import('./pages/dashboard/Overview'));
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="/agents/:slug" element={<AgentDetail />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Route>
