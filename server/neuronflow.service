@@ -1,0 +1,35 @@
+[Unit]
+Description=NeuronFlow AI Automation Platform
+After=network.target redis.service postgresql.service
+Wants=redis.service postgresql.service
+
+[Service]
+Type=simple
+User=neuronflow
+WorkingDirectory=/opt/neuronflow/server
+Environment=NODE_ENV=production
+Environment=PORT=5000
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+RestartSec=10
+
+# Security - run as non-root user
+User=neuronflow
+Group=neuronflow
+ProtectSystem=strict
+ProtectHome=true
+NoNewPrivileges=true
+PrivateTmp=true
+ReadOnlyPaths=/opt/neuronflow
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=neuronflow
+
+# Health check
+ExecStartPost=/bin/sleep 5
+ExecStartPost=/bin/bash -c 'curl -f http://localhost:5000/health || exit 1'
+
+[Install]
+WantedBy=multi-user.target

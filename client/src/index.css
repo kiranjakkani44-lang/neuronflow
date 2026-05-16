@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+:root {
+  --bg: #09090b;
+  --surface: #18181b;
+  --surface2: #201f22;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(225, 29, 72, 0.3);
+  --text: #e5e1e4;
+  --text-muted: #e5bdbe;
+  --text-dim: #727474;
+  --accent: #e11d48;
+  --accent2: #22d3ee;
+  --accent3: #ffb4ab;
+  --accent4: #74d8bd;
+  --glow: rgba(225, 29, 72, 0.15);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  background-image:
+    linear-gradient(rgba(99, 202, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 202, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  /* Uncomment for radial mask */
+  /* mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%); */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+code, .font-mono {
+  font-family: 'Space Grotesk', monospace;
+  letter-spacing: 0.1em;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+
+.status-live { background: rgba(225,29,72,0.12); color: var(--accent); font-family: 'Space Grotesk', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 9999px; }
+.status-busy { background: rgba(34,211,238,0.12); color: var(--accent2); font-family: 'Space Grotesk', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 9999px; }
+.status-idle { background: rgba(255,255,255,0.05); color: var(--text-dim); font-family: 'Space Grotesk', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 9999px; }
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}

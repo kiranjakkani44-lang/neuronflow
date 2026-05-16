@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model users {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String?
+  name          String
+  phone         String?
+  role          String   @default("CLIENT")
+  company_name  String?
+  industry      String?
+  city          String?
+  gstin         String?
+  reset_token   String?
+  reset_expires DateTime?
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  subscriptions subscriptions[]
+  deployments   deployments[]
+}
+
+model agents {
+  id                String   @id @default(uuid())
+  slug              String   @unique
+  name              String
+  short_description String
+  description       String
+  category          String
+  icon_name         String
+  price_one_time    Int
+  price_monthly     Int?
+  industries        String
+  features          String
+  roi_promise       String
+  setup_time_days   Int      @default(7)
+  status            String   @default("ACTIVE")
+  is_featured       Boolean  @default(false)
+  sort_order        Int      @default(0)
+  created_at        DateTime @default(now())
+  deployments       deployments[]
+}
+
+model subscriptions {
+  id                       String    @id @default(uuid())
+  user_id                  String
+  plan                     String
+  status                   String
+  razorpay_subscription_id String?
+  current_period_start     DateTime?
+  current_period_end       DateTime?
+  created_at               DateTime  @default(now())
+  user                     users     @relation(fields: [user_id], references: [id])
+}
+
+model deployments {
+  id          String       @id @default(uuid())
+  user_id     String
+  agent_id    String
+  status      String       @default("PENDING")
+  config      String?
+  metrics     String?
+  deployed_at DateTime?
+  created_at  DateTime     @default(now())
+  user        users        @relation(fields: [user_id], references: [id])
+  agent       agents       @relation(fields: [agent_id], references: [id])
+  agent_logs  agent_logs[]
+}
+
+model agent_logs {
+  id            String      @id @default(uuid())
+  deployment_id String
+  level         String
+  message       String
+  metadata      String?
+  created_at    DateTime    @default(now())
+  deployment    deployments @relation(fields: [deployment_id], references: [id])
+}
+
+model audit_requests {
+  id         String   @id @default(uuid())
+  name       String
+  email      String
+  phone      String
+  company    String
+  industry   String
+  message    String?
+  status     String   @default("NEW")
+  created_at DateTime @default(now())
+}
+
+model leads {
+  id         String   @id @default(uuid())
+  name       String
+  email      String
+  phone      String?
+  company    String?
+  industry   String?
+  source     String?
+  status     String   @default("NEW")
+  notes      String?
+  user_id    String?  // Owner of the lead (multi-tenancy)
+  created_at DateTime @default(now())
+}
