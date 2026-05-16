@@ -5,7 +5,7 @@ import { JWT_SECRET } from './jwt-validation';
 
 const prisma = new PrismaClient();
 
-// Server-side token blacklist for logout invalidation
+// Server-side token blacklist for logout invalidation (in-memory fallback)
 export const tokenBlacklist = new Set<string>();
 
 export interface AuthRequest extends Request {

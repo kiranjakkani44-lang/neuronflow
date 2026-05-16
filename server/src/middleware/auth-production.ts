@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import Redis from 'ioredis';
+import * as jwt from 'jsonwebtoken';
+import { Redis } from 'ioredis';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret';
 
@@ -14,19 +14,32 @@ if (redisUrl) {
       maxRetriesPerRequest: 3,
       lazyConnect: true,
       enableReadyCheck: true,
+      retryStrategy: (times: number) => {
+        if (times > 3) {
+          // Stop retrying after 3 attempts
+          console.warn('[Redis] Max retries reached, falling back to in-memory');
+          return null; // stop retrying
+        }
+        return Math.min(times * 100, 2000);
+      },
+      connectTimeout: 3000,
     });
 
-    redis.on('error', (err) => {
-      console.error('[Redis] Connection error:', err.message);
+    redis.on('error', (err: Error) => {
+      // Suppress connection errors when Redis isn't available
+      // Only log non-connection errors
+      if (!err.message.includes('ECONNREFUSED') && !err.message.includes('ENOTFOUND')) {
+        console.error('[Redis] Error:', err.message);
+      }
     });
 
     redis.on('connect', () => {
       console.log('[Redis] Connected successfully');
     });
 
-    // Connect immediately
-    redis.connect().catch((err) => {
-      console.error('[Redis] Failed to connect:', err.message);
+    // Connect (lazy) — won't spam if Redis is down
+    redis.connect().catch((err: Error) => {
+      // Connection failed — silently fall back to in-memory
       redis = null;
     });
   } catch (err) {
@@ -34,7 +47,7 @@ if (redisUrl) {
     redis = null;
   }
 } else {
-  console.warn('[Redis] REDIS_URL not set - using in-memory fallback (not recommended for production)');
+  console.log('[Redis] REDIS_URL not set — using in-memory rate limiting & token blacklist');
 }
 
 // Token blacklist expiry (7 days - matches JWT expiry)
