@@ -6,6 +6,7 @@ import { OAuth2Client } from 'google-auth-library';
 import { PrismaClient } from '@prisma/client';
 import { authMiddleware, AuthRequest, tokenBlacklist } from '../middleware/auth';
 import { JWT_SECRET } from '../middleware/jwt-validation';
+import { sendPasswordResetEmail } from '../services/email';
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -140,8 +141,9 @@ router.post('/reset-request', async (req, res) => {
       data: { reset_token, reset_expires }
     });
 
-    console.log(`[PASSWORD RESET] Token for ${email}: ${reset_token}`);
-    // In production, send email with token
+    // Send email (falls back to console log if SMTP not configured)
+    await sendPasswordResetEmail(email, reset_token);
+
     res.json({
       message: genericMessage,
       ...(process.env.NODE_ENV === 'development' ? { reset_token } : {})
@@ -275,6 +277,29 @@ router.post('/google/callback', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'OAuth failed' });
+  }
+});
+
+// Delete account
+router.delete('/account', authMiddleware, async (req: AuthRequest, res) => {
+  try {
+    const userId = req.user!.id;
+    
+    // Delete related data in order (foreign key constraints)
+    await prisma.agent_logs.deleteMany({
+      where: { deployment: { user_id: userId } }
+    });
+    await prisma.deployments.deleteMany({ where: { user_id: userId } });
+    await prisma.subscriptions.deleteMany({ where: { user_id: userId } });
+    await prisma.paymentOrders.deleteMany({ where: { user_id: userId } });
+    
+    // Delete the user
+    await prisma.users.delete({ where: { id: userId } });
+    
+    res.json({ success: true, message: 'Account deleted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete account' });
   }
 });
 

@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { authMiddleware, AuthRequest } from '../middleware/auth';
+import { agentEngine } from '../agents/engine';
+import { llm } from '../agents/llm';
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -64,7 +66,25 @@ router.post('/', authMiddleware, async (req: AuthRequest, res) => {
         user_id: req.user!.id
       }
     });
-    res.json(lead);
+    
+    // AUTO-TRIGGER: Qualify the lead immediately with AI
+    try {
+      await agentEngine.execute('no-log', 'lead_qualification', {
+        lead_data: {
+          name: lead.name, email: lead.email, phone: lead.phone || '',
+          company: lead.company || '', industry: lead.industry || '',
+          source: lead.source || '', message: lead.notes || '',
+          id: String(lead.id)
+        },
+        questions: []
+      });
+      console.log(`[AUTO] Lead qualification triggered for lead ${lead.id}`);
+    } catch (autoErr) {
+      // Silently continue if auto-qualification fails (lead was still created)
+      console.warn(`[AUTO] Lead qualification skipped for ${lead.id}:`, autoErr);
+    }
+    
+    res.status(201).json(lead);
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }

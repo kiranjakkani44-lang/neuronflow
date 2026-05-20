@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { User, Mail, Phone, Building, Key, Bell, Shield, Trash2, Check } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { User, Mail, Phone, Building, Key, Bell, Shield, Trash2, Check, Loader2 } from 'lucide-react';
 import api from '../../api/client';
 
 export default function Settings() {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
-    name: 'Demo User',
-    email: 'demo@neuronflow.com',
+    name: '',
+    email: '',
     phone: '',
     company_name: '',
     industry: '',
@@ -19,12 +20,31 @@ export default function Settings() {
   });
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    api.get('/auth/me').then(res => {
+      setProfile({
+        name: res.data.name || '',
+        email: res.data.email || '',
+        phone: res.data.phone || '',
+        company_name: res.data.company_name || '',
+        industry: res.data.industry || '',
+      });
+      setLoading(false);
+    }).catch(() => setLoading(false));
+  }, []);
 
   const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
     try {
-      await api.put('/auth/profile', profile);
+      await api.put('/auth/profile', {
+        name: profile.name,
+        phone: profile.phone,
+        company_name: profile.company_name,
+      });
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
     } catch (err) {
@@ -32,6 +52,30 @@ export default function Settings() {
     }
     setSaving(false);
   };
+
+  const handleDeleteAccount = async () => {
+    if (!window.confirm('Are you sure? This will permanently delete your account and all data.')) return;
+    const confirm2 = window.confirm('This action cannot be undone. Type OK to confirm.');
+    if (!confirm2) return;
+    setDeleting(true);
+    try {
+      await api.delete('/auth/account');
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      navigate('/');
+    } catch (err) {
+      console.error(err);
+      setDeleting(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="animate-spin text-[var(--accent)]" size={32} />
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -45,11 +89,11 @@ export default function Settings() {
       <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 rounded-full bg-[var(--accent)] flex items-center justify-center text-black font-bold text-xl">
-            {profile.name.split(' ').map(n => n[0]).join('').toUpperCase() || 'DU'}
+            {profile.name.split(' ').map(n => n[0]).join('').toUpperCase() || 'U'}
           </div>
           <div>
-            <h3 className="font-syne font-bold">{profile.name}</h3>
-            <p className="text-xs text-[var(--text-muted)] font-mono">{profile.role || 'CLIENT'}</p>
+            <h3 className="font-syne font-bold">{profile.name || 'User'}</h3>
+            <p className="text-xs text-[var(--text-muted)] font-mono">CLIENT</p>
           </div>
         </div>
 
@@ -180,9 +224,9 @@ export default function Settings() {
                 <div className="text-xs text-[var(--text-muted)]">Add an extra layer of security</div>
               </div>
             </div>
-            <button className="px-4 py-2 bg-[var(--surface2)] border border-[var(--border)] rounded-lg text-xs font-bold hover:border-[var(--accent)] transition-colors">
-              Enable 2FA
-            </button>
+            <span className="px-4 py-2 bg-[var(--accent2)]/10 border border-[var(--accent2)]/30 text-[var(--accent2)] rounded-lg text-xs font-bold">
+              Coming Soon
+            </span>
           </div>
         </div>
       </div>
@@ -199,8 +243,12 @@ export default function Settings() {
             <div className="font-medium text-sm">Delete Account</div>
             <div className="text-xs text-[var(--text-muted)]">Permanently delete your account and all data</div>
           </div>
-          <button className="px-4 py-2 bg-red-500/10 border border-red-500/30 text-red-500 rounded-lg text-xs font-bold hover:bg-red-500/20 transition-colors">
-            Delete Account
+          <button
+            onClick={handleDeleteAccount}
+            disabled={deleting}
+            className="px-4 py-2 bg-red-500/10 border border-red-500/30 text-red-500 rounded-lg text-xs font-bold hover:bg-red-500/20 transition-colors disabled:opacity-50"
+          >
+            {deleting ? 'Deleting...' : 'Delete Account'}
           </button>
         </div>
       </div>

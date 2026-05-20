@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { authMiddleware, optionalAuth, AuthRequest } from '../middleware/auth';
+import { agentEngine } from '../agents/engine';
+import { llm } from '../agents/llm';
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -18,7 +20,7 @@ router.post('/', async (req, res) => {
     });
 
     // Also create a lead entry
-    await prisma.leads.create({
+    const lead = await prisma.leads.create({
       data: {
         name,
         email,
@@ -29,6 +31,22 @@ router.post('/', async (req, res) => {
         status: 'NEW'
       }
     });
+
+    // AUTO-TRIGGER: Qualify the new lead immediately
+    try {
+      await agentEngine.execute('no-log', 'lead_qualification', {
+        lead_data: {
+          name: lead.name, email: lead.email, phone: lead.phone || '',
+          company: lead.company || '', industry: lead.industry || '',
+          source: 'AUDIT_REQUEST', message: message || '',
+          id: String(lead.id)
+        },
+        questions: []
+      });
+      console.log(`[AUTO] Audit lead qualified: ${lead.id} (${name})`);
+    } catch (autoErr) {
+      console.warn(`[AUTO] Audit lead qualification skipped:`, autoErr);
+    }
 
     res.status(201).json(audit);
   } catch (err) {

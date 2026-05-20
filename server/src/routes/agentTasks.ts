@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { authMiddleware, AuthRequest } from '../middleware/auth';
 import { agentEngine, AgentType } from '../agents/engine';
-import { prisma } from '../agents/llm';
+import { prisma, llm } from '../agents/llm';
 
 const router = Router();
 
@@ -174,6 +174,47 @@ router.post('/qualify-lead', authMiddleware, async (req: AuthRequest, res) => {
     console.error('Lead qualification error:', err);
     res.status(500).json({ error: 'Lead qualification failed' });
   }
+});
+
+// Webhook endpoint for external services (e.g., Zapier, n8n) to trigger agents
+router.post('/webhook/:deploymentId', async (req, res) => {
+  try {
+    const deploymentId = String(req.params.deploymentId);
+    
+    const deployment = await prisma.deployments.findUnique({
+      where: { id: deploymentId },
+      include: { agent: true }
+    });
+    
+    if (!deployment) return res.status(404).json({ error: 'Deployment not found' });
+    if (deployment.status !== 'LIVE') return res.status(400).json({ error: 'Agent is not live' });
+
+    const slug = deployment.agent.slug;
+    let mappedType: AgentType = 'support_bot';
+    if (slug.includes('lead') || slug.includes('qualif')) mappedType = 'lead_qualification';
+    else if (slug.includes('whatsapp') || slug.includes('cart') || slug.includes('recovery')) mappedType = 'whatsapp_bot';
+    else if (slug.includes('voice')) mappedType = 'voice_agent';
+    else if (slug.includes('support') || slug.includes('chat')) mappedType = 'support_bot';
+    else if (slug.includes('content') || slug.includes('seo') || slug.includes('social')) mappedType = 'content_generator';
+    else if (slug.includes('appointment')) mappedType = 'appointment_booking';
+
+    const task = await agentEngine.execute(deploymentId, mappedType, {
+      ...(req.body || {}),
+      source: 'webhook',
+      timestamp: new Date().toISOString()
+    });
+
+    res.json({ task_id: task.id, status: task.status, agent: deployment.agent.name });
+  } catch (err) {
+    console.error('Webhook error:', err);
+    res.status(500).json({ error: 'Webhook execution failed' });
+  }
+});
+
+// LLM health check
+router.get('/llm-health', async (req, res) => {
+  const health = await llm.checkHealth();
+  res.json(health);
 });
 
 export default router;

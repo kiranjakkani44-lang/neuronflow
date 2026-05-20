@@ -1,43 +1,141 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CreditCard, Check, Zap } from 'lucide-react';
+import { CreditCard, Check, Zap, Loader2 } from 'lucide-react';
+import api from '../../api/client';
+
+interface Subscription {
+  id: string;
+  plan: string;
+  status: string;
+  current_period_end?: string;
+  created_at: string;
+}
+
+interface PaymentOrder {
+  id: string;
+  plan: string;
+  amount: number;
+  currency: string;
+  status: string;
+  created_at: string;
+  razorpay_payment_id?: string;
+}
+
+const planPrices: Record<string, string> = {
+  Starter: '₹4,999',
+  Growth: '₹14,999',
+  Enterprise: '₹49,999',
+};
+
+const planFeatures: Record<string, string[]> = {
+  Starter: ['2 Active Agents', 'Email Support', 'Basic Workflows', 'Monthly Reports'],
+  Growth: ['5 Active Agents', 'Priority Support', 'Advanced Workflows', 'CRM Integrations', 'Custom Dashboards'],
+  Enterprise: ['Unlimited Agents', 'Dedicated Manager', 'Custom Integrations', 'SLA Guarantee', 'White Label'],
+};
 
 export default function Billing() {
+  const [subscription, setSubscription] = useState<Subscription | null>(null);
+  const [payments, setPayments] = useState<PaymentOrder[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([
+      api.get('/payments/subscription').catch(() => ({ data: null })),
+      api.get('/payments/history').catch(() => ({ data: [] })),
+    ]).then(([subRes, payRes]) => {
+      setSubscription(subRes.data);
+      setPayments(Array.isArray(payRes.data) ? payRes.data : []);
+      setLoading(false);
+    });
+  }, []);
+
+  const handleCreateOrder = async (plan: string) => {
+    try {
+      const { data } = await api.post('/payments/order', { plan });
+      if (data.order_id) {
+        const options = {
+          key: import.meta.env.VITE_RAZORPAY_KEY_ID || 'rzp_test_placeholder',
+          amount: data.amount,
+          currency: data.currency,
+          name: 'NeuronFlow',
+          description: `${plan} Plan`,
+          order_id: data.order_id,
+          handler: () => window.location.reload(),
+        };
+        const rzp = new (window as any).Razorpay(options);
+        rzp.open();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="animate-spin text-[var(--accent)]" size={32} />
+      </div>
+    );
+  }
+
+  const currentPlan = subscription?.plan || 'Starter';
+  const isActive = subscription?.status === 'ACTIVE';
+  const periodEnd = subscription?.current_period_end
+    ? new Date(subscription.current_period_end).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : 'No active subscription';
+
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
         <h1 className="font-syne font-bold text-3xl mb-2">Billing</h1>
-        <p className="text-[var(--text-muted)] text-sm">Manage your subscription and payment methods.</p>
+        <p className="text-[var(--text-muted)] text-sm">Manage your subscription and payment history.</p>
       </div>
 
       {/* Current Plan */}
-      <div className="bg-[var(--surface2)] border border-[var(--accent)]/30 rounded-xl p-8 relative overflow-hidden">
+      <div className={`bg-[var(--surface2)] border rounded-xl p-8 relative overflow-hidden ${isActive ? 'border-[var(--accent)]/30' : 'border-[var(--border)]'}`}>
         <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--accent)]/10 blur-[80px] rounded-full" />
         <div className="flex items-center justify-between mb-6">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="px-3 py-1 bg-[var(--accent)] text-black font-bold text-xs rounded-full">CURRENT PLAN</span>
-              <span className="status-live animate-pulse">ACTIVE</span>
+              <span className={`px-3 py-1 font-bold text-xs rounded-full ${isActive ? 'bg-[var(--accent)] text-black' : 'bg-[var(--border)] text-[var(--text-muted)]'}`}>
+                {isActive ? 'CURRENT PLAN' : 'NO PLAN'}
+              </span>
+              <span className={`status-live ${isActive ? 'animate-pulse' : ''}`}>{isActive ? 'ACTIVE' : 'INACTIVE'}</span>
             </div>
-            <h2 className="font-syne font-extrabold text-2xl">Growth</h2>
+            <h2 className="font-syne font-extrabold text-2xl">{currentPlan}</h2>
           </div>
           <div className="text-right">
-            <div className="font-syne font-bold text-2xl">₹14,999<span className="text-sm font-sans text-[var(--text-muted)] font-normal">/mo</span></div>
-            <div className="font-mono text-[10px] text-[var(--text-dim)]">Next billing: Jun 15, 2026</div>
+            <div className="font-syne font-bold text-2xl">{planPrices[currentPlan] || '₹0'}<span className="text-sm font-sans text-[var(--text-muted)] font-normal">/mo</span></div>
+            <div className="font-mono text-[10px] text-[var(--text-dim)]">{isActive ? `Next billing: ${periodEnd}` : periodEnd}</div>
           </div>
         </div>
 
-        <div className="flex gap-4 mb-6">
-          {['5 Active Agents', 'Priority Support', 'Advanced Workflows', 'CRM Integrations', 'Custom Dashboards'].map(f => (
+        <div className="flex gap-4 mb-6 flex-wrap">
+          {(planFeatures[currentPlan] || planFeatures.Starter).map(f => (
             <div key={f} className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
               <Check size={14} className="text-[var(--accent2)]" /> {f}
             </div>
           ))}
         </div>
 
-        <Link to="/pricing" className="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:underline font-medium">
-          Upgrade Plan → <Zap size={14} />
-        </Link>
+        {!isActive && (
+          <div className="flex gap-3">
+            {['Starter', 'Growth', 'Enterprise'].map(plan => (
+              <button
+                key={plan}
+                onClick={() => handleCreateOrder(plan)}
+                className="px-4 py-2 bg-[var(--accent)] text-black font-bold text-sm rounded-lg hover:bg-[var(--accent)]/90 transition-colors"
+              >
+                Choose {plan}
+              </button>
+            ))}
+          </div>
+        )}
+        {isActive && (
+          <Link to="/pricing" className="inline-flex items-center gap-2 text-sm text-[var(--accent)] hover:underline font-medium">
+            Upgrade Plan → <Zap size={14} />
+          </Link>
+        )}
       </div>
 
       {/* Payment History */}
@@ -45,48 +143,36 @@ export default function Billing() {
         <div className="p-6 border-b border-[var(--border)]">
           <h3 className="font-syne font-bold text-lg">Payment History</h3>
         </div>
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="border-b border-[var(--border)] bg-[#050810]">
-              <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Date</th>
-              <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Description</th>
-              <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Amount</th>
-              <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Status</th>
-              <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Invoice</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { date: 'May 15, 2026', desc: 'Growth Plan - Monthly', amount: '₹14,999', status: 'PAID' },
-              { date: 'Apr 15, 2026', desc: 'Growth Plan - Monthly', amount: '₹14,999', status: 'PAID' },
-              { date: 'Mar 15, 2026', desc: 'Growth Plan - Monthly', amount: '₹14,999', status: 'PAID' },
-            ].map((row, i) => (
-              <tr key={i} className="border-b border-[var(--border)]">
-                <td className="p-4 font-mono text-xs text-[var(--text-muted)]">{row.date}</td>
-                <td className="p-4 text-sm">{row.desc}</td>
-                <td className="p-4 font-syne font-bold">{row.amount}</td>
-                <td className="p-4"><span className="bg-[var(--accent2)]/10 text-[var(--accent2)] border border-[var(--accent2)]/30 px-2 py-1 rounded font-mono text-xs">{row.status}</span></td>
-                <td className="p-4"><button className="font-mono text-xs text-[var(--accent)] hover:underline">↓ PDF</button></td>
+        {payments.length === 0 ? (
+          <div className="p-8 text-center text-[var(--text-muted)] text-sm">No payment history yet.</div>
+        ) : (
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-[var(--border)] bg-[#050810]">
+                <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Date</th>
+                <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Description</th>
+                <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Amount</th>
+                <th className="p-4 font-mono text-xs text-[var(--text-dim)] font-normal uppercase tracking-wider">Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Payment Method */}
-      <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-syne font-bold text-lg flex items-center gap-2"><CreditCard size={18} /> Payment Method</h3>
-          <button className="text-xs font-medium text-[var(--accent)] hover:underline">+ Add New</button>
-        </div>
-        <div className="flex items-center gap-4 p-4 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
-          <div className="w-12 h-8 bg-gradient-to-r from-blue-600 to-blue-400 rounded flex items-center justify-center text-white text-xs font-bold">VISA</div>
-          <div>
-            <div className="font-mono text-sm">•••• •••• •••• 4242</div>
-            <div className="text-xs text-[var(--text-muted)]">Expires 12/27</div>
-          </div>
-          <div className="ml-auto"><span className="bg-[var(--accent2)]/10 text-[var(--accent2)] border border-[var(--accent2)]/30 px-2 py-1 rounded font-mono text-xs">DEFAULT</span></div>
-        </div>
+            </thead>
+            <tbody>
+              {payments.map((row) => (
+                <tr key={row.id} className="border-b border-[var(--border)]">
+                  <td className="p-4 font-mono text-xs text-[var(--text-muted)]">{new Date(row.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+                  <td className="p-4 text-sm">{row.plan} Plan</td>
+                  <td className="p-4 font-syne font-bold">{row.currency === 'INR' ? '₹' : ''}{(row.amount / 100).toLocaleString()}</td>
+                  <td className="p-4">
+                    <span className={`border px-2 py-1 rounded font-mono text-xs ${
+                      row.status === 'PAID' ? 'bg-[var(--accent2)]/10 text-[var(--accent2)] border-[var(--accent2)]/30' :
+                      row.status === 'FAILED' ? 'bg-red-500/10 text-red-400 border-red-500/30' :
+                      'bg-[var(--border)] text-[var(--text-muted)] border-[var(--border)]'
+                    }`}>{row.status}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

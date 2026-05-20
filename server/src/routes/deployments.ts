@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { authMiddleware, AuthRequest } from '../middleware/auth';
+import { agentEngine } from '../agents/engine';
+import { llm } from '../agents/llm';
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -74,6 +76,30 @@ router.post('/', authMiddleware, async (req: AuthRequest, res) => {
     await prisma.agent_logs.create({
       data: { deployment_id: dep.id, level: 'INFO', message: `Deployment created for ${agent.name}` }
     });
+
+    // AUTO-TRIGGER: Run initial agent task on deployment
+    try {
+      const slug = dep.agent.slug;
+      let mappedType: any = 'support_bot';
+      if (slug.includes('lead') || slug.includes('qualif')) mappedType = 'lead_qualification';
+      else if (slug.includes('whatsapp') || slug.includes('cart') || slug.includes('recovery')) mappedType = 'whatsapp_bot';
+      else if (slug.includes('voice')) mappedType = 'voice_agent';
+      else if (slug.includes('support') || slug.includes('chat')) mappedType = 'support_bot';
+      else if (slug.includes('content') || slug.includes('seo') || slug.includes('social') || slug.includes('marketing')) mappedType = 'content_generator';
+      else if (slug.includes('appointment') || slug.includes('booking')) mappedType = 'appointment_booking';
+      else if (slug.includes('crm') || slug.includes('invoice') || slug.includes('inventory') || slug.includes('hr')) mappedType = 'crm_sync';
+
+      await agentEngine.execute(dep.id, mappedType, {
+        deployment_id: dep.id,
+        agent_type: mappedType,
+        source: 'deployment_start',
+        timestamp: new Date().toISOString(),
+        deployment_name: dep.agent.name
+      });
+      console.log(`[AUTO] Initial task started for deployment ${dep.id} (${dep.agent.name})`);
+    } catch (autoErr) {
+      console.warn(`[AUTO] Initial task failed for ${dep.id}:`, autoErr);
+    }
 
     res.status(201).json(dep);
   } catch (err) {

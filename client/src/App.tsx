@@ -1,24 +1,8 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import PublicLayout from './components/layouts/PublicLayout';
 import DashboardLayout from './components/layouts/DashboardLayout';
-
-// Auth guard for admin route
-const RequireAuth = ({ children }: { children: React.ReactNode }) => {
-  const token = localStorage.getItem('token');
-  if (!token) return <Navigate to="/login" replace />;
-  return <>{children}</>;
-};
-
-const AdminLayout = () => (
-  <div className="flex h-screen bg-gray-900">
-    <div className="w-64 border-r border-gray-700 bg-gray-800 p-4">Admin Sidebar</div>
-    <div className="flex-1 flex flex-col">
-      <div className="h-16 border-b border-gray-700 bg-gray-800 p-4">Admin TopBar</div>
-      <div className="p-6 flex-1 overflow-auto"><Outlet /></div>
-    </div>
-  </div>
-);
+import AdminLayout from './components/layouts/AdminLayout';
 
 // Lazy Loaded Pages
 const Landing = React.lazy(() => import('./pages/Landing'));
@@ -37,6 +21,12 @@ const Billing = React.lazy(() => import('./pages/dashboard/Billing'));
 const Settings = React.lazy(() => import('./pages/dashboard/Settings'));
 const ChangePassword = React.lazy(() => import('./pages/dashboard/ChangePassword'));
 const Support = React.lazy(() => import('./pages/dashboard/Support'));
+const Analytics = React.lazy(() => import('./pages/dashboard/Analytics'));
+const AdminOverview = React.lazy(() => import('./pages/admin/Overview'));
+const AdminUsers = React.lazy(() => import('./pages/admin/Users'));
+const AdminAgents = React.lazy(() => import('./pages/admin/Agents'));
+const AdminAudits = React.lazy(() => import('./pages/admin/Audits'));
+const AdminLeads = React.lazy(() => import('./pages/admin/Leads'));
 
 export default function App() {
   return (
@@ -55,25 +45,26 @@ export default function App() {
             <Route path="/register" element={<Register />} />
           </Route>
 
-          {/* Dashboard Routes (auth-protected via DashboardLayout) */}
+          {/* Dashboard Routes */}
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardOverview />} />
             <Route path="agents" element={<MyAgents />} />
             <Route path="leads" element={<Leads />} />
             <Route path="agents/:id/logs" element={<AgentLogs />} />
             <Route path="billing" element={<Billing />} />
+            <Route path="analytics" element={<Analytics />} />
             <Route path="settings" element={<Settings />} />
             <Route path="settings/change-password" element={<ChangePassword />} />
             <Route path="support" element={<Support />} />
           </Route>
 
-          {/* Admin Routes (placeholder - requires auth) */}
-          <Route path="/admin" element={
-            <RequireAuth>
-              <AdminLayout />
-            </RequireAuth>
-          }}>
-            <Route index element={<div>Admin Area</div>} />
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminOverview />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="agents" element={<AdminAgents />} />
+            <Route path="audits" element={<AdminAudits />} />
+            <Route path="leads" element={<AdminLeads />} />
           </Route>
         </Routes>
       </Suspense>

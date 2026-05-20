@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Activity, LayoutDashboard, Bot, Users, CreditCard, Settings, HelpCircle, Bell, LogOut } from 'lucide-react';
+import { Activity, LayoutDashboard, Bot, Users, CreditCard, Settings, HelpCircle, Bell, LogOut, Loader2, TrendingUp } from 'lucide-react';
 import api from '../../api/client';
 
 const SidebarItem = ({ icon: Icon, label, to }: { icon: any, label: string, to: string }) => {
@@ -26,6 +26,7 @@ export default function DashboardLayout() {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [dashStats, setDashStats] = useState<{ agents: number; leads: number; todayLeads: number; activeAgents: number } | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -42,17 +43,25 @@ export default function DashboardLayout() {
       localStorage.removeItem('user');
       navigate('/login', { replace: true });
     });
+
+    // Fetch dashboard stats
+    api.get('/sse/stats').then(res => {
+      setDashStats(res.data);
+    }).catch(() => {});
+
+    // Poll stats every 30 seconds (fallback for SSE)
+    const interval = setInterval(() => {
+      api.get('/sse/stats').then(res => {
+        setDashStats(res.data);
+      }).catch(() => {});
+    }, 30000);
+
+    return () => clearInterval(interval);
   }, [navigate]);
 
   const handleLogout = async () => {
     try {
-      const token = localStorage.getItem('token');
-      if (token) {
-        await fetch('http://localhost:5000/api/auth/logout', {
-          method: 'POST',
-          headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
-        });
-      }
+      await api.post('/auth/logout');
     } catch (err) {
       // Proceed with local logout even if server call fails
     }
@@ -89,6 +98,7 @@ export default function DashboardLayout() {
           <SidebarItem icon={LayoutDashboard} label="Overview" to="/dashboard" />
           <SidebarItem icon={Bot} label="My Agents" to="/dashboard/agents" />
           <SidebarItem icon={Users} label="Leads" to="/dashboard/leads" />
+          <SidebarItem icon={TrendingUp} label="Analytics" to="/dashboard/analytics" />
 
           <span className="px-4 text-[10px] font-mono text-[var(--text-dim)] uppercase tracking-wider mt-6 mb-2">Account</span>
           <SidebarItem icon={CreditCard} label="Billing" to="/dashboard/billing" />
@@ -129,11 +139,11 @@ export default function DashboardLayout() {
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-4 bg-[var(--bg)] border border-[var(--border)] rounded px-4 py-2 font-mono text-xs text-[var(--text-muted)]">
-              <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[var(--accent2)] animate-pulse" /> Agents Running: —</span>
+              <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[var(--accent2)] animate-pulse" /> Agents Running: {dashStats?.activeAgents ?? '—'}</span>
               <span className="text-[var(--border)]">|</span>
-              <span>Leads Today: —</span>
+              <span>Leads Today: {dashStats?.todayLeads ?? '—'}</span>
               <span className="text-[var(--border)]">|</span>
-              <span className="text-[var(--accent)]">Hours Saved: —</span>
+              <span className="text-[var(--accent)]">Total Agents: {dashStats?.agents ?? '—'}</span>
             </div>
 
             <button className="relative text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">

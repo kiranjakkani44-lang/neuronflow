@@ -124,3 +124,14 @@ model paymentOrders {
   updated_at        DateTime @updatedAt
   user              users    @relation(fields: [user_id], references: [id])
 }
+
+model support_tickets {
+  id         String   @id @default(uuid())
+  user_id    String
+  subject    String
+  message    String
+  status     String   @default("OPEN") // OPEN, IN_PROGRESS, RESOLVED, CLOSED
+  response   String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}

@@ -1,87 +1,138 @@
 import 'dotenv/config';
 import { PrismaClient } from '@prisma/client';
-import OpenAI from 'openai';
-import axios from 'axios';
 
 const prisma = new PrismaClient();
 
 class LLMService {
-  private openai: OpenAI | null = null;
-  private geminiApiKey: string | null = null;
+  private baseUrl: string;
+  private apiKey: string;
+  private model: string;
+  private provider: string;
 
   constructor() {
-    // Always skip OpenAI in development (dotenv uses placeholder values)
-    // In production, set valid OPENAI_API_KEY to enable real LLM
-    const openaiKey = process.env.OPENAI_API_KEY;
-    const isDev = process.env.NODE_ENV === undefined || process.env.NODE_ENV === '' || 
-                  process.env.NODE_ENV?.includes('dev') || !process.env.NODE_ENV;
-    
-    // Only init OpenAI if we have a real non-placeholder key
-    if (openaiKey && openaiKey.length > 50 && !openaiKey.includes('placeholder') && openaiKey !== '***') {
-      this.openai = new OpenAI({ apiKey: openaiKey });
-    }
-    this.geminiApiKey = process.env.GEMINI_API_KEY || null;
+    this.provider = process.env.LLM_PROVIDER || 'mock';
+    this.baseUrl = process.env.LLM_BASE_URL || 'http://localhost:8317/v1';
+    this.apiKey = process.env.LLM_API_KEY || '';
+    this.model = process.env.LLM_MODEL || 'gemini-3.1-pro-low';
   }
 
   async generate(prompt: string, system?: string): Promise<string> {
-    if (this.openai) {
+    // If configured to use a real LLM
+    if (this.provider === 'openai-compatible' && this.apiKey) {
       try {
-        const response = await this.openai.chat.completions.create({
-          model: 'gpt-4o-mini',
-          messages: [
-            ...(system ? [{ role: 'system' as const, content: system }] : []),
-            { role: 'user', content: prompt }
-          ],
-          temperature: 0.7,
-          max_tokens: 1000
-        });
-        return response.choices[0]?.message?.content || '';
-      } catch (err) {
-        console.warn('OpenAI failed, trying fallback:', err);
-      }
-    }
+        const messages: any[] = [];
+        if (system) messages.push({ role: 'system', content: system });
+        messages.push({ role: 'user', content: prompt });
 
-    if (this.geminiApiKey) {
-      try {
-        const res = await axios.post(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.geminiApiKey}`,
-          {
-            contents: [{ parts: [{ text: (system ? system + '\n\n' : '') + prompt }] }],
-            generationConfig: { temperature: 0.7, maxOutputTokens: 1000 }
+        const res = await fetch(`${this.baseUrl}/chat/completions`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.apiKey}`
           },
-          { headers: { 'Content-Type': 'application/json' } }
-        );
-        return res.data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+          body: JSON.stringify({
+            model: this.model,
+            messages,
+            temperature: 0.7,
+            max_tokens: 1000
+          })
+        });
+
+        if (!res.ok) {
+          const errText = await res.text();
+          console.warn(`[LLM] API error (${res.status}):`, errText.substring(0, 200));
+          throw new Error(`API error: ${res.status}`);
+        }
+
+        const data = await res.json();
+        return data.choices?.[0]?.message?.content || '';
       } catch (err) {
-        console.warn('Gemini failed, using fallback:', err);
+        console.warn('[LLM] Request failed, falling back to mock:', err);
       }
     }
 
-    return this.fallbackLLM(prompt);
+    return this.mockResponse(prompt);
   }
 
-  private fallbackLLM(prompt: string): string {
+  private mockResponse(prompt: string): string {
     const lower = prompt.toLowerCase();
 
     if (lower.includes('qualif') || lower.includes('lead')) {
+      const score = Math.floor(Math.random() * 30) + 65;
+      const tier = score > 80 ? 'HOT' : score > 65 ? 'WARM' : 'COLD';
       return JSON.stringify({
-        score: 85,
-        tier: 'HOT',
-        summary: 'Strong lead with clear buying intent. SaaS startup founder actively evaluating AI automation solutions.',
-        next_action: 'Schedule immediate demo call',
+        score,
+        tier,
+        summary: `Lead analyzed: ${tier} tier with score ${score}. ${score > 80 ? 'Strong buying intent detected.' : 'Needs further nurturing.'}`,
+        next_action: score > 80 ? 'Schedule immediate demo call' : 'Send educational email sequence',
         concerns: []
       });
     }
 
     if (lower.includes('whatsapp') || lower.includes('reply')) {
       return JSON.stringify({
-        response: 'Thank you for reaching out! Our team will get back to you within 2 hours.',
+        response: `Hi there! Thanks for reaching out to NeuronFlow. Our AI team can help automate your sales, support, and operations. How can we assist you today?`,
         intent: 'general_inquiry',
         sentiment: 'positive'
       });
     }
 
+    if (lower.includes('support') || lower.includes('help')) {
+      return JSON.stringify({
+        category: 'general',
+        response: 'Thank you for contacting NeuronFlow Support. A team member will get back to you within 2 hours. For urgent matters, please call our support line.',
+        escalate: false
+      });
+    }
+
+    if (lower.includes('content') || lower.includes('social') || lower.includes('post')) {
+      return JSON.stringify({
+        content: `🚀 Is your business running on autopilot yet?\n\nAt NeuronFlow, we build AI agents that handle your sales, support, and operations 24/7. No more missed leads. No more manual follow-ups.\n\n👉 Book your free audit today and discover how much revenue AI can recover for your business.\n\n#AIAutomation #BusinessGrowth #NeuronFlow`,
+        platform: 'linkedin',
+        hashtags: ['#AI', '#Automation', '#BusinessGrowth', '#NeuronFlow']
+      });
+    }
+
+    if (lower.includes('voice') || lower.includes('call')) {
+      return JSON.stringify({
+        summary: 'Call handled successfully. Lead showed interest in AI automation services.',
+        qualified: Math.random() > 0.4,
+        action: 'follow_up_required',
+        call_duration: Math.floor(Math.random() * 180) + 60
+      });
+    }
+
+    if (lower.includes('appointment') || lower.includes('booking')) {
+      const tomorrow = new Date(Date.now() + 86400000).toISOString();
+      return JSON.stringify({
+        booking_confirmed: true,
+        appointment_time: tomorrow,
+        customer: prompt.match(/Customer:\s*(\S+)/i)?.[1] || 'Valued Customer',
+        service: 'Free Consultation',
+        reminder_sent: true
+      });
+    }
+
     return JSON.stringify({ response: 'Processed successfully', status: 'ok' });
+  }
+
+  // Validate that LLM is configured and reachable
+  async checkHealth(): Promise<{ ok: boolean; provider: string; model: string; message: string }> {
+    if (this.provider === 'mock') {
+      return { ok: true, provider: 'mock', model: 'fallback', message: 'Using mock responses (no real LLM configured)' };
+    }
+
+    try {
+      const res = await fetch(`${this.baseUrl}/models`, {
+        headers: { 'Authorization': `Bearer ${this.apiKey}` }
+      });
+      if (res.ok) {
+        return { ok: true, provider: this.provider, model: this.model, message: 'LLM connected' };
+      }
+      return { ok: false, provider: this.provider, model: this.model, message: `LLM unreachable: ${res.status}` };
+    } catch (err) {
+      return { ok: false, provider: this.provider, model: this.model, message: `LLM unreachable: ${err}` };
+    }
   }
 }
 

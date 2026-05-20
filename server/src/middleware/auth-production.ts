@@ -48,9 +48,27 @@ export interface AuthRequest extends Request {
 // RATE LIMITING
 // ===========================================
 
+// In-memory fallbacks for when Redis is unavailable
+const inMemoryRateLimits = new Map<string, { count: number; resetAt: number }>();
+const inMemoryBlacklist = new Set<string>();
+
 export async function checkRateLimit(ip: string, endpoint: string): Promise<{ allowed: boolean; retryAfter?: number }> {
   // In-memory fallback if Redis unavailable
   if (!redis) {
+    const now = Date.now();
+    const key = `${endpoint}:${ip}`;
+    const attempts = inMemoryRateLimits.get(key);
+    
+    if (attempts && attempts.resetAt > now) {
+      const limit = endpoint.includes('login') ? 5 : 30;
+      if (attempts.count >= limit) {
+        return { allowed: false, retryAfter: Math.ceil((attempts.resetAt - now) / 1000) };
+      }
+      inMemoryRateLimits.set(key, { count: attempts.count + 1, resetAt: attempts.resetAt });
+      return { allowed: true };
+    }
+    
+    inMemoryRateLimits.set(key, { count: 1, resetAt: now + 60000 });
     return { allowed: true };
   }
 
@@ -60,12 +78,10 @@ export async function checkRateLimit(ip: string, endpoint: string): Promise<{ al
     const current = await redis.incr(key);
     
     if (current === 1) {
-      // Set expiry based on endpoint
-      const ttl = endpoint.includes('login') ? 60 : 60; // 60 seconds for all
+      const ttl = endpoint.includes('login') ? 60 : 60;
       await redis.expire(key, ttl);
     }
 
-    // 30 requests per minute for API, 5 per minute for login
     const limit = endpoint.includes('login') ? 5 : 30;
     
     if (current > limit) {
@@ -76,7 +92,7 @@ export async function checkRateLimit(ip: string, endpoint: string): Promise<{ al
     return { allowed: true };
   } catch (err) {
     console.error('[RateLimit] Error:', err);
-    return { allowed: true }; // Allow on error to prevent blocking
+    return { allowed: true };
   }
 }
 
@@ -86,12 +102,11 @@ export async function checkRateLimit(ip: string, endpoint: string): Promise<{ al
 
 export async function blacklistToken(token: string): Promise<void> {
   if (!redis) {
-    console.warn('[TokenBlacklist] Redis not available, using in-memory (sessions lost on restart)');
+    inMemoryBlacklist.add(token);
     return;
   }
 
   try {
-    // Store token with expiry matching JWT expiry
     await redis.setex(`blacklist:${token}`, TOKEN_BLACKLIST_TTL, '1');
   } catch (err) {
     console.error('[TokenBlacklist] Error:', err);
@@ -100,7 +115,7 @@ export async function blacklistToken(token: string): Promise<void> {
 
 export async function isTokenBlacklisted(token: string): Promise<boolean> {
   if (!redis) {
-    return false; // In-memory fallback
+    return inMemoryBlacklist.has(token);
   }
 
   try {

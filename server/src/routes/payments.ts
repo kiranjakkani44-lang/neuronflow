@@ -223,4 +223,26 @@ router.get('/subscription', authMiddleware, async (req: AuthRequest, res) => {
   }
 });
 
+// Get payment history
+router.get('/history', authMiddleware, async (req: AuthRequest, res) => {
+  try {
+    const orders = await prisma.paymentOrders.findMany({
+      where: { user_id: req.user!.id },
+      orderBy: { created_at: 'desc' },
+      select: {
+        id: true,
+        plan: true,
+        amount: true,
+        currency: true,
+        status: true,
+        created_at: true,
+        razorpay_payment_id: true,
+      }
+    });
+    res.json(orders);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 export default router;

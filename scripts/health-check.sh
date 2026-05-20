@@ -49,10 +49,11 @@ echo ""
 # 1. API Health Endpoint
 echo -n "API Health Check: "
 response=$(curl -sf "$API_URL/health" 2>/dev/null || echo "failed")
-if [ "$response" = '{"status":"live"}' ]; then
+status=$(echo "$response" | jq -r '.status' 2>/dev/null || echo "failed")
+if [ "$status" = "live" ]; then
   log_status "OK" "API is healthy"
 else
-  log_status "FAIL" "API is not responding"
+  log_status "FAIL" "API is not responding or degraded: $response"
   send_alert "API health check failed"
 fi
 
