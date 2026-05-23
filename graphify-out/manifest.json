@@ -30,7 +30,7 @@
     "semantic_hash": ""
   },
   "/home/stb/neuronflow/server/src/agents/engine.ts": {
-    "mtime": 1779294339.4143507,
+    "mtime": 1779334527.6645029,
     "ast_hash": "47983e8fd043e9ce8a8a87fa27ab4ba8",
     "semantic_hash": ""
   },
@@ -150,8 +150,8 @@
     "semantic_hash": "767b2e9abe6452170cdc399ca052cfbc"
   },
   "/home/stb/neuronflow/client/src/App.tsx": {
-    "mtime": 1779294814.5569232,
-    "ast_hash": "c8a1312adb95c7248f958a61374a581f",
+    "mtime": 1779509161.7946093,
+    "ast_hash": "4634e7eeaf44d5d8a353b8730336c58f",
     "semantic_hash": ""
   },
   "/home/stb/neuronflow/client/src/main.tsx": {
@@ -174,19 +174,9 @@
     "ast_hash": "bdf11aa8ea790ba5e3836ca21257e929",
     "semantic_hash": ""
   },
-  "/home/stb/neuronflow/client/src/components/layouts/DashboardLayout.tsx": {
-    "mtime": 1779294839.8470657,
-    "ast_hash": "fd4d25f6b41120a9a65c5cafb0a08c03",
-    "semantic_hash": ""
-  },
   "/home/stb/neuronflow/client/src/components/layouts/PublicLayout.tsx": {
-    "mtime": 1778934732.2602224,
-    "ast_hash": "71cf77502962f6da729b7fb93aaf47e2",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/components/layouts/AdminLayout.tsx": {
-    "mtime": 1779294862.6891944,
-    "ast_hash": "f52f7ff35e1a27a30c0e17dd38ebcd3b",
+    "mtime": 1779509977.1859064,
+    "ast_hash": "8d24995d35773e1c08b1e412cdcc9879",
     "semantic_hash": ""
   },
   "/home/stb/neuronflow/client/src/api/client.ts": {
@@ -199,16 +189,6 @@
     "ast_hash": "6ed01ad6e01fb42bf894321da7eb87ff",
     "semantic_hash": "6ed01ad6e01fb42bf894321da7eb87ff"
   },
-  "/home/stb/neuronflow/client/src/pages/Register.tsx": {
-    "mtime": 1778861431.7147617,
-    "ast_hash": "d1fe32005a0bcf3359dd7c96a7d3a327",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/Login.tsx": {
-    "mtime": 1778861398.6114037,
-    "ast_hash": "9be0c465a250f51b6fd5cd76fa3ad5ce",
-    "semantic_hash": ""
-  },
   "/home/stb/neuronflow/client/src/pages/Pricing.tsx": {
     "mtime": 1778923700.4682953,
     "ast_hash": "29a74d17e5016d5863f388931d9f845f",
@@ -220,94 +200,24 @@
     "semantic_hash": ""
   },
   "/home/stb/neuronflow/client/src/pages/Landing.tsx": {
-    "mtime": 1778777573.1111243,
-    "ast_hash": "d1d5454392743115e0db08ad54bcda55",
-    "semantic_hash": "d1d5454392743115e0db08ad54bcda55"
+    "mtime": 1779509696.9803183,
+    "ast_hash": "343c291700ec92b2f818516a43e3d009",
+    "semantic_hash": ""
   },
   "/home/stb/neuronflow/client/src/pages/AgentDetail.tsx": {
-    "mtime": 1778860261.102602,
-    "ast_hash": "d01a260125db7c9b1c90322f195bb22b",
+    "mtime": 1779509475.9388943,
+    "ast_hash": "616dc9d72bf56227d5381d94a39029ef",
     "semantic_hash": ""
   },
   "/home/stb/neuronflow/client/src/pages/Contact.tsx": {
-    "mtime": 1778860029.0163338,
-    "ast_hash": "61b7812cb60096c20a47db9157824b1f",
+    "mtime": 1779509429.2709813,
+    "ast_hash": "e29c93f50952eb7d162d91431eae881e",
     "semantic_hash": ""
   },
   "/home/stb/neuronflow/client/src/pages/Agents.tsx": {
     "mtime": 1778780067.131935,
     "ast_hash": "b02ab1a3e2db13eb173baf7679232227",
     "semantic_hash": "b02ab1a3e2db13eb173baf7679232227"
-  },
-  "/home/stb/neuronflow/client/src/pages/admin/Users.tsx": {
-    "mtime": 1779292675.985176,
-    "ast_hash": "deabf3291fab57ba597ad7959a0082a4",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/admin/Leads.tsx": {
-    "mtime": 1779295733.8142753,
-    "ast_hash": "107c286fcca665813075c72c02e08b0b",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/admin/Overview.tsx": {
-    "mtime": 1779292637.4318552,
-    "ast_hash": "009ddd44346d530593e7484e4a7c31ff",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/admin/Audits.tsx": {
-    "mtime": 1779292768.4709458,
-    "ast_hash": "44ea9824e90819f05ba6199f64c15630",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/admin/Agents.tsx": {
-    "mtime": 1779292737.860691,
-    "ast_hash": "9db572cf251dd5f110d21620430339cd",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/Analytics.tsx": {
-    "mtime": 1779294717.231375,
-    "ast_hash": "5b56953b1f1c330c8678f926243cd08e",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/Leads.tsx": {
-    "mtime": 1778923418.6159003,
-    "ast_hash": "cdc3778204fc86447cc2ffe2527ecade",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/AgentLogs.tsx": {
-    "mtime": 1778861683.7615783,
-    "ast_hash": "5560ceca28376e71d27e29b1c9bb93bd",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/ChangePassword.tsx": {
-    "mtime": 1778924746.6552134,
-    "ast_hash": "cd99108df3c7d0a9814e3f01deb00e16",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/Overview.tsx": {
-    "mtime": 1778860215.4135313,
-    "ast_hash": "3203e66813a0ef02ea79d13377a56ed1",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/Support.tsx": {
-    "mtime": 1779294661.9420636,
-    "ast_hash": "51b8d5ff7f17744103c17da458d34944",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/Settings.tsx": {
-    "mtime": 1779292460.3862646,
-    "ast_hash": "7c884bb357c29ad4e665b797cb6d9256",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/Billing.tsx": {
-    "mtime": 1779295740.2662995,
-    "ast_hash": "aaab80319da966a5f9c2ec41672af6d8",
-    "semantic_hash": ""
-  },
-  "/home/stb/neuronflow/client/src/pages/dashboard/MyAgents.tsx": {
-    "mtime": 1778860215.4075313,
-    "ast_hash": "8a955bdb337a1fb4a7f749ac43af0834",
-    "semantic_hash": ""
   },
   "/home/stb/neuronflow/docker-compose.production.yml": {
     "mtime": 1778925626.5499244,

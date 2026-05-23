@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import api from '../api/client';
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', industry: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    const savings = searchParams.get('savings');
+    const agent = searchParams.get('agent');
+    if (savings) {
+      const team = searchParams.get('team') || '0';
+      const hours = searchParams.get('hours') || '0';
+      const leads = searchParams.get('leads') || '0';
+      setForm(f => ({
+        ...f,
+        message: `I calculated our potential savings of ₹${Number(savings).toLocaleString('en-IN')}/month using the ROI calculator (based on a team of ${team}, wasting ${hours} hours/week, losing ${leads} leads/month). We want to book a free audit to lock in these savings.`
+      }));
+    } else if (agent) {
+      setForm(f => ({
+        ...f,
+        message: `Hi! We are interested in deploying the "${agent}" agent for our business. Please send us details.`
+      }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

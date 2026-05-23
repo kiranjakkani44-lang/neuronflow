@@ -4,6 +4,19 @@ import { motion } from 'framer-motion';
 
 export default function Landing() {
   const [activeConsoleIndex, setActiveConsoleIndex] = useState(0);
+  const [teamSize, setTeamSize] = useState(12);
+  const [hoursWasted, setHoursWasted] = useState(20);
+  const [hourlyCost, setHourlyCost] = useState(500);
+  const [leadsLost, setLeadsLost] = useState(45);
+
+  const [activeIndustry, setActiveIndustry] = useState('real-estate');
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [activeStack, setActiveStack] = useState('shopify');
+
+  const opsSavings = teamSize * hoursWasted * hourlyCost * 4.33;
+  const leadRecovery = leadsLost * 2500;
+  const efficiencyGain = teamSize * 3000;
+  const totalSavings = Math.round(opsSavings + leadRecovery + efficiencyGain);
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -274,48 +287,93 @@ export default function Landing() {
             <h2 className="font-syne font-extrabold text-3xl md:text-5xl mb-8">How much are you losing?</h2>
             
             <div className="flex flex-col gap-8">
-              {[
-                { label: 'Team Size (People)', val: 12 },
-                { label: 'Manual Hours Wasted / Week', val: 20 },
-                { label: 'Average Hourly Cost (₹)', val: 500 },
-                { label: 'Leads Lost / Month', val: 45 }
-              ].map((slider, i) => (
-                <div key={i}>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium">{slider.label}</span>
-                    <span className="font-syne font-bold text-[var(--accent)]">{slider.val}</span>
-                  </div>
-                  <div className="w-full h-1 bg-[var(--border)] rounded-full relative">
-                    <div className="absolute left-0 top-0 h-full bg-[var(--accent)] rounded-full w-1/2 shadow-[0_0_10px_var(--accent)]" />
-                    <div className="absolute top-1/2 -translate-y-1/2 left-1/2 w-4 h-4 rounded-full bg-[var(--text)] border-2 border-[var(--accent)] cursor-pointer" />
-                  </div>
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Team Size (People)</span>
+                  <span className="font-syne font-bold text-[var(--accent)]">{teamSize}</span>
                 </div>
-              ))}
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value={teamSize}
+                  onChange={(e) => setTeamSize(parseInt(e.target.value))}
+                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Manual Hours Wasted / Week (per person)</span>
+                  <span className="font-syne font-bold text-[var(--accent)]">{hoursWasted}h</span>
+                </div>
+                <input
+                  type="range"
+                  min="1"
+                  max="40"
+                  value={hoursWasted}
+                  onChange={(e) => setHoursWasted(parseInt(e.target.value))}
+                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Average Hourly Cost (₹)</span>
+                  <span className="font-syne font-bold text-[var(--accent)]">₹{hourlyCost}</span>
+                </div>
+                <input
+                  type="range"
+                  min="100"
+                  max="2000"
+                  step="50"
+                  value={hourlyCost}
+                  onChange={(e) => setHourlyCost(parseInt(e.target.value))}
+                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Leads Lost / Month</span>
+                  <span className="font-syne font-bold text-[var(--accent)]">{leadsLost}</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="200"
+                  value={leadsLost}
+                  onChange={(e) => setLeadsLost(parseInt(e.target.value))}
+                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
             </div>
           </div>
           
           <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-8 relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.05)]">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent2)]/10 blur-[50px] rounded-full" />
             <div className="font-mono text-xs text-[var(--accent2)] mb-4 tracking-widest">ESTIMATED MONTHLY SAVINGS</div>
-            <div className="font-syne font-extrabold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent2)] to-[var(--accent)] mb-2">₹1,84,500</div>
+            <div className="font-syne font-extrabold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent2)] to-[var(--accent)] mb-2">
+              ₹{totalSavings.toLocaleString('en-IN')}
+            </div>
             <div className="text-[var(--text-muted)] text-sm mb-8">per month in recovered value</div>
             
             <div className="flex flex-col gap-3 font-mono text-xs mb-8">
               <div className="flex justify-between border-b border-[var(--border)] pb-2">
                 <span className="text-[var(--text-muted)]">Operations Savings:</span>
-                <span>₹60,000</span>
+                <span>₹{Math.round(opsSavings).toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between border-b border-[var(--border)] pb-2">
                 <span className="text-[var(--text-muted)]">Lead Recovery:</span>
-                <span>₹90,000</span>
+                <span>₹{Math.round(leadRecovery).toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between border-b border-[var(--border)] pb-2">
                 <span className="text-[var(--text-muted)]">Efficiency Gain:</span>
-                <span>₹34,500</span>
+                <span>₹{Math.round(efficiencyGain).toLocaleString('en-IN')}</span>
               </div>
             </div>
             
-            <Link to="/contact" className="block w-full py-4 text-center bg-white/5 border border-[var(--accent2)]/50 text-[var(--accent2)] font-bold rounded hover:bg-[var(--accent2)] hover:text-black transition-colors">
+            <Link
+              to={`/contact?savings=${totalSavings}&team=${teamSize}&hours=${hoursWasted}&cost=${hourlyCost}&leads=${leadsLost}`}
+              className="block w-full py-4 text-center bg-white/5 border border-[var(--accent2)]/50 text-[var(--accent2)] font-bold rounded hover:bg-[var(--accent2)] hover:text-black transition-colors"
+            >
               Lock In These Savings →
             </Link>
           </div>
@@ -383,6 +441,212 @@ export default function Landing() {
               </ul>
               <Link to="/contact" className="block text-center w-full py-3 border border-[var(--border)] rounded font-semibold hover:bg-[var(--surface)] transition-colors">Contact Sales</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDIES TABS */}
+      <section className="w-full py-24 bg-[var(--surface)] border-y border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="font-mono text-xs text-[var(--accent)] mb-4 tracking-widest uppercase">// SUCCESS_STORIES</div>
+            <h2 className="font-syne font-extrabold text-3xl md:text-5xl mb-4">Proven Real-World Impact</h2>
+            <p className="text-[var(--text-muted)]">Select an industry to see how AI agents compare to traditional manual work.</p>
+
+            <div className="flex justify-center gap-3 mt-8 flex-wrap">
+              {[
+                { id: 'real-estate', label: 'Real Estate' },
+                { id: 'clinics', label: 'Healthcare & Clinics' },
+                { id: 'ecommerce', label: 'E-commerce & Retail' }
+              ].map((ind) => (
+                <button
+                  key={ind.id}
+                  onClick={() => setActiveIndustry(ind.id)}
+                  className={`px-6 py-2.5 rounded font-mono text-xs transition-all ${activeIndustry === ind.id ? 'bg-[var(--accent)] text-black font-bold shadow-[0_0_15px_rgba(99,202,255,0.3)]' : 'bg-[var(--surface2)] text-[var(--text-muted)] border border-[var(--border)] hover:text-white'}`}
+                >
+                  {ind.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Before (Manual) */}
+            <div className="bg-[var(--surface2)] border border-red-500/20 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 px-3 py-1 bg-red-500/10 text-red-400 font-mono text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-red-500/20">MANUAL_FLOW</div>
+              <div>
+                <h3 className="font-syne font-bold text-xl text-red-400 mb-6">The Old Manual Bottleneck</h3>
+                <ul className="space-y-4 font-mono text-xs text-[var(--text-muted)]">
+                  {activeIndustry === 'real-estate' && (
+                    <>
+                      <li className="flex gap-2"><span>✕</span> <span>Inquiries booked manually, average response delay is 6-8 hours</span></li>
+                      <li className="flex gap-2"><span>✕</span> <span>Sales reps spend 60% of time cold-calling dead numbers</span></li>
+                      <li className="flex gap-2"><span>✕</span> <span>Leads received during night hours are completely lost</span></li>
+                    </>
+                  )}
+                  {activeIndustry === 'clinics' && (
+                    <>
+                      <li className="flex gap-2"><span>✕</span> <span>Receptionist flooded during rush hours, calls go unanswered</span></li>
+                      <li className="flex gap-2"><span>✕</span> <span>No systematic WhatsApp appointment reminders, 25% no-show rate</span></li>
+                      <li className="flex gap-2"><span>✕</span> <span>Patient details and symptoms scribbled on paper files</span></li>
+                    </>
+                  )}
+                  {activeIndustry === 'ecommerce' && (
+                    <>
+                      <li className="flex gap-2"><span>✕</span> <span>Customer queries on WhatsApp answered manually, long queue queues</span></li>
+                      <li className="flex gap-2"><span>✕</span> <span>Abandoned carts recovered via batch emails with less than 2% conversion</span></li>
+                      <li className="flex gap-2"><span>✕</span> <span>No automated shipping or order tracking updates on chat</span></li>
+                    </>
+                  )}
+                </ul>
+              </div>
+              <div className="mt-8 pt-6 border-t border-[var(--border)] font-syne text-sm text-[var(--text-dim)] uppercase tracking-wider">
+                Average Cost: <span className="text-red-400 font-bold">₹40,000 - ₹75,000 / month</span>
+              </div>
+            </div>
+
+            {/* After (NeuronFlow AI) */}
+            <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.03)]">
+              <div className="absolute top-0 right-0 px-3 py-1 bg-[var(--accent2)]/10 text-[var(--accent2)] font-mono text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-[var(--accent2)]/20">NEURONFLOW_AI</div>
+              <div>
+                <h3 className="font-syne font-bold text-xl text-[var(--accent2)] mb-6">AI-Driven Automation</h3>
+                <ul className="space-y-4 font-mono text-xs text-[var(--text-muted)]">
+                  {activeIndustry === 'real-estate' && (
+                    <>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>AI Outbound dialer calls new portal leads within 45 seconds</span></li>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>Only qualified leads with verified budgets are pushed to CRM</span></li>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>24/7 coverage captures out-of-office bookings automatically</span></li>
+                    </>
+                  )}
+                  {activeIndustry === 'clinics' && (
+                    <>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>AI receptionist handles unlimited simultaneous calls, never misses</span></li>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>Automated pre-appt WhatsApp forms reduce no-show rate to under 5%</span></li>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>Structured symptoms sent to doctor before patient walks in</span></li>
+                    </>
+                  )}
+                  {activeIndustry === 'ecommerce' && (
+                    <>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>WhatsApp AI Agent answers 90% of order & stock FAQs instantly</span></li>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>Instant abandoned cart recovery flows recover 22% of unpaid checkouts</span></li>
+                      <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>Customers check tracking status dynamically inside chat portal</span></li>
+                    </>
+                  )}
+                </ul>
+              </div>
+              <div className="mt-8 pt-6 border-t border-[var(--border)] font-syne text-sm text-[var(--text-dim)] uppercase tracking-wider">
+                Average Value: <span className="text-[var(--accent2)] font-bold">18% - 35% revenue recovery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPATIBILITY STACK GRID */}
+      <section className="w-full py-24 bg-[var(--bg)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+            <div className="lg:col-span-1">
+              <div className="font-mono text-xs text-[var(--accent)] mb-4 tracking-widest uppercase">// INTEGRATIONS</div>
+              <h2 className="font-syne font-extrabold text-3xl md:text-4xl mb-6">Works with Your Current Stack</h2>
+              <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">Our AI agents operate inside the business software you already use. No migration, no data loss, and zero friction.</p>
+              <div className="font-mono text-xs text-[var(--text-dim)] uppercase tracking-wider">
+                Active Integration: <span className="text-[var(--accent2)] font-bold font-mono">{activeStack.toUpperCase()}</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { id: 'shopify', label: 'Shopify', desc: 'Shopify Store' },
+                  { id: 'hubspot', label: 'HubSpot', desc: 'CRM Hub' },
+                  { id: 'zoho', label: 'Zoho', desc: 'Zoho CRM' },
+                  { id: 'sheets', label: 'Sheets', desc: 'Google Sheets' },
+                  { id: 'slack', label: 'Slack', desc: 'Slack Alerting' },
+                  { id: 'salesforce', label: 'Salesforce', desc: 'Salesforce CRM' }
+                ].map((stack) => (
+                  <button
+                    key={stack.id}
+                    onClick={() => setActiveStack(stack.id)}
+                    className={`p-4 rounded-xl border flex flex-col items-center justify-center gap-2 transition-all ${activeStack === stack.id ? 'bg-[var(--surface2)] border-[var(--accent)] shadow-[0_0_15px_rgba(0,188,212,0.15)] scale-105' : 'bg-[var(--surface)] border-[var(--border)] hover:border-zinc-700'}`}
+                  >
+                    <span className="text-xl font-bold font-syne">
+                      {stack.id === 'shopify' ? '🛒' : stack.id === 'hubspot' ? '🧡' : stack.id === 'zoho' ? '💼' : stack.id === 'sheets' ? '📊' : stack.id === 'slack' ? '💬' : '⚡'}
+                    </span>
+                    <span className="text-[10px] font-mono font-bold tracking-wider">{stack.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Integration Detail Card */}
+              <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6 flex flex-col justify-between font-mono text-xs">
+                <div>
+                  <div className="text-[var(--accent)] font-bold mb-3 uppercase tracking-wider font-syne flex items-center gap-2">
+                    <span>⚡</span> {activeStack === 'shopify' ? 'Shopify Integration' : activeStack === 'hubspot' ? 'HubSpot CRM Sync' : activeStack === 'zoho' ? 'Zoho Pipeline Automation' : activeStack === 'sheets' ? 'Google Sheets logger' : activeStack === 'slack' ? 'Slack Real-time Alerts' : 'Salesforce Integration'}
+                  </div>
+                  <p className="text-[var(--text-muted)] leading-relaxed text-xs">
+                    {activeStack === 'shopify' && "Automates WhatsApp checkout recovery sequences instantly upon cart abandonment. Pulls stock details, checks catalog sizes, and logs discount utilization metrics automatically."}
+                    {activeStack === 'hubspot' && "Creates contacts automatically when incoming voice calls are answered by AI. Richly populates lead details, records logs, and assigns deal stages without manual sales rep work."}
+                    {activeStack === 'zoho' && "Validates client budgets and intent dynamically via outbound dialers. Advancing opportunity stages in Zoho CRM automatically to prompt sales closers."}
+                    {activeStack === 'sheets' && "Pushes all structured client symptom surveys, pricing parameters, and transcripts into a central dashboard spreadsheet in real time."}
+                    {activeStack === 'slack' && "Alerts channels in real time using Slack bot notifications when hot, high-value leads are captured, so key account managers can step in immediately."}
+                    {activeStack === 'salesforce' && "Synchronizes enterprise deals, custom business intelligence fields, and coordinates meeting handoffs to dedicated account executives."}
+                  </p>
+                </div>
+                <div className="border-t border-zinc-800 pt-4 mt-6 text-[10px] text-[var(--text-dim)] uppercase tracking-wider">
+                  Deployment complexity: <span className="text-[var(--accent2)]">plug_and_play</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section className="w-full py-24 bg-[var(--surface)] border-t border-[var(--border)]" id="faq">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="font-mono text-xs text-[var(--accent)] mb-4 tracking-widest uppercase">// KNOWLEDGE_BASE</div>
+            <h2 className="font-syne font-extrabold text-3xl md:text-5xl">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "How long does the setup process take?",
+                a: "Our pre-built agents can be fully customized, loaded with your knowledge base, and deployed to your channels (WhatsApp, Web, or Phone) within 5 to 7 business days."
+              },
+              {
+                q: "Which software systems and CRMs do you support?",
+                a: "We support integrations out-of-the-box with Zoho CRM, HubSpot, Shopify, Tally, Google Sheets, Salesforce, Slack, and custom REST API endpoints."
+              },
+              {
+                q: "Do I need technical knowledge to manage these agents?",
+                a: "Not at all. We handle 100% of the setup, hosting, optimization, and training. Once launched, the agents work entirely in the background, pushing hot leads directly to you."
+              },
+              {
+                q: "Is my customer and business data secure?",
+                a: "Absolutely. All communication channels are encrypted end-to-end, and customer details are stored and routed according to industry security best practices to protect your data."
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="border border-[var(--border)] rounded-lg bg-[var(--surface2)] overflow-hidden transition-all duration-300">
+                <button
+                  onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                  className="w-full p-5 text-left font-syne font-bold text-sm md:text-base flex justify-between items-center hover:text-[var(--accent)] transition-colors"
+                >
+                  <span>{faq.q}</span>
+                  <span className="text-[var(--accent)] transition-transform duration-300 font-mono text-lg">{activeFaq === idx ? '−' : '+'}</span>
+                </button>
+                
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${activeFaq === idx ? 'max-h-[150px] border-t border-[var(--border)]' : 'max-h-0'}`}
+                >
+                  <p className="p-5 font-mono text-xs text-[var(--text-muted)] leading-relaxed bg-[var(--surface)]">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

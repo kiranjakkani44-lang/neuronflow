@@ -1,16 +1,16 @@
-# Graph Report - neuronflow  (2026-05-20)
+# Graph Report - neuronflow  (2026-05-23)
 
 ## Corpus Check
-- 64 files · ~34,841 words
+- 46 files · ~27,826 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 481 nodes · 567 edges · 51 communities (36 shown, 15 thin omitted)
+- 482 nodes · 568 edges · 53 communities (38 shown, 15 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `09a2b996`
+- Built from commit: `35267d92`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -35,6 +35,7 @@
 - [[_COMMUNITY_Client Package Metadata|Client Package Metadata]]
 - [[_COMMUNITY_Auth & JWT Utils|Auth & JWT Utils]]
 - [[_COMMUNITY_Server Entry & Index|Server Entry & Index]]
+- [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_Community 25|Community 25]]
@@ -57,6 +58,7 @@
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 51|Community 51]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `dependencies` - 20 edges
@@ -87,7 +89,7 @@
 - **** — api_client, authstore, pages_login [EXTRACTED]
 - **** — pages_landing, pages_agents, pages_agentdetail, pages_dashboard_myagents [INFERRED 0.75]
 
-## Communities (51 total, 15 thin omitted)
+## Communities (53 total, 15 thin omitted)
 
 ### Community 0 - "Client UI Layer"
 Cohesion: 0.05
@@ -110,8 +112,8 @@ Cohesion: 0.1
 Nodes (20): dependencies, axios, bcryptjs, compression, cookie-parser, cors, dotenv, express (+12 more)
 
 ### Community 6 - "Server Routing"
-Cohesion: 0.24
-Nodes (9): authMiddleware(), AuthRequest, optionalAuth(), prisma, tokenBlacklist, prisma, router, prisma (+1 more)
+Cohesion: 0.5
+Nodes (3): AuthRequest, prisma, router
 
 ### Community 7 - "Server Package Config"
 Cohesion: 0.06
@@ -149,21 +151,25 @@ Nodes (3): Client App Router, Dashboard Layout, Public Layout
 Cohesion: 0.48
 Nodes (4): Login(), Register(), AuthState, useAuthStore
 
+### Community 22 - "Community 22"
+Cohesion: 0.28
+Nodes (7): authMiddleware(), AuthRequest, checkRateLimit(), inMemoryBlacklist, inMemoryRateLimits, isTokenBlacklisted(), optionalAuth()
+
 ### Community 23 - "Community 23"
 Cohesion: 0.33
 Nodes (4): PaymentOrder, planFeatures, planPrices, Subscription
 
 ### Community 24 - "Community 24"
-Cohesion: 0.11
-Nodes (16): authMiddleware(), AuthRequest, checkRateLimit(), inMemoryBlacklist, inMemoryRateLimits, isTokenBlacklisted(), optionalAuth(), acquireFileLock() (+8 more)
+Cohesion: 0.21
+Nodes (9): acquireFileLock(), initScheduler(), instanceId, LOCK_FILE, prisma, releaseFileLock(), stopScheduler(), triggerAllAgents() (+1 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.12
 Nodes (15): attempts, client, loginAttempts, now, payload, prisma, reset_expires, reset_token (+7 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.24
-Nodes (8): llm, prisma, deploymentId, leadDep, leadId, metrics, results, router
+Cohesion: 0.18
+Nodes (11): llm, prisma, optionalAuth(), deploymentId, leadDep, leadId, metrics, results (+3 more)
 
 ### Community 27 - "Community 27"
 Cohesion: 0.22
@@ -174,16 +180,16 @@ Cohesion: 0.22
 Nodes (3): ErrorBoundary, Props, State
 
 ### Community 29 - "Community 29"
-Cohesion: 0.25
-Nodes (7): JWT_SECRET, validateJwtSecret(), allOk, allowedOrigins, app, checks, prisma
+Cohesion: 0.29
+Nodes (6): validateJwtSecret(), allOk, allowedOrigins, app, checks, prisma
 
 ### Community 30 - "Community 30"
 Cohesion: 0.25
 Nodes (7): auth, generatedSignature, orderPayload, PLAN_PRICES, planPrices, prisma, router
 
 ### Community 32 - "Community 32"
-Cohesion: 0.33
-Nodes (5): limitNum, pageNum, prisma, router, where
+Cohesion: 0.29
+Nodes (6): authMiddleware(), limitNum, pageNum, prisma, router, where
 
 ### Community 33 - "Community 33"
 Cohesion: 0.33
@@ -197,6 +203,10 @@ Nodes (5): now, prisma, router, sevenDaysAgo, thirtyDaysAgo
 Cohesion: 0.33
 Nodes (4): id, prisma, router, updateData
 
+### Community 51 - "Community 51"
+Cohesion: 0.5
+Nodes (3): prisma, tokenBlacklist, JWT_SECRET
+
 ## Knowledge Gaps
 - **265 isolated node(s):** `name`, `version`, `description`, `main`, `dev` (+260 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -206,11 +216,11 @@ Nodes (4): id, prisma, router, updateData
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AgentEngine` connect `Client Dev Dependencies` to `Community 24`, `Community 26`, `Community 35`, `Server Routing`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `AuthRequest` connect `Server Routing` to `Community 32`, `Community 33`, `Community 34`, `Community 35`, `Community 25`, `Community 26`, `Community 27`, `Community 30`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Why does `authMiddleware()` connect `Server Routing` to `Community 32`, `Community 33`, `Community 34`, `Community 35`, `Community 25`, `Community 26`, `Community 27`, `Community 30`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Why does `AuthRequest` connect `Server Routing` to `Community 32`, `Community 33`, `Community 34`, `Community 35`, `Community 51`, `Community 25`, `Community 26`, `Community 27`, `Community 30`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `authMiddleware()` connect `Community 32` to `Community 33`, `Community 34`, `Community 35`, `Server Routing`, `Community 51`, `Community 25`, `Community 26`, `Community 27`, `Community 30`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
   _265 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Client UI Layer` be split into smaller, more focused modules?**

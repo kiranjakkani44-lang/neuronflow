@@ -1187,7 +1187,7 @@
       "source_file": "server/src/middleware/jwt-validation.ts",
       "source_location": "L1",
       "id": "server_src_middleware_jwt_validation_ts",
-      "community": 29,
+      "community": 51,
       "norm_label": "jwt-validation.ts"
     },
     {
@@ -1205,7 +1205,7 @@
       "source_file": "server/src/middleware/jwt-validation.ts",
       "source_location": "L40",
       "id": "middleware_jwt_validation_jwt_secret",
-      "community": 29,
+      "community": 51,
       "norm_label": "jwt_secret"
     },
     {
@@ -1214,7 +1214,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L1",
       "id": "server_src_middleware_auth_production_ts",
-      "community": 24,
+      "community": 22,
       "norm_label": "auth-production.ts"
     },
     {
@@ -1223,7 +1223,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L43",
       "id": "middleware_auth_production_authrequest",
-      "community": 24,
+      "community": 22,
       "norm_label": "authrequest"
     },
     {
@@ -1232,7 +1232,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L52",
       "id": "middleware_auth_production_inmemoryratelimits",
-      "community": 24,
+      "community": 22,
       "norm_label": "inmemoryratelimits"
     },
     {
@@ -1241,7 +1241,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L53",
       "id": "middleware_auth_production_inmemoryblacklist",
-      "community": 24,
+      "community": 22,
       "norm_label": "inmemoryblacklist"
     },
     {
@@ -1250,7 +1250,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L55",
       "id": "middleware_auth_production_checkratelimit",
-      "community": 24,
+      "community": 22,
       "norm_label": "checkratelimit()"
     },
     {
@@ -1259,7 +1259,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L103",
       "id": "middleware_auth_production_blacklisttoken",
-      "community": 24,
+      "community": 22,
       "norm_label": "blacklisttoken()"
     },
     {
@@ -1268,7 +1268,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L116",
       "id": "middleware_auth_production_istokenblacklisted",
-      "community": 24,
+      "community": 22,
       "norm_label": "istokenblacklisted()"
     },
     {
@@ -1277,7 +1277,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L134",
       "id": "middleware_auth_production_authmiddleware",
-      "community": 24,
+      "community": 22,
       "norm_label": "authmiddleware()"
     },
     {
@@ -1286,7 +1286,7 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L160",
       "id": "middleware_auth_production_optionalauth",
-      "community": 24,
+      "community": 22,
       "norm_label": "optionalauth()"
     },
     {
@@ -1295,7 +1295,7 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L1",
       "id": "server_src_middleware_auth_ts",
-      "community": 6,
+      "community": 51,
       "norm_label": "auth.ts"
     },
     {
@@ -1304,7 +1304,7 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L6",
       "id": "middleware_auth_prisma",
-      "community": 6,
+      "community": 51,
       "norm_label": "prisma"
     },
     {
@@ -1313,7 +1313,7 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L9",
       "id": "middleware_auth_tokenblacklist",
-      "community": 6,
+      "community": 51,
       "norm_label": "tokenblacklist"
     },
     {
@@ -1331,7 +1331,7 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L16",
       "id": "middleware_auth_authmiddleware",
-      "community": 6,
+      "community": 32,
       "norm_label": "authmiddleware()"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L49",
       "id": "middleware_auth_optionalauth",
-      "community": 6,
+      "community": 26,
       "norm_label": "optionalauth()"
     },
     {
@@ -1466,7 +1466,7 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L1",
       "id": "server_src_routes_audit_ts",
-      "community": 6,
+      "community": 26,
       "norm_label": "audit.ts"
     },
     {
@@ -1475,7 +1475,7 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L7",
       "id": "routes_audit_router",
-      "community": 6,
+      "community": 26,
       "norm_label": "router"
     },
     {
@@ -1484,7 +1484,7 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L8",
       "id": "routes_audit_prisma",
-      "community": 6,
+      "community": 26,
       "norm_label": "prisma"
     },
     {
@@ -2526,7 +2526,7 @@
       "label": "Landing",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L8",
+      "source_location": "L6",
       "id": "src_app_landing",
       "community": 0,
       "norm_label": "landing"
@@ -2535,7 +2535,7 @@
       "label": "Agents",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L9",
+      "source_location": "L7",
       "id": "src_app_agents",
       "community": 0,
       "norm_label": "agents"
@@ -2544,7 +2544,7 @@
       "label": "AgentDetail",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L10",
+      "source_location": "L8",
       "id": "src_app_agentdetail",
       "community": 0,
       "norm_label": "agentdetail"
@@ -2553,7 +2553,7 @@
       "label": "Pricing",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L11",
+      "source_location": "L9",
       "id": "src_app_pricing",
       "community": 0,
       "norm_label": "pricing"
@@ -2562,7 +2562,7 @@
       "label": "Contact",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L12",
+      "source_location": "L10",
       "id": "src_app_contact",
       "community": 0,
       "norm_label": "contact"
@@ -2571,160 +2571,16 @@
       "label": "About",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L13",
+      "source_location": "L11",
       "id": "src_app_about",
       "community": 0,
       "norm_label": "about"
     },
     {
-      "label": "Login",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L14",
-      "id": "src_app_login",
-      "community": 0,
-      "norm_label": "login"
-    },
-    {
-      "label": "Register",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L15",
-      "id": "src_app_register",
-      "community": 0,
-      "norm_label": "register"
-    },
-    {
-      "label": "DashboardOverview",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L16",
-      "id": "src_app_dashboardoverview",
-      "community": 0,
-      "norm_label": "dashboardoverview"
-    },
-    {
-      "label": "MyAgents",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L17",
-      "id": "src_app_myagents",
-      "community": 0,
-      "norm_label": "myagents"
-    },
-    {
-      "label": "Leads",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L18",
-      "id": "src_app_leads",
-      "community": 0,
-      "norm_label": "leads"
-    },
-    {
-      "label": "AgentLogs",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L19",
-      "id": "src_app_agentlogs",
-      "community": 0,
-      "norm_label": "agentlogs"
-    },
-    {
-      "label": "Billing",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L20",
-      "id": "src_app_billing",
-      "community": 0,
-      "norm_label": "billing"
-    },
-    {
-      "label": "Settings",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L21",
-      "id": "src_app_settings",
-      "community": 0,
-      "norm_label": "settings"
-    },
-    {
-      "label": "ChangePassword",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L22",
-      "id": "src_app_changepassword",
-      "community": 0,
-      "norm_label": "changepassword"
-    },
-    {
-      "label": "Support",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L23",
-      "id": "src_app_support",
-      "community": 0,
-      "norm_label": "support"
-    },
-    {
-      "label": "Analytics",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L24",
-      "id": "src_app_analytics",
-      "community": 0,
-      "norm_label": "analytics"
-    },
-    {
-      "label": "AdminOverview",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L25",
-      "id": "src_app_adminoverview",
-      "community": 0,
-      "norm_label": "adminoverview"
-    },
-    {
-      "label": "AdminUsers",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L26",
-      "id": "src_app_adminusers",
-      "community": 0,
-      "norm_label": "adminusers"
-    },
-    {
-      "label": "AdminAgents",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L27",
-      "id": "src_app_adminagents",
-      "community": 0,
-      "norm_label": "adminagents"
-    },
-    {
-      "label": "AdminAudits",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L28",
-      "id": "src_app_adminaudits",
-      "community": 0,
-      "norm_label": "adminaudits"
-    },
-    {
-      "label": "AdminLeads",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L29",
-      "id": "src_app_adminleads",
-      "community": 0,
-      "norm_label": "adminleads"
-    },
-    {
       "label": "App()",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L31",
+      "source_location": "L13",
       "id": "src_app_app",
       "community": 0,
       "norm_label": "app()"
@@ -2847,33 +2703,6 @@
       "norm_label": ".render()"
     },
     {
-      "label": "DashboardLayout.tsx",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
-      "source_location": "L1",
-      "id": "client_src_components_layouts_dashboardlayout_tsx",
-      "community": 0,
-      "norm_label": "dashboardlayout.tsx"
-    },
-    {
-      "label": "SidebarItem()",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
-      "source_location": "L6",
-      "id": "layouts_dashboardlayout_sidebaritem",
-      "community": 0,
-      "norm_label": "sidebaritem()"
-    },
-    {
-      "label": "DashboardLayout()",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
-      "source_location": "L25",
-      "id": "layouts_dashboardlayout_dashboardlayout",
-      "community": 0,
-      "norm_label": "dashboardlayout()"
-    },
-    {
       "label": "PublicLayout.tsx",
       "file_type": "code",
       "source_file": "client/src/components/layouts/PublicLayout.tsx",
@@ -2901,19 +2730,10 @@
       "norm_label": "liveticker()"
     },
     {
-      "label": "ActivityToasts()",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/PublicLayout.tsx",
-      "source_location": "L77",
-      "id": "layouts_publiclayout_activitytoasts",
-      "community": 0,
-      "norm_label": "activitytoasts()"
-    },
-    {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "client/src/components/layouts/PublicLayout.tsx",
-      "source_location": "L114",
+      "source_location": "L78",
       "id": "layouts_publiclayout_navbar",
       "community": 0,
       "norm_label": "navbar()"
@@ -2922,7 +2742,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "client/src/components/layouts/PublicLayout.tsx",
-      "source_location": "L135",
+      "source_location": "L99",
       "id": "layouts_publiclayout_footer",
       "community": 0,
       "norm_label": "footer()"
@@ -2931,37 +2751,10 @@
       "label": "PublicLayout()",
       "file_type": "code",
       "source_file": "client/src/components/layouts/PublicLayout.tsx",
-      "source_location": "L163",
+      "source_location": "L126",
       "id": "layouts_publiclayout_publiclayout",
       "community": 0,
       "norm_label": "publiclayout()"
-    },
-    {
-      "label": "AdminLayout.tsx",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/AdminLayout.tsx",
-      "source_location": "L1",
-      "id": "client_src_components_layouts_adminlayout_tsx",
-      "community": 0,
-      "norm_label": "adminlayout.tsx"
-    },
-    {
-      "label": "SidebarItem()",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/AdminLayout.tsx",
-      "source_location": "L6",
-      "id": "layouts_adminlayout_sidebaritem",
-      "community": 0,
-      "norm_label": "sidebaritem()"
-    },
-    {
-      "label": "AdminLayout()",
-      "file_type": "code",
-      "source_file": "client/src/components/layouts/AdminLayout.tsx",
-      "source_location": "L25",
-      "id": "layouts_adminlayout_adminlayout",
-      "community": 0,
-      "norm_label": "adminlayout()"
     },
     {
       "label": "client.ts",
@@ -3016,42 +2809,6 @@
       "id": "store_authstore_useauthstore",
       "community": 18,
       "norm_label": "useauthstore"
-    },
-    {
-      "label": "Register.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/Register.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_register_tsx",
-      "community": 18,
-      "norm_label": "register.tsx"
-    },
-    {
-      "label": "Register()",
-      "file_type": "code",
-      "source_file": "client/src/pages/Register.tsx",
-      "source_location": "L7",
-      "id": "pages_register_register",
-      "community": 18,
-      "norm_label": "register()"
-    },
-    {
-      "label": "Login.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/Login.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_login_tsx",
-      "community": 18,
-      "norm_label": "login.tsx"
-    },
-    {
-      "label": "Login()",
-      "file_type": "code",
-      "source_file": "client/src/pages/Login.tsx",
-      "source_location": "L7",
-      "id": "pages_login_login",
-      "community": 18,
-      "norm_label": "login()"
     },
     {
       "label": "Pricing.tsx",
@@ -3122,16 +2879,25 @@
       "source_file": "client/src/pages/AgentDetail.tsx",
       "source_location": "L1",
       "id": "client_src_pages_agentdetail_tsx",
-      "community": 5,
+      "community": 52,
       "norm_label": "agentdetail.tsx"
+    },
+    {
+      "label": "AgentSimulator()",
+      "file_type": "code",
+      "source_file": "client/src/pages/AgentDetail.tsx",
+      "source_location": "L5",
+      "id": "pages_agentdetail_agentsimulator",
+      "community": 52,
+      "norm_label": "agentsimulator()"
     },
     {
       "label": "AgentDetail()",
       "file_type": "code",
       "source_file": "client/src/pages/AgentDetail.tsx",
-      "source_location": "L5",
+      "source_location": "L226",
       "id": "pages_agentdetail_agentdetail",
-      "community": 5,
+      "community": 52,
       "norm_label": "agentdetail()"
     },
     {
@@ -3147,7 +2913,7 @@
       "label": "Contact()",
       "file_type": "code",
       "source_file": "client/src/pages/Contact.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "pages_contact_contact",
       "community": 5,
       "norm_label": "contact()"
@@ -3169,402 +2935,6 @@
       "id": "pages_agents_agents",
       "community": 5,
       "norm_label": "agents()"
-    },
-    {
-      "label": "Users.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Users.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_admin_users_tsx",
-      "community": 43,
-      "norm_label": "users.tsx"
-    },
-    {
-      "label": "AdminUser",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Users.tsx",
-      "source_location": "L5",
-      "id": "admin_users_adminuser",
-      "community": 43,
-      "norm_label": "adminuser"
-    },
-    {
-      "label": "AdminUsers()",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Users.tsx",
-      "source_location": "L19",
-      "id": "admin_users_adminusers",
-      "community": 43,
-      "norm_label": "adminusers()"
-    },
-    {
-      "label": "Leads.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_admin_leads_tsx",
-      "community": 37,
-      "norm_label": "leads.tsx"
-    },
-    {
-      "label": "Lead",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L5",
-      "id": "admin_leads_lead",
-      "community": 37,
-      "norm_label": "lead"
-    },
-    {
-      "label": "AdminUser",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L18",
-      "id": "admin_leads_adminuser",
-      "community": 37,
-      "norm_label": "adminuser"
-    },
-    {
-      "label": "AdminLeads()",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L24",
-      "id": "admin_leads_adminleads",
-      "community": 37,
-      "norm_label": "adminleads()"
-    },
-    {
-      "label": "Overview.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Overview.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_admin_overview_tsx",
-      "community": 42,
-      "norm_label": "overview.tsx"
-    },
-    {
-      "label": "PlatformStats",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Overview.tsx",
-      "source_location": "L5",
-      "id": "admin_overview_platformstats",
-      "community": 42,
-      "norm_label": "platformstats"
-    },
-    {
-      "label": "AdminOverview()",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Overview.tsx",
-      "source_location": "L14",
-      "id": "admin_overview_adminoverview",
-      "community": 42,
-      "norm_label": "adminoverview()"
-    },
-    {
-      "label": "Audits.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Audits.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_admin_audits_tsx",
-      "community": 41,
-      "norm_label": "audits.tsx"
-    },
-    {
-      "label": "Audit",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Audits.tsx",
-      "source_location": "L5",
-      "id": "admin_audits_audit",
-      "community": 41,
-      "norm_label": "audit"
-    },
-    {
-      "label": "AdminAudits()",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Audits.tsx",
-      "source_location": "L17",
-      "id": "admin_audits_adminaudits",
-      "community": 41,
-      "norm_label": "adminaudits()"
-    },
-    {
-      "label": "Agents.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Agents.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_admin_agents_tsx",
-      "community": 40,
-      "norm_label": "agents.tsx"
-    },
-    {
-      "label": "Agent",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Agents.tsx",
-      "source_location": "L5",
-      "id": "admin_agents_agent",
-      "community": 40,
-      "norm_label": "agent"
-    },
-    {
-      "label": "AdminAgents()",
-      "file_type": "code",
-      "source_file": "client/src/pages/admin/Agents.tsx",
-      "source_location": "L18",
-      "id": "admin_agents_adminagents",
-      "community": 40,
-      "norm_label": "adminagents()"
-    },
-    {
-      "label": "Analytics.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Analytics.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_analytics_tsx",
-      "community": 45,
-      "norm_label": "analytics.tsx"
-    },
-    {
-      "label": "COLORS",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Analytics.tsx",
-      "source_location": "L6",
-      "id": "dashboard_analytics_colors",
-      "community": 45,
-      "norm_label": "colors"
-    },
-    {
-      "label": "Analytics()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Analytics.tsx",
-      "source_location": "L8",
-      "id": "dashboard_analytics_analytics",
-      "community": 45,
-      "norm_label": "analytics()"
-    },
-    {
-      "label": "Leads.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Leads.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_leads_tsx",
-      "community": 5,
-      "norm_label": "leads.tsx"
-    },
-    {
-      "label": "Leads()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Leads.tsx",
-      "source_location": "L5",
-      "id": "dashboard_leads_leads",
-      "community": 5,
-      "norm_label": "leads()"
-    },
-    {
-      "label": "AgentLogs.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_agentlogs_tsx",
-      "community": 22,
-      "norm_label": "agentlogs.tsx"
-    },
-    {
-      "label": "AgentLogs()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
-      "source_location": "L5",
-      "id": "dashboard_agentlogs_agentlogs",
-      "community": 22,
-      "norm_label": "agentlogs()"
-    },
-    {
-      "label": "ChangePassword.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/ChangePassword.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_changepassword_tsx",
-      "community": 48,
-      "norm_label": "changepassword.tsx"
-    },
-    {
-      "label": "ChangePassword()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/ChangePassword.tsx",
-      "source_location": "L5",
-      "id": "dashboard_changepassword_changepassword",
-      "community": 48,
-      "norm_label": "changepassword()"
-    },
-    {
-      "label": "Overview.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_overview_tsx",
-      "community": 31,
-      "norm_label": "overview.tsx"
-    },
-    {
-      "label": "sparklineData",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L7",
-      "id": "dashboard_overview_sparklinedata",
-      "community": 31,
-      "norm_label": "sparklinedata"
-    },
-    {
-      "label": "sparklineDataUp",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L8",
-      "id": "dashboard_overview_sparklinedataup",
-      "community": 31,
-      "norm_label": "sparklinedataup"
-    },
-    {
-      "label": "MetricCard()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L10",
-      "id": "dashboard_overview_metriccard",
-      "community": 31,
-      "norm_label": "metriccard()"
-    },
-    {
-      "label": "Overview()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L73",
-      "id": "dashboard_overview_overview",
-      "community": 31,
-      "norm_label": "overview()"
-    },
-    {
-      "label": "Support.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_support_tsx",
-      "community": 38,
-      "norm_label": "support.tsx"
-    },
-    {
-      "label": "Ticket",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L5",
-      "id": "dashboard_support_ticket",
-      "community": 38,
-      "norm_label": "ticket"
-    },
-    {
-      "label": "faqs",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L15",
-      "id": "dashboard_support_faqs",
-      "community": 38,
-      "norm_label": "faqs"
-    },
-    {
-      "label": "Support()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L22",
-      "id": "dashboard_support_support",
-      "community": 38,
-      "norm_label": "support()"
-    },
-    {
-      "label": "Settings.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Settings.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_settings_tsx",
-      "community": 5,
-      "norm_label": "settings.tsx"
-    },
-    {
-      "label": "Settings()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Settings.tsx",
-      "source_location": "L6",
-      "id": "dashboard_settings_settings",
-      "community": 5,
-      "norm_label": "settings()"
-    },
-    {
-      "label": "Billing.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_billing_tsx",
-      "community": 23,
-      "norm_label": "billing.tsx"
-    },
-    {
-      "label": "Subscription",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L6",
-      "id": "dashboard_billing_subscription",
-      "community": 23,
-      "norm_label": "subscription"
-    },
-    {
-      "label": "PaymentOrder",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L14",
-      "id": "dashboard_billing_paymentorder",
-      "community": 23,
-      "norm_label": "paymentorder"
-    },
-    {
-      "label": "planPrices",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L24",
-      "id": "dashboard_billing_planprices",
-      "community": 23,
-      "norm_label": "planprices"
-    },
-    {
-      "label": "planFeatures",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L30",
-      "id": "dashboard_billing_planfeatures",
-      "community": 23,
-      "norm_label": "planfeatures"
-    },
-    {
-      "label": "Billing()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L36",
-      "id": "dashboard_billing_billing",
-      "community": 23,
-      "norm_label": "billing()"
-    },
-    {
-      "label": "MyAgents.tsx",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/MyAgents.tsx",
-      "source_location": "L1",
-      "id": "client_src_pages_dashboard_myagents_tsx",
-      "community": 5,
-      "norm_label": "myagents.tsx"
-    },
-    {
-      "label": "MyAgents()",
-      "file_type": "code",
-      "source_file": "client/src/pages/dashboard/MyAgents.tsx",
-      "source_location": "L6",
-      "id": "dashboard_myagents_myagents",
-      "community": 5,
-      "norm_label": "myagents()"
     },
     {
       "label": "README.md",
@@ -4107,6 +3477,645 @@
       "norm_label": "support"
     },
     {
+      "label": "Login",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L14",
+      "community": 0,
+      "norm_label": "login",
+      "id": "src_app_login"
+    },
+    {
+      "label": "Register",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L15",
+      "community": 0,
+      "norm_label": "register",
+      "id": "src_app_register"
+    },
+    {
+      "label": "DashboardOverview",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L16",
+      "community": 0,
+      "norm_label": "dashboardoverview",
+      "id": "src_app_dashboardoverview"
+    },
+    {
+      "label": "MyAgents",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L17",
+      "community": 0,
+      "norm_label": "myagents",
+      "id": "src_app_myagents"
+    },
+    {
+      "label": "Leads",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L18",
+      "community": 0,
+      "norm_label": "leads",
+      "id": "src_app_leads"
+    },
+    {
+      "label": "AgentLogs",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L19",
+      "community": 0,
+      "norm_label": "agentlogs",
+      "id": "src_app_agentlogs"
+    },
+    {
+      "label": "Billing",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L20",
+      "community": 0,
+      "norm_label": "billing",
+      "id": "src_app_billing"
+    },
+    {
+      "label": "Settings",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L21",
+      "community": 0,
+      "norm_label": "settings",
+      "id": "src_app_settings"
+    },
+    {
+      "label": "ChangePassword",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L22",
+      "community": 0,
+      "norm_label": "changepassword",
+      "id": "src_app_changepassword"
+    },
+    {
+      "label": "Support",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L23",
+      "community": 0,
+      "norm_label": "support",
+      "id": "src_app_support"
+    },
+    {
+      "label": "Analytics",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L24",
+      "community": 0,
+      "norm_label": "analytics",
+      "id": "src_app_analytics"
+    },
+    {
+      "label": "AdminOverview",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L25",
+      "community": 0,
+      "norm_label": "adminoverview",
+      "id": "src_app_adminoverview"
+    },
+    {
+      "label": "AdminUsers",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L26",
+      "community": 0,
+      "norm_label": "adminusers",
+      "id": "src_app_adminusers"
+    },
+    {
+      "label": "AdminAgents",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L27",
+      "community": 0,
+      "norm_label": "adminagents",
+      "id": "src_app_adminagents"
+    },
+    {
+      "label": "AdminAudits",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L28",
+      "community": 0,
+      "norm_label": "adminaudits",
+      "id": "src_app_adminaudits"
+    },
+    {
+      "label": "AdminLeads",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L29",
+      "community": 0,
+      "norm_label": "adminleads",
+      "id": "src_app_adminleads"
+    },
+    {
+      "label": "DashboardLayout.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "dashboardlayout.tsx",
+      "id": "client_src_components_layouts_dashboardlayout_tsx"
+    },
+    {
+      "label": "SidebarItem()",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
+      "source_location": "L6",
+      "community": 0,
+      "norm_label": "sidebaritem()",
+      "id": "layouts_dashboardlayout_sidebaritem"
+    },
+    {
+      "label": "DashboardLayout()",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
+      "source_location": "L25",
+      "community": 0,
+      "norm_label": "dashboardlayout()",
+      "id": "layouts_dashboardlayout_dashboardlayout"
+    },
+    {
+      "label": "ActivityToasts()",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/PublicLayout.tsx",
+      "source_location": "L77",
+      "community": 0,
+      "norm_label": "activitytoasts()",
+      "id": "layouts_publiclayout_activitytoasts"
+    },
+    {
+      "label": "AdminLayout.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/AdminLayout.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "adminlayout.tsx",
+      "id": "client_src_components_layouts_adminlayout_tsx"
+    },
+    {
+      "label": "SidebarItem()",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/AdminLayout.tsx",
+      "source_location": "L6",
+      "community": 0,
+      "norm_label": "sidebaritem()",
+      "id": "layouts_adminlayout_sidebaritem"
+    },
+    {
+      "label": "AdminLayout()",
+      "file_type": "code",
+      "source_file": "client/src/components/layouts/AdminLayout.tsx",
+      "source_location": "L25",
+      "community": 0,
+      "norm_label": "adminlayout()",
+      "id": "layouts_adminlayout_adminlayout"
+    },
+    {
+      "label": "Register.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/Register.tsx",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "register.tsx",
+      "id": "client_src_pages_register_tsx"
+    },
+    {
+      "label": "Register()",
+      "file_type": "code",
+      "source_file": "client/src/pages/Register.tsx",
+      "source_location": "L7",
+      "community": 18,
+      "norm_label": "register()",
+      "id": "pages_register_register"
+    },
+    {
+      "label": "Login.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/Login.tsx",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "login.tsx",
+      "id": "client_src_pages_login_tsx"
+    },
+    {
+      "label": "Login()",
+      "file_type": "code",
+      "source_file": "client/src/pages/Login.tsx",
+      "source_location": "L7",
+      "community": 18,
+      "norm_label": "login()",
+      "id": "pages_login_login"
+    },
+    {
+      "label": "Users.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Users.tsx",
+      "source_location": "L1",
+      "community": 43,
+      "norm_label": "users.tsx",
+      "id": "client_src_pages_admin_users_tsx"
+    },
+    {
+      "label": "AdminUser",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Users.tsx",
+      "source_location": "L5",
+      "community": 43,
+      "norm_label": "adminuser",
+      "id": "admin_users_adminuser"
+    },
+    {
+      "label": "AdminUsers()",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Users.tsx",
+      "source_location": "L19",
+      "community": 43,
+      "norm_label": "adminusers()",
+      "id": "admin_users_adminusers"
+    },
+    {
+      "label": "Leads.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L1",
+      "community": 37,
+      "norm_label": "leads.tsx",
+      "id": "client_src_pages_admin_leads_tsx"
+    },
+    {
+      "label": "Lead",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L5",
+      "community": 37,
+      "norm_label": "lead",
+      "id": "admin_leads_lead"
+    },
+    {
+      "label": "AdminUser",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L18",
+      "community": 37,
+      "norm_label": "adminuser",
+      "id": "admin_leads_adminuser"
+    },
+    {
+      "label": "AdminLeads()",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L24",
+      "community": 37,
+      "norm_label": "adminleads()",
+      "id": "admin_leads_adminleads"
+    },
+    {
+      "label": "Overview.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Overview.tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "overview.tsx",
+      "id": "client_src_pages_admin_overview_tsx"
+    },
+    {
+      "label": "PlatformStats",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Overview.tsx",
+      "source_location": "L5",
+      "community": 42,
+      "norm_label": "platformstats",
+      "id": "admin_overview_platformstats"
+    },
+    {
+      "label": "AdminOverview()",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Overview.tsx",
+      "source_location": "L14",
+      "community": 42,
+      "norm_label": "adminoverview()",
+      "id": "admin_overview_adminoverview"
+    },
+    {
+      "label": "Audits.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Audits.tsx",
+      "source_location": "L1",
+      "community": 41,
+      "norm_label": "audits.tsx",
+      "id": "client_src_pages_admin_audits_tsx"
+    },
+    {
+      "label": "Audit",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Audits.tsx",
+      "source_location": "L5",
+      "community": 41,
+      "norm_label": "audit",
+      "id": "admin_audits_audit"
+    },
+    {
+      "label": "AdminAudits()",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Audits.tsx",
+      "source_location": "L17",
+      "community": 41,
+      "norm_label": "adminaudits()",
+      "id": "admin_audits_adminaudits"
+    },
+    {
+      "label": "Agents.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Agents.tsx",
+      "source_location": "L1",
+      "community": 40,
+      "norm_label": "agents.tsx",
+      "id": "client_src_pages_admin_agents_tsx"
+    },
+    {
+      "label": "Agent",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Agents.tsx",
+      "source_location": "L5",
+      "community": 40,
+      "norm_label": "agent",
+      "id": "admin_agents_agent"
+    },
+    {
+      "label": "AdminAgents()",
+      "file_type": "code",
+      "source_file": "client/src/pages/admin/Agents.tsx",
+      "source_location": "L18",
+      "community": 40,
+      "norm_label": "adminagents()",
+      "id": "admin_agents_adminagents"
+    },
+    {
+      "label": "Analytics.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Analytics.tsx",
+      "source_location": "L1",
+      "community": 45,
+      "norm_label": "analytics.tsx",
+      "id": "client_src_pages_dashboard_analytics_tsx"
+    },
+    {
+      "label": "COLORS",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Analytics.tsx",
+      "source_location": "L6",
+      "community": 45,
+      "norm_label": "colors",
+      "id": "dashboard_analytics_colors"
+    },
+    {
+      "label": "Analytics()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Analytics.tsx",
+      "source_location": "L8",
+      "community": 45,
+      "norm_label": "analytics()",
+      "id": "dashboard_analytics_analytics"
+    },
+    {
+      "label": "Leads.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Leads.tsx",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "leads.tsx",
+      "id": "client_src_pages_dashboard_leads_tsx"
+    },
+    {
+      "label": "Leads()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Leads.tsx",
+      "source_location": "L5",
+      "community": 5,
+      "norm_label": "leads()",
+      "id": "dashboard_leads_leads"
+    },
+    {
+      "label": "AgentLogs.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "agentlogs.tsx",
+      "id": "client_src_pages_dashboard_agentlogs_tsx"
+    },
+    {
+      "label": "AgentLogs()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
+      "source_location": "L5",
+      "community": 5,
+      "norm_label": "agentlogs()",
+      "id": "dashboard_agentlogs_agentlogs"
+    },
+    {
+      "label": "ChangePassword.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/ChangePassword.tsx",
+      "source_location": "L1",
+      "community": 48,
+      "norm_label": "changepassword.tsx",
+      "id": "client_src_pages_dashboard_changepassword_tsx"
+    },
+    {
+      "label": "ChangePassword()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/ChangePassword.tsx",
+      "source_location": "L5",
+      "community": 48,
+      "norm_label": "changepassword()",
+      "id": "dashboard_changepassword_changepassword"
+    },
+    {
+      "label": "Overview.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "overview.tsx",
+      "id": "client_src_pages_dashboard_overview_tsx"
+    },
+    {
+      "label": "sparklineData",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L7",
+      "community": 31,
+      "norm_label": "sparklinedata",
+      "id": "dashboard_overview_sparklinedata"
+    },
+    {
+      "label": "sparklineDataUp",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L8",
+      "community": 31,
+      "norm_label": "sparklinedataup",
+      "id": "dashboard_overview_sparklinedataup"
+    },
+    {
+      "label": "MetricCard()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L10",
+      "community": 31,
+      "norm_label": "metriccard()",
+      "id": "dashboard_overview_metriccard"
+    },
+    {
+      "label": "Overview()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L73",
+      "community": 31,
+      "norm_label": "overview()",
+      "id": "dashboard_overview_overview"
+    },
+    {
+      "label": "Support.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L1",
+      "community": 38,
+      "norm_label": "support.tsx",
+      "id": "client_src_pages_dashboard_support_tsx"
+    },
+    {
+      "label": "Ticket",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L5",
+      "community": 38,
+      "norm_label": "ticket",
+      "id": "dashboard_support_ticket"
+    },
+    {
+      "label": "faqs",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L15",
+      "community": 38,
+      "norm_label": "faqs",
+      "id": "dashboard_support_faqs"
+    },
+    {
+      "label": "Support()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L22",
+      "community": 38,
+      "norm_label": "support()",
+      "id": "dashboard_support_support"
+    },
+    {
+      "label": "Settings.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Settings.tsx",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "settings.tsx",
+      "id": "client_src_pages_dashboard_settings_tsx"
+    },
+    {
+      "label": "Settings()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Settings.tsx",
+      "source_location": "L6",
+      "community": 5,
+      "norm_label": "settings()",
+      "id": "dashboard_settings_settings"
+    },
+    {
+      "label": "Billing.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L1",
+      "community": 23,
+      "norm_label": "billing.tsx",
+      "id": "client_src_pages_dashboard_billing_tsx"
+    },
+    {
+      "label": "Subscription",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L6",
+      "community": 23,
+      "norm_label": "subscription",
+      "id": "dashboard_billing_subscription"
+    },
+    {
+      "label": "PaymentOrder",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L14",
+      "community": 23,
+      "norm_label": "paymentorder",
+      "id": "dashboard_billing_paymentorder"
+    },
+    {
+      "label": "planPrices",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L24",
+      "community": 23,
+      "norm_label": "planprices",
+      "id": "dashboard_billing_planprices"
+    },
+    {
+      "label": "planFeatures",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L30",
+      "community": 23,
+      "norm_label": "planfeatures",
+      "id": "dashboard_billing_planfeatures"
+    },
+    {
+      "label": "Billing()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L36",
+      "community": 23,
+      "norm_label": "billing()",
+      "id": "dashboard_billing_billing"
+    },
+    {
+      "label": "MyAgents.tsx",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/MyAgents.tsx",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "myagents.tsx",
+      "id": "client_src_pages_dashboard_myagents_tsx"
+    },
+    {
+      "label": "MyAgents()",
+      "file_type": "code",
+      "source_file": "client/src/pages/dashboard/MyAgents.tsx",
+      "source_location": "L6",
+      "community": 5,
+      "norm_label": "myagents()",
+      "id": "dashboard_myagents_myagents"
+    },
+    {
       "label": "planPrices",
       "file_type": "code",
       "source_file": "server/src/routes/payments.ts",
@@ -4375,9 +4384,9 @@
       "source_file": "deploy.sh",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "deploy_sh",
-      "target": "neuronflow_deploy_log_info",
-      "confidence_score": 1.0
+      "target": "neuronflow_deploy_log_info"
     },
     {
       "relation": "defines",
@@ -4385,9 +4394,9 @@
       "source_file": "deploy.sh",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "deploy_sh",
-      "target": "neuronflow_deploy_log_warn",
-      "confidence_score": 1.0
+      "target": "neuronflow_deploy_log_warn"
     },
     {
       "relation": "defines",
@@ -4395,9 +4404,9 @@
       "source_file": "deploy.sh",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "deploy_sh",
-      "target": "neuronflow_deploy_log_error",
-      "confidence_score": 1.0
+      "target": "neuronflow_deploy_log_error"
     },
     {
       "relation": "defines",
@@ -4405,9 +4414,9 @@
       "source_file": "scripts/health-check.sh",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_health_check_sh",
-      "target": "scripts_health_check_log_status",
-      "confidence_score": 1.0
+      "target": "scripts_health_check_log_status"
     },
     {
       "relation": "defines",
@@ -4415,9 +4424,9 @@
       "source_file": "scripts/health-check.sh",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_health_check_sh",
-      "target": "scripts_health_check_send_alert",
-      "confidence_score": 1.0
+      "target": "scripts_health_check_send_alert"
     },
     {
       "relation": "contains",
@@ -4525,9 +4534,9 @@
       "source_file": "server/package.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_package_scripts",
-      "target": "server_package_scripts_test",
-      "confidence_score": 1.0
+      "target": "server_package_scripts_test"
     },
     {
       "relation": "contains",
@@ -4736,9 +4745,9 @@
       "source_file": "server/package.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_package_dependencies",
-      "target": "server_package_dependencies_nodemailer",
-      "confidence_score": 1.0
+      "target": "server_package_dependencies_nodemailer"
     },
     {
       "relation": "contains",
@@ -4746,9 +4755,9 @@
       "source_file": "server/package.json",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_package_dependencies",
-      "target": "server_package_dependencies_openai",
-      "confidence_score": 1.0
+      "target": "server_package_dependencies_openai"
     },
     {
       "relation": "contains",
@@ -4846,9 +4855,9 @@
       "source_file": "server/package.json",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_package_devdependencies",
-      "target": "server_package_devdependencies_types_nodemailer",
-      "confidence_score": 1.0
+      "target": "server_package_devdependencies_types_nodemailer"
     },
     {
       "relation": "contains",
@@ -5087,9 +5096,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_middleware_jwt_validation_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_jwt_validation_ts"
     },
     {
       "relation": "imports",
@@ -5098,9 +5107,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "middleware_jwt_validation_validatejwtsecret",
-      "confidence_score": 1.0
+      "target": "middleware_jwt_validation_validatejwtsecret"
     },
     {
       "relation": "imports_from",
@@ -5109,9 +5118,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_services_email_ts",
-      "confidence_score": 1.0
+      "target": "server_src_services_email_ts"
     },
     {
       "relation": "imports",
@@ -5120,9 +5129,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "services_email_initmailer",
-      "confidence_score": 1.0
+      "target": "services_email_initmailer"
     },
     {
       "relation": "imports_from",
@@ -5131,9 +5140,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_services_scheduler_ts",
-      "confidence_score": 1.0
+      "target": "server_src_services_scheduler_ts"
     },
     {
       "relation": "imports",
@@ -5142,9 +5151,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "services_scheduler_initscheduler",
-      "confidence_score": 1.0
+      "target": "services_scheduler_initscheduler"
     },
     {
       "relation": "imports",
@@ -5153,9 +5162,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "services_scheduler_triggerallagents",
-      "confidence_score": 1.0
+      "target": "services_scheduler_triggerallagents"
     },
     {
       "relation": "imports_from",
@@ -5230,9 +5239,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_routes_agenttasks_ts",
-      "confidence_score": 1.0
+      "target": "server_src_routes_agenttasks_ts"
     },
     {
       "relation": "imports_from",
@@ -5241,9 +5250,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_routes_admin_ts",
-      "confidence_score": 1.0
+      "target": "server_src_routes_admin_ts"
     },
     {
       "relation": "imports_from",
@@ -5252,9 +5261,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_routes_sse_ts",
-      "confidence_score": 1.0
+      "target": "server_src_routes_sse_ts"
     },
     {
       "relation": "imports_from",
@@ -5263,9 +5272,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_routes_tickets_ts",
-      "confidence_score": 1.0
+      "target": "server_src_routes_tickets_ts"
     },
     {
       "relation": "imports_from",
@@ -5274,9 +5283,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_routes_analytics_ts",
-      "confidence_score": 1.0
+      "target": "server_src_routes_analytics_ts"
     },
     {
       "relation": "imports_from",
@@ -5285,9 +5294,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "server_src_middleware_auth_production_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_auth_production_ts"
     },
     {
       "relation": "imports",
@@ -5296,9 +5305,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "middleware_auth_production_checkratelimit",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_checkratelimit"
     },
     {
       "relation": "contains",
@@ -5316,9 +5325,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "src_index_allowedorigins",
-      "confidence_score": 1.0
+      "target": "src_index_allowedorigins"
     },
     {
       "relation": "contains",
@@ -5326,9 +5335,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "src_index_checks",
-      "confidence_score": 1.0
+      "target": "src_index_checks"
     },
     {
       "relation": "contains",
@@ -5336,9 +5345,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "src_index_prisma",
-      "confidence_score": 1.0
+      "target": "src_index_prisma"
     },
     {
       "relation": "contains",
@@ -5346,9 +5355,9 @@
       "source_file": "server/src/index.ts",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_index_ts",
-      "target": "src_index_allok",
-      "confidence_score": 1.0
+      "target": "src_index_allok"
     },
     {
       "relation": "contains",
@@ -5356,9 +5365,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_prisma",
-      "confidence_score": 1.0
+      "target": "agents_engine_prisma"
     },
     {
       "relation": "contains",
@@ -5366,9 +5375,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "contains",
@@ -5376,9 +5385,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_retrywithbackoff",
-      "confidence_score": 1.0
+      "target": "agents_engine_retrywithbackoff"
     },
     {
       "relation": "contains",
@@ -5386,9 +5395,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_llmservice",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice"
     },
     {
       "relation": "contains",
@@ -5396,9 +5405,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_llm",
-      "confidence_score": 1.0
+      "target": "agents_engine_llm"
     },
     {
       "relation": "contains",
@@ -5406,9 +5415,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_agenttype",
-      "confidence_score": 1.0
+      "target": "agents_engine_agenttype"
     },
     {
       "relation": "contains",
@@ -5416,9 +5425,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_agenttask",
-      "confidence_score": 1.0
+      "target": "agents_engine_agenttask"
     },
     {
       "relation": "contains",
@@ -5426,9 +5435,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L545",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_engine_ts",
-      "target": "agents_engine_agentengine",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine"
     },
     {
       "relation": "imports_from",
@@ -5437,9 +5446,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "server_src_agents_engine_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_engine_ts"
     },
     {
       "relation": "imports_from",
@@ -5448,9 +5457,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "server_src_agents_engine_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_engine_ts"
     },
     {
       "relation": "imports_from",
@@ -5459,9 +5468,9 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_audit_ts",
-      "target": "server_src_agents_engine_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_engine_ts"
     },
     {
       "relation": "imports_from",
@@ -5470,9 +5479,9 @@
       "source_file": "server/src/routes/leads.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_leads_ts",
-      "target": "server_src_agents_engine_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_engine_ts"
     },
     {
       "relation": "imports_from",
@@ -5481,9 +5490,9 @@
       "source_file": "server/src/routes/deployments.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_deployments_ts",
-      "target": "server_src_agents_engine_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_engine_ts"
     },
     {
       "relation": "calls",
@@ -5492,9 +5501,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L269",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runleadqualification",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "calls",
@@ -5503,9 +5512,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L318",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runwhatsappbot",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "calls",
@@ -5514,9 +5523,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L341",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runvoiceagent",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "calls",
@@ -5525,9 +5534,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L364",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runsupportbot",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "calls",
@@ -5536,9 +5545,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L387",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runcontentgenerator",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "calls",
@@ -5547,9 +5556,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L450",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runcrmsync",
-      "target": "agents_engine_sanitizellminput",
-      "confidence_score": 1.0
+      "target": "agents_engine_sanitizellminput"
     },
     {
       "relation": "calls",
@@ -5558,9 +5567,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L413",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runcrmsync",
-      "target": "agents_engine_retrywithbackoff",
-      "confidence_score": 1.0
+      "target": "agents_engine_retrywithbackoff"
     },
     {
       "relation": "calls",
@@ -5569,9 +5578,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L470",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runappointmentbooking",
-      "target": "agents_engine_retrywithbackoff",
-      "confidence_score": 1.0
+      "target": "agents_engine_retrywithbackoff"
     },
     {
       "relation": "method",
@@ -5579,9 +5588,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_llmservice",
-      "target": "agents_engine_llmservice_constructor",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_constructor"
     },
     {
       "relation": "method",
@@ -5589,9 +5598,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_llmservice",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "method",
@@ -5599,9 +5608,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_llmservice",
-      "target": "agents_engine_llmservice_fallbackllm",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_fallbackllm"
     },
     {
       "relation": "calls",
@@ -5610,9 +5619,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_llmservice_generate",
-      "target": "agents_engine_llmservice_fallbackllm",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_fallbackllm"
     },
     {
       "relation": "calls",
@@ -5621,9 +5630,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runleadqualification",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "calls",
@@ -5632,9 +5641,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L329",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runwhatsappbot",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "calls",
@@ -5643,9 +5652,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L352",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runvoiceagent",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "calls",
@@ -5654,9 +5663,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L375",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runsupportbot",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "calls",
@@ -5665,9 +5674,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runcontentgenerator",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "calls",
@@ -5676,9 +5685,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L452",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runcrmsync",
-      "target": "agents_engine_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_engine_llmservice_generate"
     },
     {
       "relation": "imports",
@@ -5687,9 +5696,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "agents_engine_agenttype",
-      "confidence_score": 1.0
+      "target": "agents_engine_agenttype"
     },
     {
       "relation": "imports",
@@ -5698,9 +5707,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "agents_engine_agenttype",
-      "confidence_score": 1.0
+      "target": "agents_engine_agenttype"
     },
     {
       "relation": "method",
@@ -5708,9 +5717,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_execute",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_execute"
     },
     {
       "relation": "method",
@@ -5718,9 +5727,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_processqueue",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_processqueue"
     },
     {
       "relation": "method",
@@ -5728,9 +5737,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L177",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runtask",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runtask"
     },
     {
       "relation": "method",
@@ -5738,9 +5747,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L264",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runleadqualification",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runleadqualification"
     },
     {
       "relation": "method",
@@ -5748,9 +5757,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L316",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runwhatsappbot",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runwhatsappbot"
     },
     {
       "relation": "method",
@@ -5758,9 +5767,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L339",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runvoiceagent",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runvoiceagent"
     },
     {
       "relation": "method",
@@ -5768,9 +5777,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L362",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runsupportbot",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runsupportbot"
     },
     {
       "relation": "method",
@@ -5778,9 +5787,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L385",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runcontentgenerator",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runcontentgenerator"
     },
     {
       "relation": "method",
@@ -5788,9 +5797,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L405",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runcrmsync",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runcrmsync"
     },
     {
       "relation": "method",
@@ -5798,9 +5807,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L465",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_runappointmentbooking",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runappointmentbooking"
     },
     {
       "relation": "method",
@@ -5808,9 +5817,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L517",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine",
-      "target": "agents_engine_agentengine_updatemetrics",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_updatemetrics"
     },
     {
       "relation": "imports",
@@ -5819,9 +5828,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "agents_engine_agentengine",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine"
     },
     {
       "relation": "imports",
@@ -5830,9 +5839,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "agents_engine_agentengine",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine"
     },
     {
       "relation": "imports",
@@ -5841,9 +5850,9 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_audit_ts",
-      "target": "agents_engine_agentengine",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine"
     },
     {
       "relation": "imports",
@@ -5852,9 +5861,9 @@
       "source_file": "server/src/routes/leads.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_leads_ts",
-      "target": "agents_engine_agentengine",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine"
     },
     {
       "relation": "imports",
@@ -5863,9 +5872,9 @@
       "source_file": "server/src/routes/deployments.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_deployments_ts",
-      "target": "agents_engine_agentengine",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine"
     },
     {
       "relation": "calls",
@@ -5874,9 +5883,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_execute",
-      "target": "agents_engine_agentengine_runtask",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runtask"
     },
     {
       "relation": "calls",
@@ -5885,9 +5894,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_processqueue",
-      "target": "agents_engine_agentengine_runtask",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runtask"
     },
     {
       "relation": "calls",
@@ -5896,9 +5905,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L207",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runleadqualification",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runleadqualification"
     },
     {
       "relation": "calls",
@@ -5907,9 +5916,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L210",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runwhatsappbot",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runwhatsappbot"
     },
     {
       "relation": "calls",
@@ -5918,9 +5927,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runvoiceagent",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runvoiceagent"
     },
     {
       "relation": "calls",
@@ -5929,9 +5938,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runsupportbot",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runsupportbot"
     },
     {
       "relation": "calls",
@@ -5940,9 +5949,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runcontentgenerator",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runcontentgenerator"
     },
     {
       "relation": "calls",
@@ -5951,9 +5960,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runcrmsync",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runcrmsync"
     },
     {
       "relation": "calls",
@@ -5962,9 +5971,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_runappointmentbooking",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_runappointmentbooking"
     },
     {
       "relation": "calls",
@@ -5973,9 +5982,9 @@
       "source_file": "server/src/agents/engine.ts",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_engine_agentengine_runtask",
-      "target": "agents_engine_agentengine_updatemetrics",
-      "confidence_score": 1.0
+      "target": "agents_engine_agentengine_updatemetrics"
     },
     {
       "relation": "contains",
@@ -5983,9 +5992,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_llm_ts",
-      "target": "agents_llm_prisma",
-      "confidence_score": 1.0
+      "target": "agents_llm_prisma"
     },
     {
       "relation": "contains",
@@ -5993,9 +6002,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_llm_ts",
-      "target": "agents_llm_llmservice",
-      "confidence_score": 1.0
+      "target": "agents_llm_llmservice"
     },
     {
       "relation": "contains",
@@ -6003,9 +6012,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_agents_llm_ts",
-      "target": "agents_llm_llm",
-      "confidence_score": 1.0
+      "target": "agents_llm_llm"
     },
     {
       "relation": "imports_from",
@@ -6014,9 +6023,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "server_src_agents_llm_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_llm_ts"
     },
     {
       "relation": "imports_from",
@@ -6025,9 +6034,9 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_audit_ts",
-      "target": "server_src_agents_llm_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_llm_ts"
     },
     {
       "relation": "imports_from",
@@ -6036,9 +6045,9 @@
       "source_file": "server/src/routes/leads.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_leads_ts",
-      "target": "server_src_agents_llm_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_llm_ts"
     },
     {
       "relation": "imports_from",
@@ -6047,9 +6056,9 @@
       "source_file": "server/src/routes/deployments.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_deployments_ts",
-      "target": "server_src_agents_llm_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_llm_ts"
     },
     {
       "relation": "imports_from",
@@ -6058,9 +6067,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "server_src_agents_llm_ts",
-      "confidence_score": 1.0
+      "target": "server_src_agents_llm_ts"
     },
     {
       "relation": "imports",
@@ -6069,9 +6078,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "agents_llm_prisma",
-      "confidence_score": 1.0
+      "target": "agents_llm_prisma"
     },
     {
       "relation": "method",
@@ -6079,9 +6088,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_llm_llmservice",
-      "target": "agents_llm_llmservice_constructor",
-      "confidence_score": 1.0
+      "target": "agents_llm_llmservice_constructor"
     },
     {
       "relation": "method",
@@ -6089,9 +6098,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_llm_llmservice",
-      "target": "agents_llm_llmservice_generate",
-      "confidence_score": 1.0
+      "target": "agents_llm_llmservice_generate"
     },
     {
       "relation": "method",
@@ -6099,9 +6108,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_llm_llmservice",
-      "target": "agents_llm_llmservice_mockresponse",
-      "confidence_score": 1.0
+      "target": "agents_llm_llmservice_mockresponse"
     },
     {
       "relation": "method",
@@ -6109,9 +6118,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_llm_llmservice",
-      "target": "agents_llm_llmservice_checkhealth",
-      "confidence_score": 1.0
+      "target": "agents_llm_llmservice_checkhealth"
     },
     {
       "relation": "calls",
@@ -6120,9 +6129,9 @@
       "source_file": "server/src/agents/llm.ts",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_llm_llmservice_generate",
-      "target": "agents_llm_llmservice_mockresponse",
-      "confidence_score": 1.0
+      "target": "agents_llm_llmservice_mockresponse"
     },
     {
       "relation": "imports",
@@ -6131,9 +6140,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "agents_llm_llm",
-      "confidence_score": 1.0
+      "target": "agents_llm_llm"
     },
     {
       "relation": "imports",
@@ -6142,9 +6151,9 @@
       "source_file": "server/src/routes/audit.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_audit_ts",
-      "target": "agents_llm_llm",
-      "confidence_score": 1.0
+      "target": "agents_llm_llm"
     },
     {
       "relation": "imports",
@@ -6153,9 +6162,9 @@
       "source_file": "server/src/routes/leads.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_leads_ts",
-      "target": "agents_llm_llm",
-      "confidence_score": 1.0
+      "target": "agents_llm_llm"
     },
     {
       "relation": "imports",
@@ -6164,9 +6173,9 @@
       "source_file": "server/src/routes/deployments.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_deployments_ts",
-      "target": "agents_llm_llm",
-      "confidence_score": 1.0
+      "target": "agents_llm_llm"
     },
     {
       "relation": "imports",
@@ -6175,9 +6184,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "agents_llm_llm",
-      "confidence_score": 1.0
+      "target": "agents_llm_llm"
     },
     {
       "relation": "contains",
@@ -6185,9 +6194,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_prisma",
-      "confidence_score": 1.0
+      "target": "services_scheduler_prisma"
     },
     {
       "relation": "contains",
@@ -6195,9 +6204,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_instanceid",
-      "confidence_score": 1.0
+      "target": "services_scheduler_instanceid"
     },
     {
       "relation": "contains",
@@ -6205,9 +6214,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_lock_file",
-      "confidence_score": 1.0
+      "target": "services_scheduler_lock_file"
     },
     {
       "relation": "contains",
@@ -6215,9 +6224,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_acquirefilelock",
-      "confidence_score": 1.0
+      "target": "services_scheduler_acquirefilelock"
     },
     {
       "relation": "contains",
@@ -6225,9 +6234,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_releasefilelock",
-      "confidence_score": 1.0
+      "target": "services_scheduler_releasefilelock"
     },
     {
       "relation": "contains",
@@ -6235,9 +6244,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_heartbeat",
-      "confidence_score": 1.0
+      "target": "services_scheduler_heartbeat"
     },
     {
       "relation": "contains",
@@ -6245,9 +6254,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_initscheduler",
-      "confidence_score": 1.0
+      "target": "services_scheduler_initscheduler"
     },
     {
       "relation": "contains",
@@ -6255,9 +6264,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_trytobecomeleader",
-      "confidence_score": 1.0
+      "target": "services_scheduler_trytobecomeleader"
     },
     {
       "relation": "contains",
@@ -6265,9 +6274,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_stopscheduler",
-      "confidence_score": 1.0
+      "target": "services_scheduler_stopscheduler"
     },
     {
       "relation": "contains",
@@ -6275,9 +6284,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_runscheduledjobs",
-      "confidence_score": 1.0
+      "target": "services_scheduler_runscheduledjobs"
     },
     {
       "relation": "contains",
@@ -6285,9 +6294,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_scheduler_ts",
-      "target": "services_scheduler_triggerallagents",
-      "confidence_score": 1.0
+      "target": "services_scheduler_triggerallagents"
     },
     {
       "relation": "calls",
@@ -6296,9 +6305,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_scheduler_trytobecomeleader",
-      "target": "services_scheduler_acquirefilelock",
-      "confidence_score": 1.0
+      "target": "services_scheduler_acquirefilelock"
     },
     {
       "relation": "calls",
@@ -6307,9 +6316,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_scheduler_stopscheduler",
-      "target": "services_scheduler_releasefilelock",
-      "confidence_score": 1.0
+      "target": "services_scheduler_releasefilelock"
     },
     {
       "relation": "calls",
@@ -6318,9 +6327,9 @@
       "source_file": "server/src/services/scheduler.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_scheduler_initscheduler",
-      "target": "services_scheduler_trytobecomeleader",
-      "confidence_score": 1.0
+      "target": "services_scheduler_trytobecomeleader"
     },
     {
       "relation": "contains",
@@ -6328,9 +6337,9 @@
       "source_file": "server/src/services/email.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_email_ts",
-      "target": "services_email_initmailer",
-      "confidence_score": 1.0
+      "target": "services_email_initmailer"
     },
     {
       "relation": "contains",
@@ -6338,9 +6347,9 @@
       "source_file": "server/src/services/email.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_services_email_ts",
-      "target": "services_email_sendpasswordresetemail",
-      "confidence_score": 1.0
+      "target": "services_email_sendpasswordresetemail"
     },
     {
       "relation": "imports_from",
@@ -6349,9 +6358,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "server_src_services_email_ts",
-      "confidence_score": 1.0
+      "target": "server_src_services_email_ts"
     },
     {
       "relation": "imports",
@@ -6360,9 +6369,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "services_email_sendpasswordresetemail",
-      "confidence_score": 1.0
+      "target": "services_email_sendpasswordresetemail"
     },
     {
       "relation": "contains",
@@ -6370,9 +6379,9 @@
       "source_file": "server/src/middleware/jwt-validation.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_jwt_validation_ts",
-      "target": "middleware_jwt_validation_validatejwtsecret",
-      "confidence_score": 1.0
+      "target": "middleware_jwt_validation_validatejwtsecret"
     },
     {
       "relation": "contains",
@@ -6380,9 +6389,9 @@
       "source_file": "server/src/middleware/jwt-validation.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_jwt_validation_ts",
-      "target": "middleware_jwt_validation_jwt_secret",
-      "confidence_score": 1.0
+      "target": "middleware_jwt_validation_jwt_secret"
     },
     {
       "relation": "imports_from",
@@ -6391,9 +6400,9 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_ts",
-      "target": "server_src_middleware_jwt_validation_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_jwt_validation_ts"
     },
     {
       "relation": "imports_from",
@@ -6402,9 +6411,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "server_src_middleware_jwt_validation_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_jwt_validation_ts"
     },
     {
       "relation": "imports",
@@ -6413,9 +6422,9 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_ts",
-      "target": "middleware_jwt_validation_jwt_secret",
-      "confidence_score": 1.0
+      "target": "middleware_jwt_validation_jwt_secret"
     },
     {
       "relation": "imports",
@@ -6424,9 +6433,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "middleware_jwt_validation_jwt_secret",
-      "confidence_score": 1.0
+      "target": "middleware_jwt_validation_jwt_secret"
     },
     {
       "relation": "contains",
@@ -6434,9 +6443,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_authrequest",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_authrequest"
     },
     {
       "relation": "contains",
@@ -6444,9 +6453,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_inmemoryratelimits",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_inmemoryratelimits"
     },
     {
       "relation": "contains",
@@ -6454,9 +6463,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_inmemoryblacklist",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_inmemoryblacklist"
     },
     {
       "relation": "contains",
@@ -6464,9 +6473,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_checkratelimit",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_checkratelimit"
     },
     {
       "relation": "contains",
@@ -6474,9 +6483,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_blacklisttoken",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_blacklisttoken"
     },
     {
       "relation": "contains",
@@ -6484,9 +6493,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_istokenblacklisted",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_istokenblacklisted"
     },
     {
       "relation": "contains",
@@ -6494,9 +6503,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_authmiddleware",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_authmiddleware"
     },
     {
       "relation": "contains",
@@ -6504,9 +6513,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_production_ts",
-      "target": "middleware_auth_production_optionalauth",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_optionalauth"
     },
     {
       "relation": "calls",
@@ -6515,9 +6524,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "middleware_auth_production_authmiddleware",
-      "target": "middleware_auth_production_istokenblacklisted",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_istokenblacklisted"
     },
     {
       "relation": "calls",
@@ -6526,9 +6535,9 @@
       "source_file": "server/src/middleware/auth-production.ts",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "middleware_auth_production_optionalauth",
-      "target": "middleware_auth_production_istokenblacklisted",
-      "confidence_score": 1.0
+      "target": "middleware_auth_production_istokenblacklisted"
     },
     {
       "relation": "contains",
@@ -6536,9 +6545,9 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_ts",
-      "target": "middleware_auth_prisma",
-      "confidence_score": 1.0
+      "target": "middleware_auth_prisma"
     },
     {
       "relation": "contains",
@@ -6546,9 +6555,9 @@
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_middleware_auth_ts",
-      "target": "middleware_auth_tokenblacklist",
-      "confidence_score": 1.0
+      "target": "middleware_auth_tokenblacklist"
     },
     {
       "relation": "contains",
@@ -6598,9 +6607,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "server_src_middleware_auth_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_auth_ts"
     },
     {
       "relation": "imports_from",
@@ -6631,9 +6640,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "server_src_middleware_auth_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_auth_ts"
     },
     {
       "relation": "imports_from",
@@ -6664,9 +6673,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "server_src_middleware_auth_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_auth_ts"
     },
     {
       "relation": "imports_from",
@@ -6675,9 +6684,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "server_src_middleware_auth_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_auth_ts"
     },
     {
       "relation": "imports_from",
@@ -6697,9 +6706,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "server_src_middleware_auth_ts",
-      "confidence_score": 1.0
+      "target": "server_src_middleware_auth_ts"
     },
     {
       "relation": "imports",
@@ -6708,9 +6717,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "middleware_auth_tokenblacklist",
-      "confidence_score": 1.0
+      "target": "middleware_auth_tokenblacklist"
     },
     {
       "relation": "imports",
@@ -6730,9 +6739,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "middleware_auth_authrequest",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authrequest"
     },
     {
       "relation": "imports",
@@ -6763,9 +6772,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "middleware_auth_authrequest",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authrequest"
     },
     {
       "relation": "imports",
@@ -6796,9 +6805,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "middleware_auth_authrequest",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authrequest"
     },
     {
       "relation": "imports",
@@ -6807,9 +6816,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "middleware_auth_authrequest",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authrequest"
     },
     {
       "relation": "imports",
@@ -6829,9 +6838,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "middleware_auth_authrequest",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authrequest"
     },
     {
       "relation": "imports",
@@ -6851,9 +6860,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "middleware_auth_authmiddleware",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authmiddleware"
     },
     {
       "relation": "imports",
@@ -6884,9 +6893,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "middleware_auth_authmiddleware",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authmiddleware"
     },
     {
       "relation": "imports",
@@ -6917,9 +6926,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "middleware_auth_authmiddleware",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authmiddleware"
     },
     {
       "relation": "imports",
@@ -6928,9 +6937,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "middleware_auth_authmiddleware",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authmiddleware"
     },
     {
       "relation": "imports",
@@ -6950,9 +6959,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "middleware_auth_authmiddleware",
-      "confidence_score": 1.0
+      "target": "middleware_auth_authmiddleware"
     },
     {
       "relation": "imports",
@@ -7001,9 +7010,9 @@
       "source_file": "server/src/routes/agents.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agents_ts",
-      "target": "routes_agents_allowedfields",
-      "confidence_score": 1.0
+      "target": "routes_agents_allowedfields"
     },
     {
       "relation": "contains",
@@ -7011,9 +7020,9 @@
       "source_file": "server/src/routes/agents.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agents_ts",
-      "target": "routes_agents_updates",
-      "confidence_score": 1.0
+      "target": "routes_agents_updates"
     },
     {
       "relation": "contains",
@@ -7021,9 +7030,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "routes_agenttasks_router",
-      "confidence_score": 1.0
+      "target": "routes_agenttasks_router"
     },
     {
       "relation": "contains",
@@ -7031,9 +7040,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "routes_agenttasks_deploymentid",
-      "confidence_score": 1.0
+      "target": "routes_agenttasks_deploymentid"
     },
     {
       "relation": "contains",
@@ -7041,9 +7050,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "routes_agenttasks_metrics",
-      "confidence_score": 1.0
+      "target": "routes_agenttasks_metrics"
     },
     {
       "relation": "contains",
@@ -7051,9 +7060,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "routes_agenttasks_results",
-      "confidence_score": 1.0
+      "target": "routes_agenttasks_results"
     },
     {
       "relation": "contains",
@@ -7061,9 +7070,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "routes_agenttasks_leadid",
-      "confidence_score": 1.0
+      "target": "routes_agenttasks_leadid"
     },
     {
       "relation": "contains",
@@ -7071,9 +7080,9 @@
       "source_file": "server/src/routes/agentTasks.ts",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_agenttasks_ts",
-      "target": "routes_agenttasks_leaddep",
-      "confidence_score": 1.0
+      "target": "routes_agenttasks_leaddep"
     },
     {
       "relation": "contains",
@@ -7121,9 +7130,9 @@
       "source_file": "server/src/routes/payments.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_payments_ts",
-      "target": "routes_payments_plan_prices",
-      "confidence_score": 1.0
+      "target": "routes_payments_plan_prices"
     },
     {
       "relation": "contains",
@@ -7131,9 +7140,9 @@
       "source_file": "server/src/routes/payments.ts",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_payments_ts",
-      "target": "routes_payments_orderpayload",
-      "confidence_score": 1.0
+      "target": "routes_payments_orderpayload"
     },
     {
       "relation": "contains",
@@ -7141,9 +7150,9 @@
       "source_file": "server/src/routes/payments.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_payments_ts",
-      "target": "routes_payments_auth",
-      "confidence_score": 1.0
+      "target": "routes_payments_auth"
     },
     {
       "relation": "contains",
@@ -7171,9 +7180,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "routes_admin_router",
-      "confidence_score": 1.0
+      "target": "routes_admin_router"
     },
     {
       "relation": "contains",
@@ -7181,9 +7190,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "routes_admin_prisma",
-      "confidence_score": 1.0
+      "target": "routes_admin_prisma"
     },
     {
       "relation": "contains",
@@ -7191,9 +7200,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "routes_admin_where",
-      "confidence_score": 1.0
+      "target": "routes_admin_where"
     },
     {
       "relation": "contains",
@@ -7201,9 +7210,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "routes_admin_pagenum",
-      "confidence_score": 1.0
+      "target": "routes_admin_pagenum"
     },
     {
       "relation": "contains",
@@ -7211,9 +7220,9 @@
       "source_file": "server/src/routes/admin.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_admin_ts",
-      "target": "routes_admin_limitnum",
-      "confidence_score": 1.0
+      "target": "routes_admin_limitnum"
     },
     {
       "relation": "contains",
@@ -7261,9 +7270,9 @@
       "source_file": "server/src/routes/deployments.ts",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_deployments_ts",
-      "target": "routes_deployments_id",
-      "confidence_score": 1.0
+      "target": "routes_deployments_id"
     },
     {
       "relation": "contains",
@@ -7291,9 +7300,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "routes_sse_router",
-      "confidence_score": 1.0
+      "target": "routes_sse_router"
     },
     {
       "relation": "contains",
@@ -7301,9 +7310,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "routes_sse_prisma",
-      "confidence_score": 1.0
+      "target": "routes_sse_prisma"
     },
     {
       "relation": "contains",
@@ -7311,9 +7320,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "routes_sse_sseclients",
-      "confidence_score": 1.0
+      "target": "routes_sse_sseclients"
     },
     {
       "relation": "contains",
@@ -7321,9 +7330,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "routes_sse_broadcasttouser",
-      "confidence_score": 1.0
+      "target": "routes_sse_broadcasttouser"
     },
     {
       "relation": "contains",
@@ -7331,9 +7340,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "routes_sse_heartbeat",
-      "confidence_score": 1.0
+      "target": "routes_sse_heartbeat"
     },
     {
       "relation": "contains",
@@ -7341,9 +7350,9 @@
       "source_file": "server/src/routes/sse.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_sse_ts",
-      "target": "routes_sse_remaining",
-      "confidence_score": 1.0
+      "target": "routes_sse_remaining"
     },
     {
       "relation": "imports_from",
@@ -7352,9 +7361,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "server_src_routes_sse_ts",
-      "confidence_score": 1.0
+      "target": "server_src_routes_sse_ts"
     },
     {
       "relation": "imports",
@@ -7363,9 +7372,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "routes_sse_broadcasttouser",
-      "confidence_score": 1.0
+      "target": "routes_sse_broadcasttouser"
     },
     {
       "relation": "contains",
@@ -7373,9 +7382,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "routes_analytics_router",
-      "confidence_score": 1.0
+      "target": "routes_analytics_router"
     },
     {
       "relation": "contains",
@@ -7383,9 +7392,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "routes_analytics_prisma",
-      "confidence_score": 1.0
+      "target": "routes_analytics_prisma"
     },
     {
       "relation": "contains",
@@ -7393,9 +7402,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "routes_analytics_now",
-      "confidence_score": 1.0
+      "target": "routes_analytics_now"
     },
     {
       "relation": "contains",
@@ -7403,9 +7412,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "routes_analytics_thirtydaysago",
-      "confidence_score": 1.0
+      "target": "routes_analytics_thirtydaysago"
     },
     {
       "relation": "contains",
@@ -7413,9 +7422,9 @@
       "source_file": "server/src/routes/analytics.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_analytics_ts",
-      "target": "routes_analytics_sevendaysago",
-      "confidence_score": 1.0
+      "target": "routes_analytics_sevendaysago"
     },
     {
       "relation": "contains",
@@ -7453,9 +7462,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "routes_auth_loginattempts",
-      "confidence_score": 1.0
+      "target": "routes_auth_loginattempts"
     },
     {
       "relation": "contains",
@@ -7463,9 +7472,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "routes_auth_now",
-      "confidence_score": 1.0
+      "target": "routes_auth_now"
     },
     {
       "relation": "contains",
@@ -7473,9 +7482,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "routes_auth_attempts",
-      "confidence_score": 1.0
+      "target": "routes_auth_attempts"
     },
     {
       "relation": "contains",
@@ -7483,9 +7492,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "routes_auth_waitsec",
-      "confidence_score": 1.0
+      "target": "routes_auth_waitsec"
     },
     {
       "relation": "contains",
@@ -7533,9 +7542,9 @@
       "source_file": "server/src/routes/auth.ts",
       "source_location": "L245",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_auth_ts",
-      "target": "routes_auth_client",
-      "confidence_score": 1.0
+      "target": "routes_auth_client"
     },
     {
       "relation": "contains",
@@ -7553,9 +7562,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "routes_tickets_router",
-      "confidence_score": 1.0
+      "target": "routes_tickets_router"
     },
     {
       "relation": "contains",
@@ -7563,9 +7572,9 @@
       "source_file": "server/src/routes/tickets.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_src_routes_tickets_ts",
-      "target": "routes_tickets_prisma",
-      "confidence_score": 1.0
+      "target": "routes_tickets_prisma"
     },
     {
       "relation": "contains",
@@ -7603,9 +7612,9 @@
       "source_file": "server/tests/api.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_tests_api_test_ts",
-      "target": "tests_api_test_api",
-      "confidence_score": 1.0
+      "target": "tests_api_test_api"
     },
     {
       "relation": "contains",
@@ -7613,9 +7622,9 @@
       "source_file": "server/tests/api.test.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_tests_api_test_ts",
-      "target": "tests_api_test_runtests",
-      "confidence_score": 1.0
+      "target": "tests_api_test_runtests"
     },
     {
       "relation": "contains",
@@ -8159,28 +8168,6 @@
       "target": "client_src_components_layouts_publiclayout_tsx"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_app_tsx",
-      "target": "client_src_components_layouts_dashboardlayout_tsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_app_tsx",
-      "target": "client_src_components_layouts_adminlayout_tsx",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/App.tsx",
@@ -8236,9 +8223,52 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_about",
-      "confidence_score": 1.0
+      "target": "src_app_about"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_app_tsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/main.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_main_tsx",
+      "target": "client_src_app_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_app_tsx",
+      "target": "client_src_components_layouts_dashboardlayout_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_app_tsx",
+      "target": "client_src_components_layouts_adminlayout_tsx"
     },
     {
       "relation": "contains",
@@ -8316,9 +8346,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_settings",
-      "confidence_score": 1.0
+      "target": "src_app_settings"
     },
     {
       "relation": "contains",
@@ -8326,9 +8356,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_changepassword",
-      "confidence_score": 1.0
+      "target": "src_app_changepassword"
     },
     {
       "relation": "contains",
@@ -8336,9 +8366,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_support",
-      "confidence_score": 1.0
+      "target": "src_app_support"
     },
     {
       "relation": "contains",
@@ -8346,9 +8376,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_analytics",
-      "confidence_score": 1.0
+      "target": "src_app_analytics"
     },
     {
       "relation": "contains",
@@ -8356,9 +8386,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_adminoverview",
-      "confidence_score": 1.0
+      "target": "src_app_adminoverview"
     },
     {
       "relation": "contains",
@@ -8366,9 +8396,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_adminusers",
-      "confidence_score": 1.0
+      "target": "src_app_adminusers"
     },
     {
       "relation": "contains",
@@ -8376,9 +8406,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_adminagents",
-      "confidence_score": 1.0
+      "target": "src_app_adminagents"
     },
     {
       "relation": "contains",
@@ -8386,9 +8416,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_adminaudits",
-      "confidence_score": 1.0
+      "target": "src_app_adminaudits"
     },
     {
       "relation": "contains",
@@ -8396,30 +8426,9 @@
       "source_file": "client/src/App.tsx",
       "source_location": "L29",
       "weight": 1.0,
-      "source": "client_src_app_tsx",
-      "target": "src_app_adminleads",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L27",
-      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "client_src_app_tsx",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/main.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_main_tsx",
-      "target": "client_src_app_tsx"
+      "target": "src_app_adminleads"
     },
     {
       "relation": "contains",
@@ -8438,9 +8447,9 @@
       "source_file": "client/src/main.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_main_tsx",
-      "target": "client_src_components_errorboundary_tsx",
-      "confidence_score": 1.0
+      "target": "client_src_components_errorboundary_tsx"
     },
     {
       "relation": "contains",
@@ -8448,9 +8457,9 @@
       "source_file": "client/src/hooks/useSSE.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_hooks_usesse_ts",
-      "target": "hooks_usesse_ssemessage",
-      "confidence_score": 1.0
+      "target": "hooks_usesse_ssemessage"
     },
     {
       "relation": "contains",
@@ -8458,9 +8467,9 @@
       "source_file": "client/src/hooks/useSSE.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_hooks_usesse_ts",
-      "target": "hooks_usesse_usesse",
-      "confidence_score": 1.0
+      "target": "hooks_usesse_usesse"
     },
     {
       "relation": "contains",
@@ -8468,9 +8477,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_components_errorboundary_tsx",
-      "target": "components_errorboundary_props",
-      "confidence_score": 1.0
+      "target": "components_errorboundary_props"
     },
     {
       "relation": "contains",
@@ -8478,9 +8487,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_components_errorboundary_tsx",
-      "target": "components_errorboundary_state",
-      "confidence_score": 1.0
+      "target": "components_errorboundary_state"
     },
     {
       "relation": "contains",
@@ -8488,9 +8497,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_components_errorboundary_tsx",
-      "target": "components_errorboundary_errorboundary",
-      "confidence_score": 1.0
+      "target": "components_errorboundary_errorboundary"
     },
     {
       "relation": "method",
@@ -8498,9 +8507,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_errorboundary_errorboundary",
-      "target": "components_errorboundary_errorboundary_constructor",
-      "confidence_score": 1.0
+      "target": "components_errorboundary_errorboundary_constructor"
     },
     {
       "relation": "method",
@@ -8508,9 +8517,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_errorboundary_errorboundary",
-      "target": "components_errorboundary_errorboundary_getderivedstatefromerror",
-      "confidence_score": 1.0
+      "target": "components_errorboundary_errorboundary_getderivedstatefromerror"
     },
     {
       "relation": "method",
@@ -8518,9 +8527,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_errorboundary_errorboundary",
-      "target": "components_errorboundary_errorboundary_componentdidcatch",
-      "confidence_score": 1.0
+      "target": "components_errorboundary_errorboundary_componentdidcatch"
     },
     {
       "relation": "method",
@@ -8528,40 +8537,9 @@
       "source_file": "client/src/components/ErrorBoundary.tsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_errorboundary_errorboundary",
-      "target": "components_errorboundary_errorboundary_render",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_components_layouts_dashboardlayout_tsx",
-      "target": "client_src_api_client_ts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_components_layouts_dashboardlayout_tsx",
-      "target": "layouts_dashboardlayout_sidebaritem"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_components_layouts_dashboardlayout_tsx",
-      "target": "layouts_dashboardlayout_dashboardlayout"
+      "target": "components_errorboundary_errorboundary_render"
     },
     {
       "relation": "contains",
@@ -8582,16 +8560,6 @@
       "confidence_score": 1.0,
       "source": "client_src_components_layouts_publiclayout_tsx",
       "target": "layouts_publiclayout_liveticker"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/PublicLayout.tsx",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_components_layouts_publiclayout_tsx",
-      "target": "layouts_publiclayout_activitytoasts"
     },
     {
       "relation": "contains",
@@ -8624,35 +8592,14 @@
       "target": "layouts_publiclayout_publiclayout"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/AdminLayout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "client_src_components_layouts_adminlayout_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/AdminLayout.tsx",
-      "source_location": "L6",
+      "source_file": "client/src/components/layouts/PublicLayout.tsx",
+      "source_location": "L77",
       "weight": 1.0,
-      "source": "client_src_components_layouts_adminlayout_tsx",
-      "target": "layouts_adminlayout_sidebaritem",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/layouts/AdminLayout.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "client_src_components_layouts_adminlayout_tsx",
-      "target": "layouts_adminlayout_adminlayout",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_publiclayout_tsx",
+      "target": "layouts_publiclayout_activitytoasts"
     },
     {
       "relation": "contains",
@@ -8678,34 +8625,12 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Register.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "client_src_pages_register_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Login.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_login_tsx",
-      "target": "client_src_api_client_ts"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "client/src/pages/Pricing.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_pricing_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8744,12 +8669,56 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_dashboardlayout_tsx",
+      "target": "client_src_api_client_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/layouts/AdminLayout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_adminlayout_tsx",
+      "target": "client_src_api_client_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Register.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_register_tsx",
+      "target": "client_src_api_client_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Login.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_login_tsx",
+      "target": "client_src_api_client_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "client/src/pages/admin/Users.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_admin_users_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8758,9 +8727,9 @@
       "source_file": "client/src/pages/admin/Leads.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_admin_leads_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8769,9 +8738,9 @@
       "source_file": "client/src/pages/admin/Overview.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_admin_overview_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8780,9 +8749,9 @@
       "source_file": "client/src/pages/admin/Audits.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_admin_audits_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8791,9 +8760,9 @@
       "source_file": "client/src/pages/admin/Agents.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_admin_agents_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8802,9 +8771,9 @@
       "source_file": "client/src/pages/dashboard/Analytics.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_dashboard_analytics_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8813,9 +8782,9 @@
       "source_file": "client/src/pages/dashboard/Leads.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_dashboard_leads_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8824,9 +8793,9 @@
       "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_dashboard_agentlogs_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8846,9 +8815,9 @@
       "source_file": "client/src/pages/dashboard/Support.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_dashboard_support_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8857,9 +8826,9 @@
       "source_file": "client/src/pages/dashboard/Settings.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_dashboard_settings_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8868,9 +8837,9 @@
       "source_file": "client/src/pages/dashboard/Billing.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_dashboard_billing_tsx",
-      "target": "client_src_api_client_ts",
-      "confidence_score": 1.0
+      "target": "client_src_api_client_ts"
     },
     {
       "relation": "imports_from",
@@ -8910,9 +8879,9 @@
       "source_file": "client/src/pages/Register.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_register_tsx",
-      "target": "client_src_store_authstore_ts",
-      "confidence_score": 1.0
+      "target": "client_src_store_authstore_ts"
     },
     {
       "relation": "imports_from",
@@ -8932,9 +8901,9 @@
       "source_file": "client/src/pages/Register.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_register_tsx",
-      "target": "store_authstore_useauthstore",
-      "confidence_score": 1.0
+      "target": "store_authstore_useauthstore"
     },
     {
       "relation": "imports",
@@ -8972,32 +8941,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Register.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_register_tsx",
-      "target": "pages_register_register"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Login.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_login_tsx",
-      "target": "pages_login_login"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "client/src/pages/Pricing.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_pricing_tsx",
-      "target": "pages_pricing_plans",
-      "confidence_score": 1.0
+      "target": "pages_pricing_plans"
     },
     {
       "relation": "contains",
@@ -9015,9 +8964,9 @@
       "source_file": "client/src/pages/About.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_src_pages_about_tsx",
-      "target": "pages_about_about",
-      "confidence_score": 1.0
+      "target": "pages_about_about"
     },
     {
       "relation": "contains",
@@ -9028,6 +8977,16 @@
       "confidence_score": 1.0,
       "source": "client_src_pages_landing_tsx",
       "target": "pages_landing_landing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/AgentDetail.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "client_src_pages_agentdetail_tsx",
+      "target": "pages_agentdetail_agentsimulator",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9058,316 +9017,6 @@
       "confidence_score": 1.0,
       "source": "client_src_pages_agents_tsx",
       "target": "pages_agents_agents"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Users.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_users_tsx",
-      "target": "admin_users_adminuser",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Users.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_users_tsx",
-      "target": "admin_users_adminusers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_leads_tsx",
-      "target": "admin_leads_lead",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_leads_tsx",
-      "target": "admin_leads_adminuser",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Leads.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_leads_tsx",
-      "target": "admin_leads_adminleads",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Overview.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_overview_tsx",
-      "target": "admin_overview_platformstats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Overview.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_overview_tsx",
-      "target": "admin_overview_adminoverview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Audits.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_audits_tsx",
-      "target": "admin_audits_audit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Audits.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_audits_tsx",
-      "target": "admin_audits_adminaudits",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Agents.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_agents_tsx",
-      "target": "admin_agents_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/admin/Agents.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "client_src_pages_admin_agents_tsx",
-      "target": "admin_agents_adminagents",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Analytics.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_analytics_tsx",
-      "target": "dashboard_analytics_colors",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Analytics.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_analytics_tsx",
-      "target": "dashboard_analytics_analytics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Leads.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_leads_tsx",
-      "target": "dashboard_leads_leads"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_agentlogs_tsx",
-      "target": "dashboard_agentlogs_agentlogs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/ChangePassword.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_changepassword_tsx",
-      "target": "dashboard_changepassword_changepassword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_overview_tsx",
-      "target": "dashboard_overview_sparklinedata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_overview_tsx",
-      "target": "dashboard_overview_sparklinedataup"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_overview_tsx",
-      "target": "dashboard_overview_metriccard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_overview_tsx",
-      "target": "dashboard_overview_overview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Overview.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_overview_tsx",
-      "target": "dashboard_overview_bot"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_support_tsx",
-      "target": "dashboard_support_ticket",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_support_tsx",
-      "target": "dashboard_support_faqs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Support.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_support_tsx",
-      "target": "dashboard_support_support",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Settings.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_settings_tsx",
-      "target": "dashboard_settings_settings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_billing_tsx",
-      "target": "dashboard_billing_subscription",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_billing_tsx",
-      "target": "dashboard_billing_paymentorder",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_billing_tsx",
-      "target": "dashboard_billing_planprices",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "client_src_pages_dashboard_billing_tsx",
-      "target": "dashboard_billing_planfeatures",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/Billing.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_billing_tsx",
-      "target": "dashboard_billing_billing"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/dashboard/MyAgents.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard_myagents_tsx",
-      "target": "dashboard_myagents_myagents"
     },
     {
       "relation": "contains",
@@ -9545,9 +9194,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "production_md",
-      "target": "neuronflow_production",
-      "confidence_score": 1.0
+      "target": "neuronflow_production"
     },
     {
       "relation": "contains",
@@ -9555,9 +9204,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "production_md",
-      "target": "neuronflow_production_neuronflow_production_deployment_guide",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_neuronflow_production_deployment_guide"
     },
     {
       "relation": "contains",
@@ -9565,9 +9214,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "production_md",
-      "target": "neuronflow_production_3",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_3"
     },
     {
       "relation": "contains",
@@ -9575,9 +9224,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_prerequisites",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_prerequisites"
     },
     {
       "relation": "contains",
@@ -9585,9 +9234,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_quick_start_docker",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_quick_start_docker"
     },
     {
       "relation": "contains",
@@ -9595,9 +9244,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_manual_deployment_systemd",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_manual_deployment_systemd"
     },
     {
       "relation": "contains",
@@ -9605,9 +9254,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_environment_variables",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_environment_variables"
     },
     {
       "relation": "contains",
@@ -9615,9 +9264,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_ssl_setup_let_s_encrypt",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_ssl_setup_let_s_encrypt"
     },
     {
       "relation": "contains",
@@ -9625,9 +9274,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_monitoring",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_monitoring"
     },
     {
       "relation": "contains",
@@ -9635,9 +9284,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_security_checklist",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_security_checklist"
     },
     {
       "relation": "contains",
@@ -9645,9 +9294,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_troubleshooting",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_troubleshooting"
     },
     {
       "relation": "contains",
@@ -9655,9 +9304,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_scale",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_scale"
     },
     {
       "relation": "contains",
@@ -9665,9 +9314,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L188",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_backup",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_backup"
     },
     {
       "relation": "contains",
@@ -9675,9 +9324,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L202",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_3",
-      "target": "neuronflow_production_support",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_support"
     },
     {
       "relation": "contains",
@@ -9685,9 +9334,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_quick_start_docker",
-      "target": "neuronflow_production_codeblock_1",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_1"
     },
     {
       "relation": "contains",
@@ -9695,9 +9344,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_manual_deployment_systemd",
-      "target": "neuronflow_production_codeblock_2",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_2"
     },
     {
       "relation": "contains",
@@ -9705,9 +9354,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_manual_deployment_systemd",
-      "target": "neuronflow_production_services_running",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_services_running"
     },
     {
       "relation": "contains",
@@ -9715,9 +9364,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_environment_variables",
-      "target": "neuronflow_production_generate_jwt_secret",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_generate_jwt_secret"
     },
     {
       "relation": "contains",
@@ -9725,9 +9374,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_generate_jwt_secret",
-      "target": "neuronflow_production_codeblock_3",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_3"
     },
     {
       "relation": "contains",
@@ -9735,9 +9384,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_ssl_setup_let_s_encrypt",
-      "target": "neuronflow_production_codeblock_4",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_4"
     },
     {
       "relation": "contains",
@@ -9745,9 +9394,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_monitoring",
-      "target": "neuronflow_production_health_check",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_health_check"
     },
     {
       "relation": "contains",
@@ -9755,9 +9404,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_monitoring",
-      "target": "neuronflow_production_logs",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_logs"
     },
     {
       "relation": "contains",
@@ -9765,9 +9414,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_monitoring",
-      "target": "neuronflow_production_cron_jobs_already_configured",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_cron_jobs_already_configured"
     },
     {
       "relation": "contains",
@@ -9775,9 +9424,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_health_check",
-      "target": "neuronflow_production_codeblock_5",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_5"
     },
     {
       "relation": "contains",
@@ -9785,9 +9434,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_logs",
-      "target": "neuronflow_production_codeblock_6",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_6"
     },
     {
       "relation": "contains",
@@ -9795,9 +9444,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_troubleshooting",
-      "target": "neuronflow_production_api_not_responding",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_api_not_responding"
     },
     {
       "relation": "contains",
@@ -9805,9 +9454,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_troubleshooting",
-      "target": "neuronflow_production_database_connection_failed",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_database_connection_failed"
     },
     {
       "relation": "contains",
@@ -9815,9 +9464,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_troubleshooting",
-      "target": "neuronflow_production_redis_connection_failed",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_redis_connection_failed"
     },
     {
       "relation": "contains",
@@ -9825,9 +9474,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_troubleshooting",
-      "target": "neuronflow_production_ssl_certificate_expired",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_ssl_certificate_expired"
     },
     {
       "relation": "contains",
@@ -9835,9 +9484,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_api_not_responding",
-      "target": "neuronflow_production_codeblock_7",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_7"
     },
     {
       "relation": "contains",
@@ -9845,9 +9494,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_database_connection_failed",
-      "target": "neuronflow_production_codeblock_8",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_8"
     },
     {
       "relation": "contains",
@@ -9855,9 +9504,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_redis_connection_failed",
-      "target": "neuronflow_production_codeblock_9",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_9"
     },
     {
       "relation": "contains",
@@ -9865,9 +9514,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L161",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_ssl_certificate_expired",
-      "target": "neuronflow_production_codeblock_10",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_10"
     },
     {
       "relation": "contains",
@@ -9875,9 +9524,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L170",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_scale",
-      "target": "neuronflow_production_horizontal_scaling_docker",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_horizontal_scaling_docker"
     },
     {
       "relation": "contains",
@@ -9885,9 +9534,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_scale",
-      "target": "neuronflow_production_vertical_scaling_systemd",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_vertical_scaling_systemd"
     },
     {
       "relation": "contains",
@@ -9895,9 +9544,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_horizontal_scaling_docker",
-      "target": "neuronflow_production_codeblock_11",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_11"
     },
     {
       "relation": "contains",
@@ -9905,9 +9554,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_vertical_scaling_systemd",
-      "target": "neuronflow_production_codeblock_12",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_12"
     },
     {
       "relation": "contains",
@@ -9915,9 +9564,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L190",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_backup",
-      "target": "neuronflow_production_database",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_database"
     },
     {
       "relation": "contains",
@@ -9925,9 +9574,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L195",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_backup",
-      "target": "neuronflow_production_redis_optional",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_redis_optional"
     },
     {
       "relation": "contains",
@@ -9935,9 +9584,9 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L191",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_database",
-      "target": "neuronflow_production_codeblock_13",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_13"
     },
     {
       "relation": "contains",
@@ -9945,9 +9594,379 @@
       "source_file": "PRODUCTION.md",
       "source_location": "L196",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "neuronflow_production_redis_optional",
-      "target": "neuronflow_production_codeblock_14",
-      "confidence_score": 1.0
+      "target": "neuronflow_production_codeblock_14"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_dashboardlayout_tsx",
+      "target": "layouts_dashboardlayout_sidebaritem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/layouts/DashboardLayout.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_dashboardlayout_tsx",
+      "target": "layouts_dashboardlayout_dashboardlayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/layouts/AdminLayout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_adminlayout_tsx",
+      "target": "layouts_adminlayout_sidebaritem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/layouts/AdminLayout.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_components_layouts_adminlayout_tsx",
+      "target": "layouts_adminlayout_adminlayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Register.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_register_tsx",
+      "target": "pages_register_register"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Login.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_login_tsx",
+      "target": "pages_login_login"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Users.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_users_tsx",
+      "target": "admin_users_adminuser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Users.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_users_tsx",
+      "target": "admin_users_adminusers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_leads_tsx",
+      "target": "admin_leads_lead"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_leads_tsx",
+      "target": "admin_leads_adminuser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Leads.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_leads_tsx",
+      "target": "admin_leads_adminleads"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Overview.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_overview_tsx",
+      "target": "admin_overview_platformstats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Overview.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_overview_tsx",
+      "target": "admin_overview_adminoverview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Audits.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_audits_tsx",
+      "target": "admin_audits_audit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Audits.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_audits_tsx",
+      "target": "admin_audits_adminaudits"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Agents.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_agents_tsx",
+      "target": "admin_agents_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/admin/Agents.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_admin_agents_tsx",
+      "target": "admin_agents_adminagents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Analytics.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_analytics_tsx",
+      "target": "dashboard_analytics_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Analytics.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_analytics_tsx",
+      "target": "dashboard_analytics_analytics"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Leads.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_leads_tsx",
+      "target": "dashboard_leads_leads"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/AgentLogs.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_agentlogs_tsx",
+      "target": "dashboard_agentlogs_agentlogs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/ChangePassword.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_changepassword_tsx",
+      "target": "dashboard_changepassword_changepassword"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_overview_tsx",
+      "target": "dashboard_overview_sparklinedata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_overview_tsx",
+      "target": "dashboard_overview_sparklinedataup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_overview_tsx",
+      "target": "dashboard_overview_metriccard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_overview_tsx",
+      "target": "dashboard_overview_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Overview.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_overview_tsx",
+      "target": "dashboard_overview_bot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_support_tsx",
+      "target": "dashboard_support_ticket"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_support_tsx",
+      "target": "dashboard_support_faqs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Support.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_support_tsx",
+      "target": "dashboard_support_support"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Settings.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_settings_tsx",
+      "target": "dashboard_settings_settings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_billing_tsx",
+      "target": "dashboard_billing_subscription"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_billing_tsx",
+      "target": "dashboard_billing_paymentorder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_billing_tsx",
+      "target": "dashboard_billing_planprices"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_billing_tsx",
+      "target": "dashboard_billing_planfeatures"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/Billing.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_billing_tsx",
+      "target": "dashboard_billing_billing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/dashboard/MyAgents.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard_myagents_tsx",
+      "target": "dashboard_myagents_myagents"
     },
     {
       "relation": "references",
@@ -10200,5 +10219,5 @@
       "source_file": "client/src/pages/Landing.tsx, client/src/pages/Agents.tsx, client/src/pages/AgentDetail.tsx, client/src/pages/dashboard/MyAgents.tsx"
     }
   ],
-  "built_at_commit": "09a2b9964f75bcfe6e9f395e9cac5a19a7d26c03"
+  "built_at_commit": "35267d925f5ac61dfbddc124a545e02a30654920"
 }
