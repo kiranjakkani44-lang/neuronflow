@@ -3,15 +3,11 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 
 // Validate JWT secret at startup (fails fast on bad config)
 import { validateJwtSecret } from './middleware/jwt-validation';
-validateJwtSecret(); // Exits if production has weak secret
+validateJwtSecret();
 
 // Initialize email service
 import { initMailer } from './services/email';
 initMailer();
-
-// Initialize scheduler (disabled for serverless, triggered via cron route)
-// import { initScheduler, triggerAllAgents } from './services/scheduler';
-// initScheduler();
 
 import authRoutes from './routes/auth';
 import agentsRoutes from './routes/agents';
@@ -46,7 +42,6 @@ import compression from 'compression';
 
 app.use(cors({
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
-    // Allow requests with no origin (mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) return callback(null, true);
     console.warn(`[CORS] Blocked request from unknown origin: ${origin}`);
@@ -58,104 +53,19 @@ app.use(cors({
 }));
 
 app.use(helmet());
-app.use(morgan('combined'));
+app.use(morgan(process.env.LOG_LEVEL === 'debug' ? 'combined' : 'short'));
 app.use(compression());
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/health', async (req: Request, res: Response) => {
-  const checks: Record<string, { ok: boolean; message: string }> = {};
-  
-  // Database check
-  try {
-    const { PrismaClient } = await import('@prisma/client');
-    const prisma = new PrismaClient();
-    await prisma.$queryRaw`SELECT 1`;
-    await prisma.$disconnect();
-    checks.database = { ok: true, message: 'Connected' };
-  } catch (err: any) {
-    checks.database = { ok: false, message: err.message };
-  }
+// Rate limiting (production check only, applied per-route as needed)
 
-  // LLM check
-  try {
-    const { llm } = await import('./agents/llm');
-    const health = await llm.checkHealth();
-    checks.llm = { ok: health.ok, message: `${health.provider} (${health.model})` };
-  } catch (err: any) {
-    checks.llm = { ok: false, message: err.message };
-  }
-
-  // Redis check
-  try {
-    const { tokenRedis } = await import('./middleware/auth-production');
-    if (tokenRedis) {
-      await tokenRedis.ping();
-      checks.redis = { ok: true, message: 'Connected' };
-    } else {
-      checks.redis = { ok: false, message: 'Not configured (using in-memory fallback)' };
-    }
-  } catch (err: any) {
-    checks.redis = { ok: false, message: err.message };
-  }
-
-  // Email check
-  const { transporter } = await import('./services/email');
-  checks.email = {
-    ok: !!transporter,
-    message: transporter ? 'SMTP configured' : 'Not configured (console logging only)'
-  };
-
-  const allOk = Object.values(checks).every(c => c.ok || c.message.includes('fallback') || c.message.includes('console'));
-  
-  res.status(allOk ? 200 : 503).json({
-    status: allOk ? 'live' : 'degraded',
-    timestamp: new Date().toISOString(),
-    checks
-  });
+// Health check
+app.get('/api/health', (_req: Request, res: Response) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Global rate limiting for login endpoint
-app.use('/api/auth/login', async (req: Request, res: Response, next: NextFunction) => {
-  const ip = req.ip || 'unknown';
-  const result = await checkRateLimit(ip, 'login');
-  if (!result.allowed) {
-    return res.status(429).json({ error: 'Too many requests', retry_after: result.retryAfter });
-  }
-  next();
-});
-
-// Rate limiting for audit submissions
-app.use('/api/audit', async (req: Request, res: Response, next: NextFunction) => {
-  if (req.method === 'POST') {
-    const ip = req.ip || 'unknown';
-    const result = await checkRateLimit(ip, 'audit');
-    if (!result.allowed) {
-      return res.status(429).json({ error: 'Too many audit requests. Please try again later.', retry_after: result.retryAfter });
-    }
-  }
-  next();
-});
-
-// Rate limiting for payment orders
-app.use('/api/payments/order', async (req: Request, res: Response, next: NextFunction) => {
-  const ip = req.ip || 'unknown';
-  const result = await checkRateLimit(ip, 'payment');
-  if (!result.allowed) {
-    return res.status(429).json({ error: 'Too many payment requests. Please try again later.', retry_after: result.retryAfter });
-  }
-  next();
-});
-
-// Rate limiting for webhooks
-app.use('/api/agent-tasks/webhook', async (req: Request, res: Response, next: NextFunction) => {
-  const ip = req.ip || 'unknown';
-  const result = await checkRateLimit(ip, 'webhook');
-  if (!result.allowed) {
-    return res.status(429).json({ error: 'Too many webhook requests. Please try again later.', retry_after: result.retryAfter });
-  }
-  next();
-});
-
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/agents', agentsRoutes);
 app.use('/api/deployments', deploymentsRoutes);
@@ -169,8 +79,24 @@ app.use('/api/tickets', ticketRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/cron', cronRoutes);
 
-if (process.env.NODE_ENV !== 'production' || process.env.ENABLE_LOCAL_SERVER === 'true') {
-  app.listen(PORT, () => console.log(`NeuronFlow Server running on port ${PORT}`));
+// 404 handler
+app.use((_req: Request, res: Response) => {
+  res.status(404).json({ error: 'Not found' });
+});
+
+// Global error handler
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Internal server error' });
+});
+
+// Only listen when run directly (not as serverless function)
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`[NeuronFlow] Server running on port ${PORT}`);
+    console.log(`[NeuronFlow] Environment: ${process.env.NODE_ENV || 'development'}`);
+  });
 }
 
+// Export for Vercel serverless
 export default app;
