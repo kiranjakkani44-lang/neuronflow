@@ -16,7 +16,7 @@ export function useSSE() {
     if (!token) return;
 
     try {
-      const url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/sse/stats`;
+      const url = '/api/sse/stats';
       const res = await fetch(url, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
