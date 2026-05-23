@@ -9,7 +9,7 @@ export function useSSE() {
   const [connected, setConnected] = useState(false);
   const [stats, setStats] = useState<{ agents: number; leads: number } | null>(null);
   const [updates, setUpdates] = useState<SSEMessage[]>([]);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const fetchStats = useCallback(async () => {
     const token = localStorage.getItem('token');
