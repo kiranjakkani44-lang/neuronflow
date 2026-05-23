@@ -9,70 +9,40 @@ export function useSSE() {
   const [connected, setConnected] = useState(false);
   const [stats, setStats] = useState<{ agents: number; leads: number } | null>(null);
   const [updates, setUpdates] = useState<SSEMessage[]>([]);
-  const abortRef = useRef<AbortController | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const connect = useCallback(() => {
+  const fetchStats = useCallback(async () => {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    if (abortRef.current) abortRef.current.abort();
-    const controller = new AbortController();
-    abortRef.current = controller;
-
-    const url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/sse/stream`;
-
-    fetch(url, {
-      headers: { 'Authorization': `Bearer ${token}` },
-      signal: controller.signal
-    }).then(async response => {
-      if (!response.ok || !response.body) {
+    try {
+      const url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/sse/stats`;
+      const res = await fetch(url, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      
+      if (res.ok) {
+        setConnected(true);
+        const data = await res.json();
+        setStats({ agents: data.activeAgents || 0, leads: data.leads || 0 });
+      } else {
         setConnected(false);
-        setTimeout(connect, 5000);
-        return;
       }
-
-      setConnected(true);
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
-      let currentEvent = 'message';
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
-
-        for (const line of lines) {
-          if (line.startsWith('event: ')) {
-            currentEvent = line.slice(7);
-          } else if (line.startsWith('data: ')) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (currentEvent === 'stats') setStats(data);
-              setUpdates(prev => [...prev.slice(-50), { event: currentEvent, data }]);
-            } catch {
-              // ignore
-            }
-          }
-        }
-      }
-    }).catch((err) => {
-      if (err.name !== 'AbortError') {
-        setConnected(false);
-        setTimeout(connect, 5000);
-      }
-    });
+    } catch (err) {
+      setConnected(false);
+    }
   }, []);
 
   useEffect(() => {
-    connect();
+    fetchStats(); // Initial fetch
+    intervalRef.current = setInterval(fetchStats, 10000); // Poll every 10s
+
     return () => {
-      if (abortRef.current) abortRef.current.abort();
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
-  }, [connect]);
+  }, [fetchStats]);
 
   return { connected, stats, updates };
 }

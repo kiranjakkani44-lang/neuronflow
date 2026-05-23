@@ -5,13 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc",
+    "build": "npm run prisma:generate && tsc",
     "start": "node dist/index.js",
     "test": "npx tsx tests/api.test.ts",
-    "prisma:generate": "prisma generate --schema=src/prisma/schema.prisma",
-    "prisma:push": "prisma db push --schema=src/prisma/schema.prisma",
-    "prisma:seed": "ts-node-dev src/prisma/seed.ts",
-    "prisma:studio": "prisma studio --schema=src/prisma/schema.prisma"
+    "prisma:generate": "prisma generate --schema=prisma/schema.prisma",
+    "prisma:push": "prisma db push --schema=prisma/schema.prisma",
+    "prisma:seed": "ts-node-dev prisma/seed.ts",
+    "prisma:studio": "prisma studio --schema=prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

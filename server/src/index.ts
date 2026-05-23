@@ -9,9 +9,9 @@ validateJwtSecret(); // Exits if production has weak secret
 import { initMailer } from './services/email';
 initMailer();
 
-// Initialize scheduler
-import { initScheduler, triggerAllAgents } from './services/scheduler';
-initScheduler();
+// Initialize scheduler (disabled for serverless, triggered via cron route)
+// import { initScheduler, triggerAllAgents } from './services/scheduler';
+// initScheduler();
 
 import authRoutes from './routes/auth';
 import agentsRoutes from './routes/agents';
@@ -24,6 +24,7 @@ import adminRoutes from './routes/admin';
 import sseRoutes from './routes/sse';
 import ticketRoutes from './routes/tickets';
 import analyticsRoutes from './routes/analytics';
+import cronRoutes from './routes/cron';
 import { checkRateLimit } from './middleware/auth-production';
 
 const app: Express = express();
@@ -166,5 +167,10 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/sse', sseRoutes);
 app.use('/api/tickets', ticketRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/cron', cronRoutes);
 
-app.listen(PORT, () => console.log(`NeuronFlow Server running on port ${PORT}`));
+if (process.env.NODE_ENV !== 'production' || process.env.ENABLE_LOCAL_SERVER === 'true') {
+  app.listen(PORT, () => console.log(`NeuronFlow Server running on port ${PORT}`));
+}
+
+export default app;
