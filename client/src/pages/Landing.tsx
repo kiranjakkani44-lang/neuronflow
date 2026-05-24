@@ -191,8 +191,7 @@ export default function Landing() {
                 ✦ Never miss an inbound call again, 24/7
               </div>
               
-              <div className="flex items-center justify-between border-t border-[var(--border)] pt-4">
-                <div className="font-syne font-bold">₹45,000</div>
+              <div className="flex items-center justify-end border-t border-[var(--border)] pt-4">
                 <Link to="/agents/ai-voice-inbound" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
               </div>
             </div>
@@ -210,8 +209,7 @@ export default function Landing() {
                 ✦ Reply to every customer in under 60 seconds
               </div>
               
-              <div className="flex items-center justify-between border-t border-[var(--border)] pt-4">
-                <div className="font-syne font-bold">₹35,000</div>
+              <div className="flex items-center justify-end border-t border-[var(--border)] pt-4">
                 <Link to="/agents/whatsapp-automation" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
               </div>
             </div>
@@ -229,8 +227,7 @@ export default function Landing() {
                 ✦ Only talk to leads ready to buy
               </div>
               
-              <div className="flex items-center justify-between border-t border-[var(--border)] pt-4">
-                <div className="font-syne font-bold">₹40,000</div>
+              <div className="flex items-center justify-end border-t border-[var(--border)] pt-4">
                 <Link to="/agents/lead-qualification" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
               </div>
             </div>

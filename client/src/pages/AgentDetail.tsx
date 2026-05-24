@@ -285,13 +285,11 @@ export default function AgentDetail() {
 
         <div>
           <div className="sticky top-24 bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-8">
-            <h3 className="font-mono text-xs text-[var(--text-dim)] mb-2 tracking-widest">DEPLOYMENT COST</h3>
-            <div className="font-syne font-extrabold text-5xl mb-2">₹{agent.price_one_time.toLocaleString('en-IN')}</div>
-            <div className="text-[var(--text-muted)] text-sm border-b border-[var(--border)] pb-6 mb-6">One-time setup fee</div>
+            <h3 className="font-mono text-xs text-[var(--text-dim)] mb-2 tracking-widest">READY TO DEPLOY</h3>
+            <div className="text-[var(--text-muted)] text-sm border-b border-[var(--border)] pb-6 mb-6">Get started with this agent today.</div>
 
             <ul className="space-y-3 mb-8 text-sm text-[var(--text-muted)]">
               <li className="flex justify-between"><span>Setup Time</span><span className="text-white font-mono">{agent.setup_time_days} days</span></li>
-              <li className="flex justify-between"><span>Maintenance</span><span className="text-white font-mono">from ₹4,999/mo</span></li>
               <li className="flex justify-between"><span>Compute</span><span className="text-white font-mono">Billed at cost</span></li>
             </ul>
 
