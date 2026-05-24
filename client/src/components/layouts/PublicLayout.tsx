@@ -27,16 +27,16 @@ const Navbar = () => {
             <span className="hidden sm:inline">Book Free Audit →</span>
             <span className="sm:hidden">Book Audit</span>
           </Link>
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-[var(--text)] p-1 hover:text-[var(--accent)] transition-colors">
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-[var(--text)] w-11 h-11 flex items-center justify-center hover:text-[var(--accent)] transition-colors">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
       
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-[#050810] border-b border-[var(--border)] p-4 flex flex-col shadow-xl">
-          <Link onClick={() => setIsOpen(false)} to="/agents" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3 border-b border-white/5">Agents</Link>
-          <Link onClick={() => setIsOpen(false)} to="/#how-it-works" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3">How it Works</Link>
+        <div className="md:hidden fixed inset-0 top-16 z-50 h-[calc(100vh-4rem)] bg-[#050810]/98 backdrop-blur-xl border-t border-[var(--border)] p-6 flex flex-col shadow-2xl">
+          <Link onClick={() => setIsOpen(false)} to="/agents" className="block text-lg font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-5 border-b border-white/5">Agents</Link>
+          <Link onClick={() => setIsOpen(false)} to="/#how-it-works" className="block text-lg font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-5">How it Works</Link>
         </div>
       )}
     </nav>

@@ -36,7 +36,7 @@ export default function Landing() {
   return (
     <div className="flex flex-col items-center w-full">
       {/* HERO SECTION */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-20 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-16 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Copy */}
         <div className="flex flex-col items-start z-10">
           <div className="px-4 py-1.5 rounded-full bg-white/5 border border-[var(--accent)] mb-8 flex items-center gap-2 backdrop-blur-sm">
@@ -44,7 +44,7 @@ export default function Landing() {
             <span className="font-mono text-xs tracking-wider text-[var(--text)]">18 AI AGENTS RUNNING LIVE</span>
           </div>
           
-          <h1 className="font-syne font-extrabold text-5xl lg:text-7xl leading-[1.1] tracking-[-0.03em] mb-6">
+          <h1 className="font-syne font-extrabold text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.1] tracking-[-0.03em] mb-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>Your Business.</motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)]">Running on Autopilot.</motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-[var(--text-muted)]">Starting Day 7.</motion.div>
@@ -63,7 +63,7 @@ export default function Landing() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 w-full border-t border-[var(--border)] pt-8">
+          <div className="grid grid-cols-3 gap-2 sm:gap-8 w-full border-t border-[var(--border)] pt-8">
             <div>
               <div className="font-syne font-extrabold text-2xl md:text-3xl text-[var(--text)] mb-1">8,420+</div>
               <div className="font-mono text-[10px] md:text-xs text-[var(--text-dim)] uppercase">Leads Captured</div>
@@ -129,11 +129,11 @@ export default function Landing() {
       </section>
       
       {/* PAIN POINTS */}
-      <section className="w-full bg-[var(--surface)] border-y border-[var(--border)] py-24" id="pain-points">
+      <section className="w-full bg-[var(--surface)] border-y border-[var(--border)] py-16 md:py-24" id="pain-points">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
             <div className="font-mono text-xs text-[var(--text-dim)] mb-4 uppercase tracking-widest">// THE_PROBLEM</div>
-            <h2 className="font-syne font-extrabold text-3xl md:text-5xl text-[var(--text)] max-w-2xl">Where your business bleeds revenue daily.</h2>
+            <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] text-[var(--text)] max-w-2xl">Where your business bleeds revenue daily.</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -159,12 +159,12 @@ export default function Landing() {
 
       
       {/* AGENT SHOWCASE / MARKETPLACE */}
-      <section className="w-full bg-[var(--surface)] py-24" id="agents">
+      <section className="w-full bg-[var(--surface)] py-16 md:py-24" id="agents">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <div className="font-mono text-xs text-[var(--text-dim)] mb-4 uppercase tracking-widest">// THE_SOLUTION</div>
-              <h2 className="font-syne font-extrabold text-3xl md:text-5xl text-[var(--text)]">Hire your AI workforce.</h2>
+              <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] text-[var(--text)]">Hire your AI workforce.</h2>
             </div>
             
             <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide w-full">
@@ -245,11 +245,11 @@ export default function Landing() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="w-full py-24" id="how-it-works">
+      <section className="w-full py-16 md:py-24" id="how-it-works">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
              <div className="font-mono text-xs text-[var(--text-dim)] mb-4 uppercase tracking-widest">// DEPLOYMENT</div>
-             <h2 className="font-syne font-extrabold text-3xl md:text-5xl">Live in 30 days. Guaranteed.</h2>
+             <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)]">Live in 30 days. Guaranteed.</h2>
           </div>
           
           <div className="relative">
@@ -280,11 +280,11 @@ export default function Landing() {
       </section>
 
       {/* ROI CALCULATOR */}
-      <section className="w-full bg-[var(--surface)] border-y border-[var(--border)] py-24" id="roi">
+      <section className="w-full bg-[var(--surface)] border-y border-[var(--border)] py-16 md:py-24" id="roi">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="font-mono text-xs text-[var(--text-dim)] mb-4 uppercase tracking-widest">// ROI_CALCULATOR</div>
-            <h2 className="font-syne font-extrabold text-3xl md:text-5xl mb-8">How much are you losing?</h2>
+            <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] mb-8">How much are you losing?</h2>
             
             <div className="flex flex-col gap-8">
               <div>
@@ -298,7 +298,7 @@ export default function Landing() {
                   max="100"
                   value={teamSize}
                   onChange={(e) => setTeamSize(parseInt(e.target.value))}
-                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-[var(--accent)] h-2 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
                 />
               </div>
               <div>
@@ -312,7 +312,7 @@ export default function Landing() {
                   max="40"
                   value={hoursWasted}
                   onChange={(e) => setHoursWasted(parseInt(e.target.value))}
-                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-[var(--accent)] h-2 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
                 />
               </div>
               <div>
@@ -327,7 +327,7 @@ export default function Landing() {
                   step="50"
                   value={hourlyCost}
                   onChange={(e) => setHourlyCost(parseInt(e.target.value))}
-                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-[var(--accent)] h-2 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
                 />
               </div>
               <div>
@@ -341,7 +341,7 @@ export default function Landing() {
                   max="200"
                   value={leadsLost}
                   onChange={(e) => setLeadsLost(parseInt(e.target.value))}
-                  className="w-full accent-[var(--accent)] h-1 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-[var(--accent)] h-2 bg-[var(--border)] rounded-lg appearance-none cursor-pointer"
                 />
               </div>
             </div>
@@ -381,10 +381,10 @@ export default function Landing() {
       </section>
 
       {/* PRICING */}
-      <section className="w-full py-24" id="pricing">
+      <section className="w-full py-16 md:py-24" id="pricing">
         <div className="max-w-7xl mx-auto px-6">
            <div className="text-center mb-16">
-             <h2 className="font-syne font-extrabold text-3xl md:text-5xl mb-4">Simple, transparent pricing.</h2>
+             <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] mb-4">Simple, transparent pricing.</h2>
              <p className="text-[var(--text-muted)]">One-time setup fee + affordable monthly maintenance.</p>
           </div>
           
@@ -446,11 +446,11 @@ export default function Landing() {
       </section>
 
       {/* CASE STUDIES TABS */}
-      <section className="w-full py-24 bg-[var(--surface)] border-y border-[var(--border)]">
+      <section className="w-full py-16 md:py-24 bg-[var(--surface)] border-y border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="font-mono text-xs text-[var(--accent)] mb-4 tracking-widest uppercase">// SUCCESS_STORIES</div>
-            <h2 className="font-syne font-extrabold text-3xl md:text-5xl mb-4">Proven Real-World Impact</h2>
+            <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] mb-4">Proven Real-World Impact</h2>
             <p className="text-[var(--text-muted)]">Select an industry to see how AI agents compare to traditional manual work.</p>
 
             <div className="flex justify-center gap-3 mt-8 flex-wrap">
@@ -543,7 +543,7 @@ export default function Landing() {
       </section>
 
       {/* COMPATIBILITY STACK GRID */}
-      <section className="w-full py-24 bg-[var(--bg)]">
+      <section className="w-full py-16 md:py-24 bg-[var(--bg)]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
             <div className="lg:col-span-1">
@@ -653,10 +653,10 @@ export default function Landing() {
 
 
       {/* CTA SECTION */}
-      <section className="w-full py-32 relative overflow-hidden">
+      <section className="w-full py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[var(--accent)] opacity-[0.03] pattern-grid" />
         <div className="max-w-4xl mx-auto px-6 text-center z-10 relative">
-          <h2 className="font-syne font-extrabold text-4xl md:text-6xl mb-6">Stop losing leads to your competitors.</h2>
+          <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3.75rem)] mb-6">Stop losing leads to your competitors.</h2>
           <p className="text-xl text-[var(--text-muted)] mb-10 max-w-2xl mx-auto">Get a custom deployment plan showing exactly which agents will generate the highest ROI for your specific business.</p>
           <Link to="/contact" className="inline-block px-10 py-5 bg-[var(--accent)] text-black font-bold text-lg rounded-lg hover:shadow-[0_0_30px_var(--border-glow)] hover:-translate-y-1 transition-all">
             Book Your Free Audit →

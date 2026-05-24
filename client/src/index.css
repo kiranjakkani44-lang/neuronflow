@@ -63,3 +63,28 @@ code, .font-mono {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
+/* Touch-friendly range sliders */
+input[type="range"] {
+  height: 8px; /* h-2 equivalent */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+}
