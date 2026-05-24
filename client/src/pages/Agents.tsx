@@ -38,7 +38,7 @@ export default function Agents() {
               <p className="text-[var(--text-muted)] text-sm mb-4 min-h-[4rem]">{agent.short_description}</p>
               <div className="bg-[var(--accent2)]/10 text-[var(--accent2)] p-2 rounded text-xs font-mono mb-4">✦ {agent.roi_promise}</div>
             </div>
-            <div className="flex items-center justify-end border-t border-[var(--border)] pt-4 mt-auto">
+            <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
               <Link to={`/agents/${agent.slug}`} className="px-4 py-2 bg-[var(--surface)] border border-[var(--border)] hover:bg-[var(--accent)] hover:text-black rounded text-xs font-bold transition-colors">Details →</Link>
             </div>
           </div>
