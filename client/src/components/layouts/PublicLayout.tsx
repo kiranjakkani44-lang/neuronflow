@@ -78,9 +78,9 @@ const LiveTicker = () => {
 const Navbar = () => (
   <nav className="sticky top-0 z-40 backdrop-blur-xl bg-[var(--bg)]/80 border-b border-[var(--border)]">
     <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <Link to="/" className="flex items-center gap-2">
+      <Link to="/" className="flex items-center gap-2 shrink-0">
         <Activity className="text-[var(--accent)]" size={24} />
-        <span className="font-syne font-extrabold text-2xl tracking-tight">Neuron<span className="text-[var(--accent)]">Flow</span></span>
+        <span className="font-syne font-extrabold text-xl md:text-2xl tracking-tight">Neuron<span className="text-[var(--accent)]">Flow</span></span>
       </Link>
       <div className="hidden md:flex gap-8">
         <Link to="/agents" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Agents</Link>
@@ -88,8 +88,9 @@ const Navbar = () => (
         <Link to="/pricing" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Pricing</Link>
       </div>
       <div>
-        <Link to="/contact" className="px-5 py-2.5 bg-[var(--accent)] text-black font-semibold rounded hover:shadow-[0_0_15px_var(--border-glow)] transition-all">
-          Book Free Audit →
+        <Link to="/contact" className="px-3 md:px-5 py-2 md:py-2.5 text-xs md:text-sm bg-[var(--accent)] text-black font-semibold rounded hover:shadow-[0_0_15px_var(--border-glow)] transition-all whitespace-nowrap">
+          <span className="hidden sm:inline">Book Free Audit →</span>
+          <span className="sm:hidden">Book Audit</span>
         </Link>
       </div>
     </div>
