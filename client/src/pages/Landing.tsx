@@ -185,7 +185,7 @@ export default function Landing() {
                 <div className="status-live animate-pulse">LIVE</div>
               </div>
               <h3 className="font-syne font-bold text-lg mb-2">AI Voice Agent (Inbound)</h3>
-              <p className="text-[var(--text-muted)] text-xs mb-6 h-12">An intelligent voice agent that answers every inbound call, qualifies leads, and transfers them to your CRM.</p>
+              <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">An intelligent voice agent that answers every inbound call, qualifies leads, and transfers them to your CRM.</p>
               
               <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
                 ✦ Never miss an inbound call again, 24/7
@@ -204,7 +204,7 @@ export default function Landing() {
                 <div className="status-live animate-pulse">LIVE</div>
               </div>
               <h3 className="font-syne font-bold text-lg mb-2">WhatsApp Automation</h3>
-              <p className="text-[var(--text-muted)] text-xs mb-6 h-12">Engage customers where they already are. Automate FAQs, provide order updates, and capture leads directly through WhatsApp.</p>
+              <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Engage customers where they already are. Automate FAQs, provide order updates, and capture leads directly through WhatsApp.</p>
               
               <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
                 ✦ Reply to every customer in under 60 seconds
@@ -223,7 +223,7 @@ export default function Landing() {
                 <div className="status-live animate-pulse">LIVE</div>
               </div>
               <h3 className="font-syne font-bold text-lg mb-2">AI Lead Qualification</h3>
-              <p className="text-[var(--text-muted)] text-xs mb-6 h-12">Stop wasting time on unqualified prospects. This agent engages every new lead, asks qualifying questions, and scores them.</p>
+              <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Stop wasting time on unqualified prospects. This agent engages every new lead, asks qualifying questions, and scores them.</p>
               
               <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
                 ✦ Only talk to leads ready to buy
