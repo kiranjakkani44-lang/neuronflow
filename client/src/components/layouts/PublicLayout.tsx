@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
-import { Terminal, Activity, Zap } from 'lucide-react';
+import { Terminal, Activity, Zap, Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 
 const CustomCursor = () => {
@@ -75,27 +75,42 @@ const LiveTicker = () => {
 };
 
 
-const Navbar = () => (
-  <nav className="sticky top-0 z-40 backdrop-blur-xl bg-[var(--bg)]/80 border-b border-[var(--border)]">
-    <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <Link to="/" className="flex items-center gap-2 shrink-0">
-        <Activity className="text-[var(--accent)]" size={24} />
-        <span className="font-syne font-extrabold text-xl md:text-2xl tracking-tight">Neuron<span className="text-[var(--accent)]">Flow</span></span>
-      </Link>
-      <div className="hidden md:flex gap-8">
-        <Link to="/agents" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Agents</Link>
-        <Link to="/#how-it-works" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">How it Works</Link>
-        <Link to="/pricing" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Pricing</Link>
-      </div>
-      <div>
-        <Link to="/contact" className="px-3 md:px-5 py-2 md:py-2.5 text-xs md:text-sm bg-[var(--accent)] text-black font-semibold rounded hover:shadow-[0_0_15px_var(--border-glow)] transition-all whitespace-nowrap">
-          <span className="hidden sm:inline">Book Free Audit →</span>
-          <span className="sm:hidden">Book Audit</span>
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="sticky top-0 z-40 backdrop-blur-xl bg-[var(--bg)]/80 border-b border-[var(--border)]">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
+          <Activity className="text-[var(--accent)]" size={24} />
+          <span className="font-syne font-extrabold text-xl md:text-2xl tracking-tight">Neuron<span className="text-[var(--accent)]">Flow</span></span>
         </Link>
+        <div className="hidden md:flex gap-8">
+          <Link to="/agents" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Agents</Link>
+          <Link to="/#how-it-works" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">How it Works</Link>
+          <Link to="/pricing" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Pricing</Link>
+        </div>
+        <div className="flex items-center gap-3">
+          <Link to="/contact" className="px-3 md:px-5 py-2 md:py-2.5 text-xs md:text-sm bg-[var(--accent)] text-black font-semibold rounded hover:shadow-[0_0_15px_var(--border-glow)] transition-all whitespace-nowrap">
+            <span className="hidden sm:inline">Book Free Audit →</span>
+            <span className="sm:hidden">Book Audit</span>
+          </Link>
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-[var(--text)] p-1 hover:text-[var(--accent)] transition-colors">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
-);
+      
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-[#050810] border-b border-[var(--border)] p-4 flex flex-col shadow-xl">
+          <Link onClick={() => setIsOpen(false)} to="/agents" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3 border-b border-white/5">Agents</Link>
+          <Link onClick={() => setIsOpen(false)} to="/#how-it-works" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3 border-b border-white/5">How it Works</Link>
+          <Link onClick={() => setIsOpen(false)} to="/pricing" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3">Pricing</Link>
+        </div>
+      )}
+    </nav>
+  );
+};
 
 const Footer = () => (
   <footer className="bg-[var(--surface)] border-t border-[var(--border)] py-12 mt-20">
