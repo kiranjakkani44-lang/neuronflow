@@ -5,26 +5,7 @@ import clsx from 'clsx';
 
 
 
-const LiveTicker = () => {
-  return (
-    <div className="w-full bg-[var(--surface2)] border-b border-[var(--accent2)] border-opacity-30 flex items-center h-8 overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 px-4 bg-[var(--surface2)] z-10 flex items-center gap-2 border-r border-[var(--border)]">
-        <div className="w-2 h-2 rounded-full bg-[var(--accent2)] animate-pulse" />
-        <span className="font-mono text-xs font-bold tracking-wider text-[var(--accent2)]">SYSTEM LIVE</span>
-      </div>
-      <div className="whitespace-nowrap flex pl-[150px]">
-        <div className="animate-[ticker_30s_linear_infinite] flex gap-12 font-mono text-xs text-[var(--text-muted)]">
-          <span><span className="text-[var(--accent)]">[VOICE]</span> AI called RealEstate Co lead — qualified in 38s</span>
-          <span><span className="text-[var(--accent2)]">[WHATSAPP]</span> 47 follow-ups sent — Apollo Clinic</span>
-          <span><span className="text-[var(--accent3)]">[RECOVERY]</span> ₹18,400 cart recovered — StyleHub</span>
-          <span><span className="text-[var(--accent4)]">[BOOKED]</span> 12 appointments confirmed — Dr. Mehta</span>
-          <span><span className="text-[var(--accent)]">[VOICE]</span> AI called RealEstate Co lead — qualified in 38s</span>
-          <span><span className="text-[var(--accent2)]">[WHATSAPP]</span> 47 follow-ups sent — Apollo Clinic</span>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 
 const Navbar = () => {
@@ -167,7 +148,7 @@ export default function PublicLayout() {
       </div>
       
 
-      <LiveTicker />
+
       <Navbar />
       
       <main className="flex-1 relative z-10">
