@@ -21,7 +21,7 @@ export default function Agents() {
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide w-full max-w-full">
           {['All', 'Voice', 'WhatsApp', 'Automation', 'Marketing', 'Analytics', 'Operations'].map(t => (
-            <button key={t} onClick={() => setFilter(t)} className={`px-4 py-2 rounded text-xs font-mono transition-colors whitespace-nowrap ${filter === t ? 'bg-[var(--accent)] text-black font-bold' : 'bg-[var(--surface2)] text-[var(--text-muted)] border border-[var(--border)]'}`}>{t}</button>
+            <button key={t} onClick={() => setFilter(t)} className={`shrink-0 px-4 py-2 rounded text-xs font-mono transition-colors whitespace-nowrap ${filter === t ? 'bg-[var(--accent)] text-black font-bold' : 'bg-[var(--surface2)] text-[var(--text-muted)] border border-[var(--border)]'}`}>{t}</button>
           ))}
         </div>
       </div>

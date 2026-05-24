@@ -167,9 +167,9 @@ export default function Landing() {
               <h2 className="font-syne font-extrabold text-3xl md:text-5xl text-[var(--text)]">Hire your AI workforce.</h2>
             </div>
             
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide w-full">
               {['All', 'Voice', 'WhatsApp', 'Automation', 'Marketing'].map((tab, i) => (
-                <button key={i} className={`px-4 py-2 rounded font-mono text-xs whitespace-nowrap transition-colors ${i === 0 ? 'bg-[var(--accent)] text-black font-bold' : 'bg-[var(--surface2)] text-[var(--text-muted)] hover:text-[var(--text)] border border-[var(--border)]'}`}>
+                <button key={i} className={`shrink-0 px-4 py-2 rounded font-mono text-xs whitespace-nowrap transition-colors ${i === 0 ? 'bg-[var(--accent)] text-black font-bold' : 'bg-[var(--surface2)] text-[var(--text-muted)] hover:text-[var(--text)] border border-[var(--border)]'}`}>
                   {tab}
                 </button>
               ))}
