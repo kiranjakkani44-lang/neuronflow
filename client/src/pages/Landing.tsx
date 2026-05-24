@@ -192,7 +192,7 @@ export default function Landing() {
               </div>
               
               <div className="flex items-center justify-center border-t border-[var(--border)] pt-4">
-                <Link to="/agents/ai-voice-inbound" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
+                <Link to="/agents/ai-voice-inbound" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
               </div>
             </div>
             
@@ -210,7 +210,7 @@ export default function Landing() {
               </div>
               
               <div className="flex items-center justify-center border-t border-[var(--border)] pt-4">
-                <Link to="/agents/whatsapp-automation" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
+                <Link to="/agents/whatsapp-automation" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
               </div>
             </div>
             
@@ -230,7 +230,7 @@ export default function Landing() {
                </div>
                
                <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
-                 <Link to="/agents/lead-qualification" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
+                 <Link to="/agents/lead-qualification" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
                </div>
              </div>
 
@@ -399,61 +399,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section className="w-full py-16 md:py-24" id="pricing">
-        <div className="max-w-7xl mx-auto px-6">
-           <div className="text-center mb-16">
-             <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] mb-4">Simple, transparent pricing.</h2>
-             <p className="text-[var(--text-muted)]">One-time setup fee + affordable monthly maintenance.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Starter */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] p-8 rounded-xl flex flex-col hover:-translate-y-2 transition-transform">
-              <h3 className="font-syne font-bold text-xl mb-2">Starter</h3>
-              <p className="text-[var(--text-muted)] text-sm h-10">Perfect for small businesses starting their automation journey.</p>
-              <div className="my-4 md:my-8" />
-              <ul className="flex flex-col gap-3 text-sm text-[var(--text-muted)] mb-8 flex-1">
-                <li className="flex items-center gap-2"><span className="text-[var(--accent)]">✓</span> 1 Active Agent</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent)]">✓</span> Standard Support</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent)]">✓</span> Basic Analytics</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent)]">✓</span> Email & WhatsApp Logs</li>
-              </ul>
-              <Link to="/contact" className="block text-center w-full py-3 border border-[var(--border)] rounded font-semibold hover:bg-[var(--surface)] transition-colors">Get Started</Link>
-            </div>
-            
-            {/* Growth */}
-            <div className="bg-[#0a101a] border border-[var(--accent)] p-8 rounded-xl flex flex-col relative shadow-[0_0_30px_rgba(99,202,255,0.1)] -translate-y-4">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--accent)] text-black px-3 py-1 rounded-full text-xs font-bold tracking-wide">MOST POPULAR</div>
-              <h3 className="font-syne font-bold text-xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)]">Growth</h3>
-              <p className="text-[var(--text-muted)] text-sm h-10">For scaling operations needing multiple interconnected agents.</p>
-              <div className="my-4 md:my-8" />
-              <ul className="flex flex-col gap-3 text-sm text-[var(--text-muted)] mb-8 flex-1">
-                <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> 5 Active Agents</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> Priority Support (SLA)</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> Advanced Custom Workflows</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> CRM Integrations</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> Custom ROI Dashboards</li>
-              </ul>
-              <Link to="/contact" className="block text-center w-full py-3 bg-[var(--accent)] text-black rounded font-bold hover:shadow-[0_0_15px_var(--border-glow)] transition-shadow">Deploy Growth Plan</Link>
-            </div>
-            
-            {/* Enterprise */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] p-8 rounded-xl flex flex-col hover:-translate-y-2 transition-transform">
-              <h3 className="font-syne font-bold text-xl mb-2">Enterprise</h3>
-              <p className="text-[var(--text-muted)] text-sm h-10">Full operational takeover with unlimited custom AI agents.</p>
-              <div className="my-4 md:my-8" />
-              <ul className="flex flex-col gap-3 text-sm text-[var(--text-muted)] mb-8 flex-1">
-                <li className="flex items-center gap-2"><span className="text-[var(--text)]">✓</span> Unlimited Agents</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--text)]">✓</span> Dedicated Account Manager</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--text)]">✓</span> Custom Model Fine-Tuning</li>
-                <li className="flex items-center gap-2"><span className="text-[var(--text)]">✓</span> On-Premise Deployment options</li>
-              </ul>
-              <Link to="/contact" className="block text-center w-full py-3 border border-[var(--border)] rounded font-semibold hover:bg-[var(--surface)] transition-colors">Contact Sales</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* CASE STUDIES TABS */}
       <section className="w-full py-16 md:py-24 bg-[var(--surface)] border-y border-[var(--border)]">
