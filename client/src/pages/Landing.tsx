@@ -505,9 +505,9 @@ export default function Landing() {
               </div>
             </div>
 
-            {/* After (NeuronFlow AI) */}
+            {/* After (Operon AI) */}
             <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.03)]">
-              <div className="absolute top-0 right-0 px-3 py-1 bg-[var(--accent2)]/10 text-[var(--accent2)] font-mono text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-[var(--accent2)]/20">NEURONFLOW_AI</div>
+              <div className="absolute top-0 right-0 px-3 py-1 bg-[var(--accent2)]/10 text-[var(--accent2)] font-mono text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-[var(--accent2)]/20">OPERON_AI</div>
               <div>
                 <h3 className="font-syne font-bold text-xl text-[var(--accent2)] mb-6">AI-Driven Automation</h3>
                 <ul className="space-y-4 font-mono text-xs text-[var(--text-muted)]">

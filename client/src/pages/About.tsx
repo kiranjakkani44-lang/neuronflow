@@ -12,7 +12,7 @@ export default function About() {
           We build the agents that run your business.
         </h1>
         <p className="text-[var(--text-muted)] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          NeuronFlow is a team of AI engineers, automation specialists, and growth strategists obsessed with one thing — making businesses run without them.
+          Operon is a team of AI engineers, automation specialists, and growth strategists obsessed with one thing — making businesses run without them.
         </p>
       </section>
 
@@ -23,7 +23,7 @@ export default function About() {
             <div className="font-mono text-xs text-[var(--text-dim)] mb-4 uppercase tracking-widest">// THE_STORY</div>
             <h2 className="font-syne font-extrabold text-3xl md:text-4xl mb-6">Started because we were tired of the same problems.</h2>
             <p className="text-[var(--text-muted)] leading-relaxed mb-4">
-              We built NeuronFlow after spending years watching businesses lose leads at 2 AM, watch their teams burn out on repetitive tasks, and bleed revenue to competitors who simply responded faster.
+              We built Operon after spending years watching businesses lose leads at 2 AM, watch their teams burn out on repetitive tasks, and bleed revenue to competitors who simply responded faster.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed">
               The solution wasn't more hires. It was smarter systems. AI agents that work 24/7, never take a day off, and never make a typo.
@@ -32,7 +32,7 @@ export default function About() {
           <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-8">
             <div className="flex items-center gap-3 mb-6">
               <Activity className="text-[var(--accent)]" size={28} />
-              <span className="font-syne font-bold text-xl">NeuronFlow</span>
+              <span className="font-syne font-bold text-xl">Operon</span>
             </div>
             <div className="space-y-4 font-mono text-sm">
               <div className="flex justify-between border-b border-[var(--border)] pb-3">

@@ -16,12 +16,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <Activity className="text-[var(--accent)]" size={24} />
-          <span className="font-syne font-extrabold text-xl md:text-2xl tracking-tight">Neuron<span className="text-[var(--accent)]">Flow</span></span>
+          <span className="font-syne font-extrabold text-xl md:text-2xl tracking-tight">Operon</span>
         </Link>
         <div className="hidden md:flex gap-8">
           <Link to="/agents" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Agents</Link>
           <Link to="/#how-it-works" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">How it Works</Link>
-          <Link to="/pricing" className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">Pricing</Link>
         </div>
         <div className="flex items-center gap-3">
           <Link to="/contact" className="px-3 md:px-5 py-2 md:py-2.5 text-xs md:text-sm bg-[var(--accent)] text-black font-semibold rounded hover:shadow-[0_0_15px_var(--border-glow)] transition-all whitespace-nowrap">
@@ -37,8 +36,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-[#050810] border-b border-[var(--border)] p-4 flex flex-col shadow-xl">
           <Link onClick={() => setIsOpen(false)} to="/agents" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3 border-b border-white/5">Agents</Link>
-          <Link onClick={() => setIsOpen(false)} to="/#how-it-works" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3 border-b border-white/5">How it Works</Link>
-          <Link onClick={() => setIsOpen(false)} to="/pricing" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3">Pricing</Link>
+          <Link onClick={() => setIsOpen(false)} to="/#how-it-works" className="block text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors py-3">How it Works</Link>
         </div>
       )}
     </nav>
@@ -51,7 +49,7 @@ const Footer = () => (
       <div>
         <div className="flex items-center gap-2 mb-4">
           <Activity className="text-[var(--accent)]" size={20} />
-          <span className="font-syne font-bold text-xl">Neuron<span className="text-[var(--accent)]">Flow</span></span>
+          <span className="font-syne font-bold text-xl">Operon</span>
         </div>
         <p className="text-[var(--text-muted)] text-sm mb-2">Your Business. Running on Autopilot.</p>
         <p className="text-[var(--text-dim)] text-xs font-mono">GSTIN: 27AAAAA0000A1Z5</p>
@@ -60,7 +58,6 @@ const Footer = () => (
         <div className="flex flex-col gap-2">
           <span className="font-mono text-xs text-[var(--text-dim)] uppercase">Platform</span>
           <Link to="/agents" className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)]">Agents</Link>
-          <Link to="/pricing" className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)]">Pricing</Link>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-mono text-xs text-[var(--text-dim)] uppercase">Company</span>
@@ -79,7 +76,7 @@ export default function PublicLayout() {
   const [chatMessages, setChatMessages] = useState<Array<{ sender: 'ai' | 'user'; text: string; options?: string[] }>>([
     {
       sender: 'ai',
-      text: "Hi there! I am the NeuronFlow Onboarding Assistant. 🤖 Which business operation would you like to automate first?",
+      text: "Hi there! I am the Operon Onboarding Assistant. 🤖 Which business operation would you like to automate first?",
       options: ["Qualify Leads", "Customer Support", "Booking Appointments"]
     }
   ]);
@@ -182,7 +179,7 @@ export default function PublicLayout() {
             <div className="bg-zinc-900 border-b border-[var(--border)] p-4 flex justify-between items-center">
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse" />
-                <span className="font-syne font-bold text-white">NeuronFlow Assistant</span>
+                <span className="font-syne font-bold text-white">Operon Assistant</span>
               </div>
               <span className="font-mono text-[9px] text-[var(--accent)] bg-[var(--accent)]/10 px-1.5 py-0.5 rounded border border-[var(--accent)]/20 uppercase tracking-widest">AGENT_01</span>
             </div>
@@ -233,7 +230,7 @@ export default function PublicLayout() {
 
       {/* Floating WhatsApp Widget */}
       <a
-        href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20NeuronFlow%20AI%20automation%20agents."
+        href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20Operon%20AI%20automation%20agents."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-[999] bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all group flex items-center gap-2 border border-white/10"
