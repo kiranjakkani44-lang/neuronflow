@@ -178,38 +178,42 @@ export default function Landing() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {/* Agent Card 1 */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
+            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,50%),rgba(99,202,255,0.08)_0%,transparent_50%)] pointer-events-none" />
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center text-2xl">🎙️</div>
-                <div className="status-live animate-pulse">LIVE</div>
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center text-2xl">🎙️</div>
+                  <div className="status-live animate-pulse">LIVE</div>
+                </div>
+                <h3 className="font-syne font-bold text-lg mb-2">AI Voice Agent (Inbound)</h3>
+                <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">An intelligent voice agent that answers every inbound call, qualifies leads, and transfers them to your CRM.</p>
+                
+                <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
+                  ✦ Never miss an inbound call again, 24/7
+                </div>
               </div>
-              <h3 className="font-syne font-bold text-lg mb-2">AI Voice Agent (Inbound)</h3>
-              <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">An intelligent voice agent that answers every inbound call, qualifies leads, and transfers them to your CRM.</p>
               
-              <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
-                ✦ Never miss an inbound call again, 24/7
-              </div>
-              
-              <div className="flex items-center justify-center border-t border-[var(--border)] pt-4">
+              <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
                 <Link to="/agents/ai-voice-inbound" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
               </div>
             </div>
             
             {/* Agent Card 2 */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
-               <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 rounded-lg bg-[var(--accent2)]/10 text-[var(--accent2)] flex items-center justify-center text-2xl">💬</div>
-                <div className="status-live animate-pulse">LIVE</div>
+            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+               <div>
+                 <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--accent2)]/10 text-[var(--accent2)] flex items-center justify-center text-2xl">💬</div>
+                  <div className="status-live animate-pulse">LIVE</div>
+                </div>
+                <h3 className="font-syne font-bold text-lg mb-2">WhatsApp Automation</h3>
+                <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Engage customers where they already are. Automate FAQs, provide order updates, and capture leads directly through WhatsApp.</p>
+                
+                <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
+                  ✦ Reply to every customer in under 60 seconds
+                </div>
               </div>
-              <h3 className="font-syne font-bold text-lg mb-2">WhatsApp Automation</h3>
-              <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Engage customers where they already are. Automate FAQs, provide order updates, and capture leads directly through WhatsApp.</p>
               
-              <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
-                ✦ Reply to every customer in under 60 seconds
-              </div>
-              
-              <div className="flex items-center justify-center border-t border-[var(--border)] pt-4">
+              <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
                 <Link to="/agents/whatsapp-automation" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
               </div>
             </div>
@@ -250,7 +254,7 @@ export default function Landing() {
                </div>
                
                <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
-                 <Link to="/agents/email-automator" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
+                 <Link to="/agents/email-automator" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
                </div>
              </div>
           </div>
