@@ -136,19 +136,19 @@ export default function Landing() {
             <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3rem)] text-[var(--text)] max-w-2xl">Where your business bleeds revenue daily.</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {[
               { id: '01 / 03', icon: '🥶', title: 'Leads going cold while you sleep', desc: 'A lead generated at 2 AM expects a response at 2 AM. By 9 AM, theyve already bought from your competitor.', stat: '⚡ 78% of customers buy from whoever responds first' },
               { id: '02 / 03', icon: '⏳', title: '30+ hours wasted on manual tasks', desc: 'Your highly-paid team is copying data between CRMs, sending invoices, and answering the same 5 questions repeatedly.', stat: '📉 Manual data entry costs companies 20-30% in revenue' },
               { id: '03 / 03', icon: '🛒', title: 'Website visitors leaving without buying', desc: '100 people visit your site. 98 leave without doing anything because there was no one to engage them immediately.', stat: '💰 E-commerce loses $18B yearly to abandoned carts' }
             ].map((p, i) => (
-              <div key={i} className="bg-[var(--surface2)] border border-[var(--border)] p-8 rounded-xl hover:-translate-y-2 hover:border-[var(--accent3)] transition-all group relative overflow-hidden">
+              <div key={i} className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] bg-[var(--surface2)] border border-[var(--border)] p-4 sm:p-8 rounded-xl hover:-translate-y-2 hover:border-[var(--accent3)] transition-all group relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--accent3)] to-transparent opacity-50" />
-                <div className="font-mono text-[10px] text-[var(--text-dim)] mb-6">{p.id}</div>
-                <div className="text-4xl mb-6">{p.icon}</div>
-                <h3 className="font-syne font-bold text-xl mb-4">{p.title}</h3>
-                <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-8">{p.desc}</p>
-                <div className="bg-[var(--accent3)]/10 text-[var(--accent3)] text-xs font-mono p-3 rounded border border-[var(--accent3)]/20 mt-auto">
+                <div className="font-mono text-[10px] text-[var(--text-dim)] mb-4 sm:mb-6">{p.id}</div>
+                <div className="text-2xl sm:text-4xl mb-4 sm:mb-6">{p.icon}</div>
+                <h3 className="font-syne font-bold text-base sm:text-xl mb-2 sm:mb-4">{p.title}</h3>
+                <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed mb-4 sm:mb-8 flex-1">{p.desc}</p>
+                <div className="bg-[var(--accent3)]/10 text-[var(--accent3)] text-[10px] sm:text-xs font-mono p-2 sm:p-3 rounded border border-[var(--accent3)]/20 mt-auto">
                   {p.stat}
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function Landing() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {/* Agent Card 1 */}
             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,50%),rgba(99,202,255,0.08)_0%,transparent_50%)] pointer-events-none" />
@@ -215,22 +215,44 @@ export default function Landing() {
             </div>
             
              {/* Agent Card 3 */}
-             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
-               <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 rounded-lg bg-[var(--accent4)]/10 text-[var(--accent4)] flex items-center justify-center text-2xl">⚡</div>
-                <div className="status-live animate-pulse">LIVE</div>
-              </div>
-              <h3 className="font-syne font-bold text-lg mb-2">AI Lead Qualification</h3>
-              <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Stop wasting time on unqualified prospects. This agent engages every new lead, asks qualifying questions, and scores them.</p>
-              
-              <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
-                ✦ Only talk to leads ready to buy
-              </div>
-              
-              <div className="flex items-center justify-center border-t border-[var(--border)] pt-4">
-                <Link to="/agents/lead-qualification" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
-              </div>
-            </div>
+             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+               <div>
+                 <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--accent4)]/10 text-[var(--accent4)] flex items-center justify-center text-2xl">⚡</div>
+                  <div className="status-live animate-pulse">LIVE</div>
+                 </div>
+                 <h3 className="font-syne font-bold text-lg mb-2">AI Lead Qualification</h3>
+                 <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Stop wasting time on unqualified prospects. This agent engages every new lead, asks qualifying questions, and scores them.</p>
+                 
+                 <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
+                   ✦ Only talk to leads ready to buy
+                 </div>
+               </div>
+               
+               <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
+                 <Link to="/agents/lead-qualification" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
+               </div>
+             </div>
+
+             {/* Agent Card 4 */}
+             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+               <div>
+                 <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center text-2xl">📧</div>
+                  <div className="status-live animate-pulse">LIVE</div>
+                 </div>
+                 <h3 className="font-syne font-bold text-lg mb-2">Email Automator</h3>
+                 <p className="text-[var(--text-muted)] text-xs mb-6 min-h-[3rem]">Sifts through your inbox, drafts contextual replies to clients, and filters out the spam automatically.</p>
+                 
+                 <div className="bg-[var(--accent2)]/10 border border-[var(--accent2)]/20 p-3 rounded font-mono text-xs text-[var(--accent2)] mb-6">
+                   ✦ Inbox zero, without the effort
+                 </div>
+               </div>
+               
+               <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
+                 <Link to="/agents/email-automator" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Deploy →</Link>
+               </div>
+             </div>
           </div>
           
           <div className="mt-12 text-center">
@@ -253,7 +275,7 @@ export default function Landing() {
             {/* Connecting line */}
             <div className="absolute top-9 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20 hidden md:block" />
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            <div className="grid grid-cols-4 gap-2 md:gap-12 relative z-10">
               {[
                 { num: 1, title: 'Book Free Audit', desc: 'We analyze your business bottlenecks.', color: 'var(--accent)' },
                 { num: 2, title: 'Map Workflows', desc: 'We design the exact AI automation paths.', color: 'var(--accent2)' },
@@ -262,13 +284,13 @@ export default function Landing() {
               ].map((step, i) => (
                 <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left group">
                   <div 
-                    className="w-18 h-18 rounded-full flex items-center justify-center font-syne font-bold text-2xl mb-6 border-2 transition-transform group-hover:scale-110 bg-[var(--bg)]"
+                    className="w-8 h-8 md:w-18 md:h-18 rounded-full flex items-center justify-center font-syne font-bold text-xs md:text-2xl mb-2 md:mb-6 border md:border-2 transition-transform group-hover:scale-110 bg-[var(--bg)]"
                     style={{ borderColor: step.color, color: step.color, boxShadow: `0 0 20px ${step.color}20` }}
                   >
-                    0{step.num}
+                    {step.num}
                   </div>
-                  <h3 className="font-syne font-bold text-lg mb-2">{step.title}</h3>
-                  <p className="text-[var(--text-muted)] text-sm">{step.desc}</p>
+                  <h3 className="font-syne font-bold text-[10px] md:text-lg mb-1 md:mb-2 leading-tight">{step.title}</h3>
+                  <p className="text-[var(--text-muted)] text-[8px] md:text-sm leading-tight hidden md:block">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -390,10 +412,7 @@ export default function Landing() {
             <div className="bg-[var(--surface2)] border border-[var(--border)] p-8 rounded-xl flex flex-col hover:-translate-y-2 transition-transform">
               <h3 className="font-syne font-bold text-xl mb-2">Starter</h3>
               <p className="text-[var(--text-muted)] text-sm h-10">Perfect for small businesses starting their automation journey.</p>
-              <div className="my-8">
-                <div className="text-3xl font-syne font-bold mb-1">₹4,999<span className="text-sm font-sans text-[var(--text-muted)] font-normal">/mo</span></div>
-                <div className="text-xs font-mono text-[var(--text-dim)]">+ ₹14,999 setup fee</div>
-              </div>
+              <div className="my-4 md:my-8" />
               <ul className="flex flex-col gap-3 text-sm text-[var(--text-muted)] mb-8 flex-1">
                 <li className="flex items-center gap-2"><span className="text-[var(--accent)]">✓</span> 1 Active Agent</li>
                 <li className="flex items-center gap-2"><span className="text-[var(--accent)]">✓</span> Standard Support</li>
@@ -408,10 +427,7 @@ export default function Landing() {
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--accent)] text-black px-3 py-1 rounded-full text-xs font-bold tracking-wide">MOST POPULAR</div>
               <h3 className="font-syne font-bold text-xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)]">Growth</h3>
               <p className="text-[var(--text-muted)] text-sm h-10">For scaling operations needing multiple interconnected agents.</p>
-              <div className="my-8">
-                <div className="text-3xl font-syne font-bold mb-1">₹14,999<span className="text-sm font-sans text-[var(--text-muted)] font-normal">/mo</span></div>
-                <div className="text-xs font-mono text-[var(--text-dim)]">+ ₹49,999 setup fee</div>
-              </div>
+              <div className="my-4 md:my-8" />
               <ul className="flex flex-col gap-3 text-sm text-[var(--text-muted)] mb-8 flex-1">
                 <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> 5 Active Agents</li>
                 <li className="flex items-center gap-2"><span className="text-[var(--accent2)]">✓</span> Priority Support (SLA)</li>
@@ -426,10 +442,7 @@ export default function Landing() {
             <div className="bg-[var(--surface2)] border border-[var(--border)] p-8 rounded-xl flex flex-col hover:-translate-y-2 transition-transform">
               <h3 className="font-syne font-bold text-xl mb-2">Enterprise</h3>
               <p className="text-[var(--text-muted)] text-sm h-10">Full operational takeover with unlimited custom AI agents.</p>
-              <div className="my-8">
-                <div className="text-3xl font-syne font-bold mb-1">Custom</div>
-                <div className="text-xs font-mono text-[var(--text-dim)]">Custom setup fee</div>
-              </div>
+              <div className="my-4 md:my-8" />
               <ul className="flex flex-col gap-3 text-sm text-[var(--text-muted)] mb-8 flex-1">
                 <li className="flex items-center gap-2"><span className="text-[var(--text)]">✓</span> Unlimited Agents</li>
                 <li className="flex items-center gap-2"><span className="text-[var(--text)]">✓</span> Dedicated Account Manager</li>
@@ -467,13 +480,13 @@ export default function Landing() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <div className="grid grid-cols-2 gap-4 md:gap-8 items-stretch">
             {/* Before (Manual) */}
-            <div className="bg-[var(--surface2)] border border-red-500/20 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 px-3 py-1 bg-red-500/10 text-red-400 font-mono text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-red-500/20">MANUAL_FLOW</div>
+            <div className="bg-[var(--surface2)] border border-red-500/20 rounded-xl p-4 md:p-8 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 px-2 py-0.5 md:px-3 md:py-1 bg-red-500/10 text-red-400 font-mono text-[8px] md:text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-red-500/20">MANUAL</div>
               <div>
-                <h3 className="font-syne font-bold text-xl text-red-400 mb-6">The Old Manual Bottleneck</h3>
-                <ul className="space-y-4 font-mono text-xs text-[var(--text-muted)]">
+                <h3 className="font-syne font-bold text-sm md:text-xl text-red-400 mb-4 md:mb-6 leading-tight">The Old Manual Bottleneck</h3>
+                <ul className="space-y-2 md:space-y-4 font-mono text-[9px] md:text-xs text-[var(--text-muted)]">
                   {activeIndustry === 'real-estate' && (
                     <>
                       <li className="flex gap-2"><span>✕</span> <span>Inquiries booked manually, average response delay is 6-8 hours</span></li>
@@ -503,11 +516,11 @@ export default function Landing() {
             </div>
 
             {/* After (Operon AI) */}
-            <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.03)]">
-              <div className="absolute top-0 right-0 px-3 py-1 bg-[var(--accent2)]/10 text-[var(--accent2)] font-mono text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-[var(--accent2)]/20">OPERON_AI</div>
+            <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-4 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.03)]">
+              <div className="absolute top-0 right-0 px-2 py-0.5 md:px-3 md:py-1 bg-[var(--accent2)]/10 text-[var(--accent2)] font-mono text-[8px] md:text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-[var(--accent2)]/20">OPERON_AI</div>
               <div>
-                <h3 className="font-syne font-bold text-xl text-[var(--accent2)] mb-6">AI-Driven Automation</h3>
-                <ul className="space-y-4 font-mono text-xs text-[var(--text-muted)]">
+                <h3 className="font-syne font-bold text-sm md:text-xl text-[var(--accent2)] mb-4 md:mb-6 leading-tight">AI-Driven Automation</h3>
+                <ul className="space-y-2 md:space-y-4 font-mono text-[9px] md:text-xs text-[var(--text-muted)]">
                   {activeIndustry === 'real-estate' && (
                     <>
                       <li className="flex gap-2"><span className="text-[var(--accent2)]">✓</span> <span>AI Outbound dialer calls new portal leads within 45 seconds</span></li>
