@@ -230,7 +230,7 @@ export default function PublicLayout() {
 
       {/* Floating WhatsApp Widget */}
       <a
-        href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20Operon%20AI%20automation%20agents."
+        href="https://wa.me/917780379949?text=Hi!%20I'm%20interested%20in%20Operon%20AI%20automation%20agents."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-[999] bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all group flex items-center gap-2 border border-white/10"
