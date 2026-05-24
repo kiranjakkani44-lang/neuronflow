@@ -1,6 +1,15 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { Suspense, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import PublicLayout from './components/layouts/PublicLayout';
+
+// ScrollToTop Component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 // Lazy Loaded Pages
 const Landing = React.lazy(() => import('./pages/Landing'));
@@ -13,6 +22,7 @@ const About = React.lazy(() => import('./pages/About'));
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<div className="h-screen w-screen flex items-center justify-center font-mono text-[var(--accent)]">LOADING_SYSTEM...</div>}>
         <Routes>
           {/* Public Routes */}
