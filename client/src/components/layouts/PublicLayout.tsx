@@ -113,7 +113,7 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-[var(--surface)] border-t border-[var(--border)] py-12 mt-20">
+  <footer className="bg-[var(--surface)] border-t border-[var(--border)] pt-12 pb-32 mt-20">
     <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <div className="flex items-center gap-2 mb-4">
