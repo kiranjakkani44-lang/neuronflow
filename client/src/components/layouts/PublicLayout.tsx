@@ -226,7 +226,7 @@ export default function PublicLayout() {
 
         {/* Chat Window Panel */}
         {chatOpen && (
-          <div className="absolute bottom-16 left-0 w-[320px] bg-zinc-950 border border-[var(--border)] rounded-2xl shadow-2xl overflow-hidden font-sans text-xs animate-in slide-in-from-bottom-5 duration-300">
+          <div className="absolute bottom-16 left-0 w-[85vw] sm:w-[320px] bg-zinc-950 border border-[var(--border)] rounded-2xl shadow-2xl overflow-hidden font-sans text-xs animate-in slide-in-from-bottom-5 duration-300">
             {/* Header */}
             <div className="bg-zinc-900 border-b border-[var(--border)] p-4 flex justify-between items-center">
               <div className="flex items-center gap-2">

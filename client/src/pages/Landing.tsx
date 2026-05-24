@@ -63,7 +63,7 @@ export default function Landing() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-3 gap-8 w-full border-t border-[var(--border)] pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 w-full border-t border-[var(--border)] pt-8">
             <div>
               <div className="font-syne font-extrabold text-2xl md:text-3xl text-[var(--text)] mb-1">8,420+</div>
               <div className="font-mono text-[10px] md:text-xs text-[var(--text-dim)] uppercase">Leads Captured</div>
