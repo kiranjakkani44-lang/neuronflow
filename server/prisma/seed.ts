@@ -362,6 +362,26 @@ const agentsData = [
     short_description: 'An AI expert trained on your internal data.',
     description: 'Turn your chaotic internal documentation into an instantly searchable AI expert. Employees ask questions in natural language and get immediate, accurate answers with citations.',
     icon_name: 'Database'
+  },
+  {
+    slug: 'email-automator',
+    name: 'Email Automator',
+    category: 'AUTOMATION',
+    price_one_time: 25000,
+    roi_promise: 'Inbox zero, without the effort',
+    setup_time_days: 3,
+    industries: JSON.stringify(['ecommerce', 'clinics', 'real-estate', 'd2c']),
+    features: JSON.stringify([
+      { title: 'Smart Filtering', desc: 'Sifts through inbox and filters spam' },
+      { title: 'Contextual Replies', desc: 'Drafts responses based on context' },
+      { title: 'CRM Syncing', desc: 'Logs important emails in your CRM' },
+      { title: 'Follow-ups', desc: 'Automates follow-up sequences' }
+    ]),
+    is_featured: true,
+    sort_order: 19,
+    short_description: 'Automate inbox management and email responses.',
+    description: 'Sifts through your inbox, drafts contextual replies to clients, filters out the spam automatically, and logs important communications in your CRM.',
+    icon_name: 'Mail'
   }
 ];
 
