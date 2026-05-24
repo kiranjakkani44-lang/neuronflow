@@ -88,7 +88,8 @@ const AgentSimulator = ({ category, name }: { category: string; name: string }) 
     let currentLogIndex = 0;
     const interval = setInterval(() => {
       if (currentLogIndex < automationLogs.length) {
-        setTerminalLogs(prev => [...prev, automationLogs[currentLogIndex]]);
+        const logToPush = automationLogs[currentLogIndex];
+        setTerminalLogs(prev => [...prev, logToPush]);
         currentLogIndex++;
       } else {
         clearInterval(interval);
