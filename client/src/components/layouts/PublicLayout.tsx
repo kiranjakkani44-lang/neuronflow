@@ -191,10 +191,12 @@ export default function PublicLayout() {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col">
+    <div className="min-h-screen relative flex flex-col overflow-x-hidden w-full">
       {/* Global Background Orbs */}
-      <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent)]/10 blur-[120px] pointer-events-none animate-[pulse_8s_ease-in-out_infinite]" />
-      <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent2)]/10 blur-[120px] pointer-events-none animate-[pulse_10s_ease-in-out_infinite_reverse]" />
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent)]/10 blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent2)]/10 blur-[120px] animate-[pulse_10s_ease-in-out_infinite_reverse]" />
+      </div>
       
       <CustomCursor />
       <LiveTicker />

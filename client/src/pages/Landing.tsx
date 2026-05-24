@@ -556,7 +556,7 @@ export default function Landing() {
             </div>
 
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
                   { id: 'shopify', label: 'Shopify', desc: 'Shopify Store' },
                   { id: 'hubspot', label: 'HubSpot', desc: 'CRM Hub' },
