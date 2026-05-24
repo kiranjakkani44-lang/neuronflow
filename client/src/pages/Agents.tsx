@@ -26,9 +26,9 @@ export default function Agents() {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {filtered.map(agent => (
-          <div key={agent.id} className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6 hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div key={agent.id} className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 hover:-translate-y-1 transition-transform flex flex-col justify-between">
             <div>
               <div className="flex justify-between mb-4">
                 <div className="text-2xl p-2 bg-white/5 rounded border border-[var(--border)]">🤖</div>

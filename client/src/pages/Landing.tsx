@@ -176,9 +176,9 @@ export default function Landing() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {/* Agent Card 1 */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
+            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,50%),rgba(99,202,255,0.08)_0%,transparent_50%)] pointer-events-none" />
               <div className="flex justify-between items-start mb-6">
                 <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center text-2xl">🎙️</div>
@@ -198,7 +198,7 @@ export default function Landing() {
             </div>
             
             {/* Agent Card 2 */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
+            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
                <div className="flex justify-between items-start mb-6">
                 <div className="w-12 h-12 rounded-lg bg-[var(--accent2)]/10 text-[var(--accent2)] flex items-center justify-center text-2xl">💬</div>
                 <div className="status-live animate-pulse">LIVE</div>
@@ -217,7 +217,7 @@ export default function Landing() {
             </div>
             
              {/* Agent Card 3 */}
-             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
+             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden">
                <div className="flex justify-between items-start mb-6">
                 <div className="w-12 h-12 rounded-lg bg-[var(--accent4)]/10 text-[var(--accent4)] flex items-center justify-center text-2xl">⚡</div>
                 <div className="status-live animate-pulse">LIVE</div>
