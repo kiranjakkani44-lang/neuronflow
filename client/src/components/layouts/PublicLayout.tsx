@@ -3,55 +3,7 @@ import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { Terminal, Activity, Zap, Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 
-const CustomCursor = () => {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    let animationFrameId: number;
-
-    const onMouseMove = (e: MouseEvent) => {
-      mx = e.clientX;
-      my = e.clientY;
-      if (cursorRef.current) {
-        cursorRef.current.style.left = `${mx - 5}px`;
-        cursorRef.current.style.top = `${my - 5}px`;
-      }
-    };
-
-    const animRing = () => {
-      rx += (mx - rx - 18) * 0.15;
-      ry += (my - ry - 18) * 0.15;
-      if (ringRef.current) {
-        ringRef.current.style.left = `${rx}px`;
-        ringRef.current.style.top = `${ry}px`;
-      }
-      animationFrameId = requestAnimationFrame(animRing);
-    };
-
-    document.addEventListener('mousemove', onMouseMove);
-    animRing();
-
-    return () => {
-      document.removeEventListener('mousemove', onMouseMove);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  return (
-    <>
-      <div 
-        ref={cursorRef} 
-        className="fixed w-[10px] h-[10px] bg-[var(--accent)] rounded-full pointer-events-none z-[9999] mix-blend-screen"
-      />
-      <div 
-        ref={ringRef} 
-        className="fixed w-[36px] h-[36px] border border-[var(--accent)] rounded-full pointer-events-none z-[9998] mix-blend-screen transition-transform duration-100 ease-out"
-      />
-    </>
-  );
-};
 
 const LiveTicker = () => {
   return (
@@ -214,7 +166,7 @@ export default function PublicLayout() {
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent2)]/10 blur-[120px] animate-[pulse_10s_ease-in-out_infinite_reverse]" />
       </div>
       
-      <CustomCursor />
+
       <LiveTicker />
       <Navbar />
       
