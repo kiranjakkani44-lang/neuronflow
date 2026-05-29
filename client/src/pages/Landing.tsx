@@ -1,6 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+
+const TiltCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  
+  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 20 });
+  
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    x.set(mouseX / width - 0.5);
+    y.set(mouseY / height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
+      className={className}
+    >
+      {/* 3D Inner Layer */ }
+      <div style={{ transform: "translateZ(40px)" }} className="w-full h-full">
+        {children}
+      </div>
+    </motion.div>
+  );
+};
 
 export default function Landing() {
   const [activeConsoleIndex, setActiveConsoleIndex] = useState(0);
@@ -18,6 +61,16 @@ export default function Landing() {
   const efficiencyGain = teamSize * 3000;
   const totalSavings = Math.round(opsSavings + leadRecovery + efficiencyGain);
   
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveConsoleIndex(prev => (prev + 1) % 5);
@@ -34,7 +87,15 @@ export default function Landing() {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full relative">
+      {/* Immersive Global Cursor Glow */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(circle 800px at ${cursorPos.x}px ${cursorPos.y}px, rgba(255,255,255,0.03), transparent 40%)`
+        }}
+      />
+      
       {/* HERO SECTION */}
       <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-16 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Copy */}
@@ -44,10 +105,10 @@ export default function Landing() {
             <span className="font-mono text-xs tracking-wider text-[var(--text)]">18 AI AGENTS RUNNING LIVE</span>
           </div>
           
-          <h1 className="font-syne font-extrabold text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.1] tracking-[-0.03em] mb-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>Your Business.</motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)]">Running on Autopilot.</motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-[var(--text-muted)]">Starting Day 7.</motion.div>
+          <h1 className="font-extrabold text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.1] tracking-[-0.03em] mb-6" style={{ perspective: 1000 }}>
+            <motion.div initial={{ opacity: 0, y: 20, rotateX: 10 }} animate={{ opacity: 1, y: 0, rotateX: 0 }} transition={{ delay: 0.1, type: "spring", stiffness: 100, damping: 20 }}>Your Business.</motion.div>
+            <motion.div initial={{ opacity: 0, y: 20, rotateX: 10 }} animate={{ opacity: 1, y: 0, rotateX: 0 }} transition={{ delay: 0.2, type: "spring", stiffness: 100, damping: 20 }} className="text-gradient-3d">Running on Autopilot.</motion.div>
+            <motion.div initial={{ opacity: 0, y: 20, rotateX: 10 }} animate={{ opacity: 1, y: 0, rotateX: 0 }} transition={{ delay: 0.3, type: "spring", stiffness: 100, damping: 20 }} className="text-[var(--text-muted)] text-[clamp(1.5rem,4vw,2.5rem)] mt-2">Starting Day 7.</motion.div>
           </h1>
           
           <p className="text-[var(--text-muted)] text-lg md:text-xl max-w-[460px] mb-10 leading-relaxed font-light">
@@ -55,10 +116,10 @@ export default function Landing() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Link to="/contact" className="px-8 py-4 bg-[var(--accent)] text-black font-bold rounded hover:shadow-[0_0_25px_var(--border-glow)] hover:-translate-y-1 transition-all text-center">
-              Book Free Audit →
+            <Link to="/contact" className="btn-3d px-8 py-4 font-bold rounded-xl text-center flex items-center justify-center gap-2">
+              Book Free Audit <span>→</span>
             </Link>
-            <Link to="/agents" className="px-8 py-4 bg-[var(--surface2)] border border-[var(--border)] text-[var(--text)] font-semibold rounded hover:bg-white/10 hover:-translate-y-1 transition-all text-center">
+            <Link to="/agents" className="glass-panel px-8 py-4 text-[var(--text)] font-semibold rounded-xl hover:bg-white/5 hover:-translate-y-1 transition-all text-center">
               Explore Agents ↓
             </Link>
           </div>
@@ -81,10 +142,12 @@ export default function Landing() {
 
         {/* Right Side: Live Console */}
         <motion.div 
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="bg-[#050810] rounded-xl border border-[var(--border)] overflow-hidden shadow-2xl z-10"
+          initial={{ opacity: 0, x: 40, rotateY: -10, rotateX: 5 }}
+          animate={{ opacity: 1, x: 0, rotateY: -5, rotateX: 2 }}
+          transition={{ delay: 0.5, type: "spring", stiffness: 80, damping: 20 }}
+          whileHover={{ rotateY: 0, rotateX: 0, scale: 1.02, transition: { duration: 0.4 } }}
+          className="glass-panel rounded-2xl overflow-hidden shadow-[0_32px_64px_rgba(0,0,0,0.8)] z-10"
+          style={{ transformStyle: "preserve-3d", perspective: 1000 }}
         >
           {/* Mac Header */}
           <div className="h-10 bg-[#0a101a] border-b border-[var(--border)] flex items-center px-4 justify-between">
@@ -142,7 +205,7 @@ export default function Landing() {
               { id: '02 / 03', icon: '⏳', title: '30+ hours wasted on manual tasks', desc: 'Your highly-paid team is copying data between CRMs, sending invoices, and answering the same 5 questions repeatedly.', stat: '📉 Manual data entry costs companies 20-30% in revenue' },
               { id: '03 / 03', icon: '🛒', title: 'Website visitors leaving without buying', desc: '100 people visit your site. 98 leave without doing anything because there was no one to engage them immediately.', stat: '💰 E-commerce loses $18B yearly to abandoned carts' }
             ].map((p, i) => (
-              <div key={i} className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] bg-[var(--surface2)] border border-[var(--border)] p-4 sm:p-8 rounded-xl hover:-translate-y-2 hover:border-[var(--accent3)] transition-all group relative overflow-hidden flex flex-col">
+              <TiltCard key={i} className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] card-3d p-4 sm:p-8 rounded-2xl group relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--accent3)] to-transparent opacity-50" />
                 <div className="font-mono text-[10px] text-[var(--text-dim)] mb-4 sm:mb-6">{p.id}</div>
                 <div className="text-2xl sm:text-4xl mb-4 sm:mb-6">{p.icon}</div>
@@ -151,7 +214,7 @@ export default function Landing() {
                 <div className="bg-[var(--accent3)]/10 text-[var(--accent3)] text-[10px] sm:text-xs font-mono p-2 sm:p-3 rounded border border-[var(--accent3)]/20 mt-auto">
                   {p.stat}
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -178,7 +241,7 @@ export default function Landing() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {/* Agent Card 1 */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+            <TiltCard className="card-3d rounded-2xl p-4 sm:p-6 group relative overflow-hidden flex flex-col justify-between">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,50%),rgba(99,202,255,0.08)_0%,transparent_50%)] pointer-events-none" />
               <div>
                 <div className="flex justify-between items-start mb-6">
@@ -196,10 +259,10 @@ export default function Landing() {
               <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
                 <Link to="/agents/ai-voice-inbound" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
               </div>
-            </div>
+            </TiltCard>
             
             {/* Agent Card 2 */}
-            <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+            <TiltCard className="card-3d rounded-2xl p-4 sm:p-6 group relative overflow-hidden flex flex-col justify-between">
                <div>
                  <div className="flex justify-between items-start mb-6">
                   <div className="w-12 h-12 rounded-lg bg-[var(--accent2)]/10 text-[var(--accent2)] flex items-center justify-center text-2xl">💬</div>
@@ -216,10 +279,10 @@ export default function Landing() {
               <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
                 <Link to="/agents/whatsapp-automation" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
               </div>
-            </div>
+            </TiltCard>
             
              {/* Agent Card 3 */}
-             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+             <TiltCard className="card-3d rounded-2xl p-4 sm:p-6 group relative overflow-hidden flex flex-col justify-between">
                <div>
                  <div className="flex justify-between items-start mb-6">
                   <div className="w-12 h-12 rounded-lg bg-[var(--accent4)]/10 text-[var(--accent4)] flex items-center justify-center text-2xl">⚡</div>
@@ -236,10 +299,10 @@ export default function Landing() {
                <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
                  <Link to="/agents/lead-qualification" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
                </div>
-             </div>
+             </TiltCard>
 
              {/* Agent Card 4 */}
-             <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-4 sm:p-6 group hover:-translate-y-1 transition-transform relative overflow-hidden flex flex-col justify-between">
+             <TiltCard className="card-3d rounded-2xl p-4 sm:p-6 group relative overflow-hidden flex flex-col justify-between">
                <div>
                  <div className="flex justify-between items-start mb-6">
                   <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center text-2xl">📧</div>
@@ -256,7 +319,7 @@ export default function Landing() {
                <div className="flex items-center justify-center border-t border-[var(--border)] pt-4 mt-auto">
                  <Link to="/agents/email-automator" className="text-xs font-bold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded group-hover:bg-[var(--accent)] group-hover:text-black transition-colors">Details →</Link>
                </div>
-             </div>
+             </TiltCard>
           </div>
           
           <div className="mt-12 text-center">
@@ -370,7 +433,7 @@ export default function Landing() {
             </div>
           </div>
           
-          <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-8 relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.05)]">
+          <div className="card-3d rounded-2xl p-8 relative overflow-hidden shadow-[0_32px_64px_rgba(0,0,0,0.8)]">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent2)]/10 blur-[50px] rounded-full" />
             <div className="font-mono text-xs text-[var(--accent2)] mb-4 tracking-widest">ESTIMATED MONTHLY SAVINGS</div>
             <div className="font-syne font-extrabold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent2)] to-[var(--accent)] mb-2">
@@ -432,7 +495,7 @@ export default function Landing() {
 
           <div className="grid grid-cols-2 gap-4 md:gap-8 items-stretch">
             {/* Before (Manual) */}
-            <div className="bg-[var(--surface2)] border border-red-500/20 rounded-xl p-4 md:p-8 flex flex-col justify-between relative overflow-hidden">
+            <div className="glass-panel border border-red-500/20 rounded-2xl p-4 md:p-8 flex flex-col justify-between relative overflow-hidden hover:border-red-500/40 transition-colors">
               <div className="absolute top-0 right-0 px-2 py-0.5 md:px-3 md:py-1 bg-red-500/10 text-red-400 font-mono text-[8px] md:text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-red-500/20">MANUAL</div>
               <div>
                 <h3 className="font-syne font-bold text-sm md:text-xl text-red-400 mb-4 md:mb-6 leading-tight">The Old Manual Bottleneck</h3>
@@ -466,7 +529,7 @@ export default function Landing() {
             </div>
 
             {/* After (Operon AI) */}
-            <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-4 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.03)]">
+            <div className="card-3d border border-[var(--accent2)]/30 rounded-2xl p-4 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.03)]">
               <div className="absolute top-0 right-0 px-2 py-0.5 md:px-3 md:py-1 bg-[var(--accent2)]/10 text-[var(--accent2)] font-mono text-[8px] md:text-[10px] uppercase tracking-widest rounded-bl border-l border-b border-[var(--accent2)]/20">OPERON_AI</div>
               <div>
                 <h3 className="font-syne font-bold text-sm md:text-xl text-[var(--accent2)] mb-4 md:mb-6 leading-tight">AI-Driven Automation</h3>
@@ -528,7 +591,7 @@ export default function Landing() {
                   <button
                     key={stack.id}
                     onClick={() => setActiveStack(stack.id)}
-                    className={`p-4 rounded-xl border flex flex-col items-center justify-center gap-2 transition-all ${activeStack === stack.id ? 'bg-[var(--surface2)] border-[var(--accent)] shadow-[0_0_15px_rgba(0,188,212,0.15)] scale-105' : 'bg-[var(--surface)] border-[var(--border)] hover:border-zinc-700'}`}
+                    className={`p-4 rounded-2xl border flex flex-col items-center justify-center gap-2 transition-all ${activeStack === stack.id ? 'glass-panel border-[var(--accent)] shadow-[0_16px_32px_rgba(0,0,0,0.8)] scale-105' : 'card-3d border-[var(--border)] hover:border-[rgba(255,255,255,0.2)]'}`}
                   >
                     <span className="text-xl font-bold font-syne">
                       {stack.id === 'shopify' ? '🛒' : stack.id === 'hubspot' ? '🧡' : stack.id === 'zoho' ? '💼' : stack.id === 'sheets' ? '📊' : stack.id === 'slack' ? '💬' : '⚡'}
@@ -539,7 +602,7 @@ export default function Landing() {
               </div>
 
               {/* Integration Detail Card */}
-              <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-xl p-6 flex flex-col justify-between font-mono text-xs">
+              <div className="card-3d rounded-2xl p-6 flex flex-col justify-between font-mono text-xs shadow-[0_16px_32px_rgba(0,0,0,0.6)]">
                 <div>
                   <div className="text-[var(--accent)] font-bold mb-3 uppercase tracking-wider font-syne flex items-center gap-2">
                     <span>⚡</span> {activeStack === 'shopify' ? 'Shopify Integration' : activeStack === 'hubspot' ? 'HubSpot CRM Sync' : activeStack === 'zoho' ? 'Zoho Pipeline Automation' : activeStack === 'sheets' ? 'Google Sheets logger' : activeStack === 'slack' ? 'Slack Real-time Alerts' : 'Salesforce Integration'}
@@ -589,7 +652,7 @@ export default function Landing() {
                 a: "Absolutely. All communication channels are encrypted end-to-end, and customer details are stored and routed according to industry security best practices to protect your data."
               }
             ].map((faq, idx) => (
-              <div key={idx} className="border border-[var(--border)] rounded-lg bg-[var(--surface2)] overflow-hidden transition-all duration-300">
+              <div key={idx} className="card-3d rounded-2xl overflow-hidden transition-all duration-300">
                 <button
                   onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                   className="w-full p-5 text-left font-syne font-bold text-sm md:text-base flex justify-between items-center hover:text-[var(--accent)] transition-colors"
@@ -618,8 +681,8 @@ export default function Landing() {
         <div className="max-w-4xl mx-auto px-6 text-center z-10 relative">
           <h2 className="font-syne font-extrabold text-[clamp(2rem,6vw,3.75rem)] mb-6">Stop losing leads to your competitors.</h2>
           <p className="text-xl text-[var(--text-muted)] mb-10 max-w-2xl mx-auto">Get a custom deployment plan showing exactly which agents will generate the highest ROI for your specific business.</p>
-          <Link to="/contact" className="inline-block px-10 py-5 bg-[var(--accent)] text-black font-bold text-lg rounded-lg hover:shadow-[0_0_30px_var(--border-glow)] hover:-translate-y-1 transition-all">
-            Book Your Free Audit →
+          <Link to="/contact" className="btn-3d inline-block px-10 py-5 font-bold text-lg rounded-xl flex items-center justify-center gap-2 mx-auto w-fit">
+            Book Your Free Audit <span>→</span>
           </Link>
           <p className="mt-4 font-mono text-xs text-[var(--text-dim)] uppercase">No obligation. No pitch. Just clarity.</p>
         </div>
