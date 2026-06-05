@@ -40,51 +40,55 @@ export default function Contact() {
 
   if (status === 'success') {
     return (
-      <div className="max-w-2xl mx-auto px-6 py-32 text-center">
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-[var(--surface2)] border border-[var(--accent2)]/30 rounded-xl p-12">
-          <div className="text-5xl mb-6">✅</div>
-          <h1 className="font-syne font-extrabold text-3xl mb-4">Request Received!</h1>
-          <p className="text-[var(--text-muted)] mb-8">Our team will reach out within 24 hours to schedule your free audit call.</p>
-          <a href="/" className="inline-block px-6 py-3 bg-[var(--accent)] text-black font-bold rounded">Back to Home</a>
+      <div className="max-w-2xl mx-auto px-5 sm:px-6 py-20 sm:py-32 text-center">
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="card-base p-8 sm:p-12">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center mx-auto mb-6">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--accent-bright)]">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <h1 className="font-display font-extrabold text-2xl sm:text-3xl mb-4">Request Received!</h1>
+          <p className="text-[var(--text-muted)] text-base mb-8">Our team will reach out within 24 hours to schedule your free audit call.</p>
+          <a href="/" className="btn-primary">Back to Home</a>
         </motion.div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-24">
+    <div className="max-w-3xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-24">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <div className="font-mono text-xs text-[var(--text-dim)] mb-4 uppercase tracking-widest">// FREE_AUDIT</div>
-        <h1 className="font-syne font-extrabold text-4xl md:text-5xl mb-4">Book Your Free Audit</h1>
-        <p className="text-[var(--text-muted)] text-lg mb-12 max-w-xl">Tell us about your business. We'll analyze where AI agents can recover the most revenue and create a custom deployment plan for you.</p>
+        <div className="font-mono text-xs text-[var(--text-muted)] mb-4 uppercase tracking-widest">// FREE_AUDIT</div>
+        <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl mb-4">Book Your Free Audit</h1>
+        <p className="text-[var(--text-muted)] text-base sm:text-lg mb-10 sm:mb-12 max-w-xl">Tell us about your business. We'll analyze where AI agents can recover the most revenue and create a custom deployment plan for you.</p>
       </motion.div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           <div>
-            <label className="font-mono text-xs text-[var(--text-dim)] mb-2 block uppercase tracking-wider">Your Name *</label>
-            <input required type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className="w-full bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="Rahul Sharma" />
+            <label className="font-mono text-xs text-[var(--text-muted)] mb-2 block uppercase tracking-wider">Your Name *</label>
+            <input required type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="Rahul Sharma" />
           </div>
           <div>
-            <label className="font-mono text-xs text-[var(--text-dim)] mb-2 block uppercase tracking-wider">Email *</label>
-            <input required type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} className="w-full bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="rahul@company.com" />
+            <label className="font-mono text-xs text-[var(--text-muted)] mb-2 block uppercase tracking-wider">Email *</label>
+            <input required type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="rahul@company.com" />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           <div>
-            <label className="font-mono text-xs text-[var(--text-dim)] mb-2 block uppercase tracking-wider">Phone *</label>
-            <input required type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="w-full bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="+91 98765 43210" />
+            <label className="font-mono text-xs text-[var(--text-muted)] mb-2 block uppercase tracking-wider">Phone *</label>
+            <input required type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="+91 98765 43210" />
           </div>
           <div>
-            <label className="font-mono text-xs text-[var(--text-dim)] mb-2 block uppercase tracking-wider">Company Name *</label>
-            <input required type="text" value={form.company} onChange={e => setForm({ ...form, company: e.target.value })} className="w-full bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="Acme Solutions Pvt Ltd" />
+            <label className="font-mono text-xs text-[var(--text-muted)] mb-2 block uppercase tracking-wider">Company Name *</label>
+            <input required type="text" value={form.company} onChange={e => setForm({ ...form, company: e.target.value })} className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors" placeholder="Acme Solutions Pvt Ltd" />
           </div>
         </div>
 
         <div>
-          <label className="font-mono text-xs text-[var(--text-dim)] mb-2 block uppercase tracking-wider">Industry</label>
-          <select value={form.industry} onChange={e => setForm({ ...form, industry: e.target.value })} className="w-full bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors">
+          <label className="font-mono text-xs text-[var(--text-muted)] mb-2 block uppercase tracking-wider">Industry</label>
+          <select value={form.industry} onChange={e => setForm({ ...form, industry: e.target.value })} className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors">
             <option value="">Select your industry</option>
             <option>E-commerce / Retail</option>
             <option>Healthcare</option>
@@ -100,19 +104,19 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="font-mono text-xs text-[var(--text-dim)] mb-2 block uppercase tracking-wider">What's your biggest challenge? (optional)</label>
-          <textarea rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} className="w-full bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors resize-none" placeholder="Tell us about your current bottlenecks, team size, and what you'd like to automate..." />
+          <label className="font-mono text-xs text-[var(--text-muted)] mb-2 block uppercase tracking-wider">What's your biggest challenge? (optional)</label>
+          <textarea rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--text)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors resize-none" placeholder="Tell us about your current bottlenecks, team size, and what you'd like to automate..." />
         </div>
 
         {status === 'error' && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400 font-mono text-sm">Something went wrong. Please try again or email us directly.</div>
         )}
 
-        <button type="submit" disabled={status === 'loading'} className="w-full py-4 bg-[var(--accent)] text-black font-bold text-lg rounded-lg hover:shadow-[0_0_25px_var(--border-glow)] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+        <button type="submit" disabled={status === 'loading'} className="w-full py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-bold text-base sm:text-lg rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
           {status === 'loading' ? 'Submitting...' : 'Request Free Audit →'}
         </button>
 
-        <p className="text-center font-mono text-[10px] text-[var(--text-dim)]">No spam. No sales pressure. Just a focused 30-min call to map your automation roadmap.</p>
+        <p className="text-center font-mono text-[10px] text-[var(--text-muted)]">No spam. No sales pressure. Just a focused 30-min call to map your automation roadmap.</p>
       </form>
     </div>
   );

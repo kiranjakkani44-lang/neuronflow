@@ -101,7 +101,7 @@ const AgentSimulator = ({ category, name }: { category: string; name: string }) 
   return (
     <div className="mt-12 border border-[var(--border)] bg-[var(--surface)] p-6 rounded-xl relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent)]/5 blur-[40px] pointer-events-none" />
-      <h3 className="font-syne font-bold text-xl mb-2 flex items-center gap-2">
+      <h3 className="font-display font-bold text-xl mb-2 flex items-center gap-2">
         <span className="text-[var(--accent)]">✦</span> Interactive Agent Simulator
       </h3>
       <p className="text-xs text-[var(--text-muted)] font-mono mb-6 uppercase tracking-wider">
@@ -130,13 +130,13 @@ const AgentSimulator = ({ category, name }: { category: string; name: string }) 
               <button
                 onClick={advanceVoice}
                 disabled={isTyping}
-                className="px-4 py-2 bg-[var(--accent)] text-black rounded font-bold hover:shadow-[0_0_15px_var(--border-glow)] transition-shadow text-[11px]"
+                className="px-4 py-2 bg-[var(--accent)] text-white rounded font-bold hover:shadow-[0_0_15px_var(--border-glow)] transition-shadow text-[11px]"
               >
                 {step === 0 ? "Start Call Simulation" : step === voiceTranscript.length - 1 ? "Restart Simulation" : "Next Conversation Node →"}
               </button>
               {step > 0 && (
-                <div className="flex items-center gap-1.5 text-[10px] text-[var(--accent2)] animate-pulse">
-                  <div className="w-2 h-2 rounded-full bg-[var(--accent2)]" />
+                <div className="flex items-center gap-1.5 text-[10px] text-[var(--accent-bright)] animate-pulse">
+                  <div className="w-2 h-2 rounded-full bg-[var(--accent-bright)]" />
                   <span>SIMULATED VOICE LINE ACTIVE</span>
                 </div>
               )}
@@ -150,12 +150,12 @@ const AgentSimulator = ({ category, name }: { category: string; name: string }) 
           <div className="max-w-[340px] mx-auto bg-black border-4 border-zinc-800 rounded-[28px] overflow-hidden shadow-2xl relative">
             <div className="h-10 bg-zinc-900 px-4 flex justify-between items-center text-[10px] font-mono text-[var(--text-muted)] border-b border-zinc-800">
               <span>9:41 AM</span>
-              <span className="text-[var(--accent2)]">● WHATSAPP_LIVE</span>
+              <span className="text-[var(--accent-bright)]">● WHATSAPP_LIVE</span>
             </div>
             
             <div className="p-4 bg-zinc-950 min-h-[320px] max-h-[380px] overflow-y-auto space-y-3 font-sans text-xs flex flex-col justify-end">
               {whatsappMessages.slice(0, step + 1).map((m, idx) => (
-                <div key={idx} className={`max-w-[80%] p-3 rounded-lg ${m.sender === 'ai' ? 'bg-zinc-800 text-white mr-auto rounded-tl-none' : 'bg-[var(--accent2)]/10 text-[var(--accent2)] border border-[var(--accent2)]/20 ml-auto rounded-tr-none'}`}>
+                <div key={idx} className={`max-w-[80%] p-3 rounded-lg ${m.sender === 'ai' ? 'bg-zinc-800 text-white mr-auto rounded-tl-none' : 'bg-[var(--accent-bright)]/10 text-[var(--accent-bright)] border border-[var(--accent-bright)]/20 ml-auto rounded-tr-none'}`}>
                   <p className="whitespace-pre-line leading-relaxed">{m.text}</p>
                 </div>
               ))}
@@ -172,7 +172,7 @@ const AgentSimulator = ({ category, name }: { category: string; name: string }) 
               <button
                 onClick={advanceWhatsApp}
                 disabled={isTyping}
-                className="w-full py-2 bg-[var(--accent2)] text-black rounded font-bold hover:shadow-[0_0_15px_rgba(0,255,136,0.3)] transition-shadow text-[11px] text-center"
+                className="w-full py-2 bg-[var(--accent-bright)] text-black rounded font-bold hover:shadow-[0_0_15px_rgba(0,255,136,0.3)] transition-shadow text-[11px] text-center"
               >
                 {step === 0 ? "Simulate WhatsApp Chat" : step === whatsappMessages.length - 1 ? "Reset Chat" : "Reply To Agent →"}
               </button>
@@ -192,7 +192,7 @@ const AgentSimulator = ({ category, name }: { category: string; name: string }) 
                   let colorClass = "text-zinc-300";
                   if (log.includes("[INBOUND]")) colorClass = "text-cyan-400";
                   if (log.includes("[SCORE]")) colorClass = "text-amber-400";
-                  if (log.includes("[ACTION]") || log.includes("[WHATSAPP]")) colorClass = "text-[var(--accent2)]";
+                  if (log.includes("[ACTION]") || log.includes("[WHATSAPP]")) colorClass = "text-[var(--accent-bright)]";
                   if (log.includes("[SUCCESS]")) colorClass = "text-[var(--accent)] font-bold";
                   return <div key={idx} className={colorClass}>{log}</div>;
                 })
@@ -258,16 +258,16 @@ export default function AgentDetail() {
             <span className="px-3 py-1 bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/30 rounded font-mono text-xs">{agent.category}</span>
             <span className="status-live animate-pulse">READY TO DEPLOY</span>
           </div>
-          <h1 className="font-syne font-extrabold text-4xl mb-4">{agent.name}</h1>
+          <h1 className="font-display font-extrabold text-4xl mb-4">{agent.name}</h1>
           <p className="text-[var(--text-muted)] text-lg mb-8 leading-relaxed">{agent.description}</p>
 
-          <div className="bg-[var(--surface2)] border border-[var(--accent2)]/30 p-6 rounded-xl mb-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent2)]/10 blur-[50px]" />
+          <div className="bg-[var(--surface2)] border border-[var(--accent-bright)]/30 p-6 rounded-xl mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent-bright)]/10 blur-[50px]" />
             <h3 className="font-mono text-xs text-[var(--text-dim)] mb-2 uppercase tracking-wider">ROI Guarantee</h3>
-            <p className="font-syne font-bold text-xl text-[var(--accent2)]">{agent.roi_promise}</p>
+            <p className="font-display font-bold text-xl text-[var(--accent-bright)]">{agent.roi_promise}</p>
           </div>
 
-          <h3 className="font-syne font-bold text-xl mb-4">Core Capabilities</h3>
+          <h3 className="font-display font-bold text-xl mb-4">Core Capabilities</h3>
           <ul className="space-y-4 mb-10">
             {(agent.features || []).map((f: any, i: number) => (
               <li key={i} className="flex gap-4 p-4 border border-[var(--border)] rounded-lg bg-[var(--surface2)]">
@@ -296,7 +296,7 @@ export default function AgentDetail() {
 
             <button
               onClick={handleDeploy}
-              className="block text-center w-full py-4 bg-[var(--accent)] text-black font-bold rounded hover:shadow-[0_0_20px_var(--border-glow)] transition-all mb-4"
+              className="block text-center w-full py-4 bg-[var(--accent)] text-white font-bold rounded hover:shadow-[0_0_20px_var(--border-glow)] transition-all mb-4"
             >
               Deploy This Agent →
             </button>
